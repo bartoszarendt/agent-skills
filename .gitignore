@@ -1,0 +1,8 @@
+# Temporary reference material — never committed
+tmp/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
