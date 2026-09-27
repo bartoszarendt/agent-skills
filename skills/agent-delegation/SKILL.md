@@ -1,6 +1,6 @@
 ---
 name: agent-delegation
-description: Delegate a bounded implementation, review, diagnosis, or research task to a separate agent CLI process (Claude Code, Codex, OpenCode, or Pi), then monitor the run and verify its result. Use when the user asks for work or a second opinion from another agent, model, or named CLI in a separate session.
+description: Delegate a bounded implementation, review, diagnosis, or research task to a separate agent CLI process (Claude Code, Codex, OpenCode, or Pi), then monitor the run and verify its result. Use when the user asks for work or a second opinion from another agent, model, or named CLI in a separate session, or when project instructions or configuration route a kind of work to another agent CLI.
 ---
 
 # Agent Delegation
@@ -25,15 +25,18 @@ CLI's own documentation.
 
 Use this skill for implementation, review, diagnosis, research, and second
 opinions when the user asks for a separate agent process. An explicit request is
-sufficient, even for a small task. When the user asks for the current
-application's built-in subagents instead of a separate CLI, use those.
+sufficient, even for a small task. Project instructions or configuration that
+route a kind of work, or a named agent role, to another CLI are a standing
+request for that work; a user's instruction for a particular task overrides
+them. When the user asks for the current application's built-in subagents
+instead of a separate CLI, use those.
 
 Delegating to the same product as the current agent is valid when requested.
 
 ## Select the CLI, model, and permissions
 
-1. Honor a named CLI. Otherwise use a preference stated by the user or project
-   instructions. If none exists and exactly one supported CLI is installed and
+1. Honor a named CLI. Otherwise use a preference stated by the user, project
+   instructions, or project configuration. If none exists and exactly one supported CLI is installed and
    ready, use it; if several are, ask which one.
 2. Reuse established model and provider choices. Use the CLI's configured default
    when cost and data-handling implications are settled. Ask when the choice is
@@ -41,6 +44,9 @@ Delegating to the same product as the current agent is valid when requested.
    this material. Never switch provider or model silently after a failure.
 3. Match the permission level to the task:
    - Review, diagnosis, research, and second opinions: read-only.
+   - Review or planning whose result the delegate must record in a file, such
+     as a task or findings record: write access, with the brief permitting
+     writes only to those files. Compare the workspace after the run.
    - Implementation: write access for the requested scope.
    - Bypassed approvals, disabled sandboxes, blanket auto-approval, network
      access, or writable directories outside the workspace: only when the user
@@ -85,7 +91,10 @@ Delegating to the same product as the current agent is valid when requested.
 
 If the CLI is missing or not ready, or a required enforced boundary is
 unavailable, report the blocker. A prepared brief is useful fallback work, but it
-is not completed delegation. Do the task directly only if the user wants that.
+is not completed delegation. Do the task directly, or with the current
+application's own agents, only if the user wants that or project instructions
+define that fallback, and say which applied. Once a writing run has started,
+reconcile its partial edits before any fallback.
 
 ## Write the brief
 
@@ -116,6 +125,14 @@ Report: changes and reasons; files touched; checks run with results;
   and the evidence expected. Ask the delegate to separate observations from
   inferences. Forbid changes, not inspection: permit the read-only commands the
   CLI needs, because some CLIs read files only through shell commands.
+- When the project defines the agent that should do the task, such as a role
+  file in the selected CLI's agent directory, start that agent by name where the
+  reference gives an option for it; otherwise have the brief tell the delegate
+  to read that file before anything else, with its path. Pass model and effort
+  explicitly where the project sets them, since a separate process does not
+  always apply an agent file's settings. The agent's own permission rules then
+  shape the boundary: read them, and keep the permission options this skill
+  selects.
 
 The brief's premises are fixed once the run starts. If one proves wrong, stop the
 run, reconcile any partial edits, and dispatch a corrected brief.
@@ -209,6 +226,9 @@ and give the run directory's location.
 - [ ] CLI, model, and permission level match the request and existing authorization.
 - [ ] Requested scope and enforced isolation were distinguished and reported.
 - [ ] The brief is self-contained, names exact checks, and contains no secrets.
+- [ ] A project-defined agent was started by name or read first, with any model
+      and effort the project sets passed explicitly.
+- [ ] Any fallback was one the user or project instructions allow, and was reported.
 - [ ] The starting state was recorded, and pre-existing user work is intact.
 - [ ] Success was judged from process exit, terminal state, and errors together;
       a recorded cancellation or timeout overrode them.

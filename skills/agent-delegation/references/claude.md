@@ -130,6 +130,16 @@ WSL2, a container, or a VM there.
 Limits: `--max-turns <n>` and `--max-budget-usd <amount>`. Model and effort:
 `--model <name>` and `--effort <level>`.
 
+## Named agent
+
+`--agent <name>` runs the session as an agent defined in the project's
+`.claude/agents/` or among the user's agents. Combine it with the read-only or
+write run above, and still pass `--permission-mode`, and `--model` and
+`--effort` where the project sets them, rather than relying on the agent file's
+own settings in print mode. A review that must record its result in a file
+needs an edit tool and `acceptEdits`, with the brief limiting writes to that
+file; compare the workspace after the run.
+
 ## Output
 
 `--output-format json` writes one result object. Read:

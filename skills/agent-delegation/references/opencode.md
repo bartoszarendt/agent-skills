@@ -76,6 +76,18 @@ when the boundary matters.
   user accepts that. Never combine it with `plan`, because it would approve the
   requests that keep that agent read-only.
 
+## Named agent
+
+`--agent <name>` also selects an agent defined in the project's
+`.opencode/agents/` or in the global configuration, instead of `plan` or
+`build`. Its permission rules are merged with the global configuration, and the
+agent's rules take precedence, so a named agent is read-only only when the
+merged rules deny edits: inspect the effective permissions before relying on a
+read-only run, and compare the workspace after it. Pass `-m` and `--variant`
+where the project sets them.
+A reasoning effort set in the agent file has no command-line option and applies
+through the agent.
+
 ## Output
 
 `--format json` writes JSONL events of the types `text`, `reasoning`,

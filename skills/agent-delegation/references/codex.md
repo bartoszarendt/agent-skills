@@ -54,6 +54,14 @@ The trailing `-` reads the brief from stdin. Model and effort:
 add `--skip-git-repo-check`. `--add-dir <dir>` adds a writable directory and
 widens the boundary.
 
+## Named agent
+
+`codex exec` has no option to start an agent defined under `.codex/agents/`,
+and `-p` layers a profile from the user's Codex home, not from the project. Tell
+the delegate in the brief to read the agent file first and follow it, and pass
+the file's `model` and `model_reasoning_effort` as `-m <model>` and
+`-c model_reasoning_effort=<level>`. The sandbox still comes from `-s`.
+
 ## Output
 
 `--json` writes JSONL events. `-o` writes the final agent message to a file.
