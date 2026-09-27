@@ -11,6 +11,7 @@ Markdown; they require no hooks, plugin runtime, scripts, or particular agent ho
 
 | Skill | Use it for |
 |---|---|
+| [agent-delegation](skills/agent-delegation/) | Running tasks in a separate Claude Code, Codex, OpenCode, or Pi CLI process and verifying the result. |
 | [agent-instructions](skills/agent-instructions/) | Writing clear, scoped agent guidance and checking how its rules interact. |
 | [api-design](skills/api-design/) | Defining programming contracts, consumer compatibility, and retry safety. |
 | [code-review](skills/code-review/) | Investigating actionable defects and reporting evidence, impact, and gaps. |
