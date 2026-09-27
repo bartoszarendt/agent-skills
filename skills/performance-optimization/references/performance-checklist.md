@@ -99,6 +99,60 @@ subscriptions, closures, detached UI nodes, buffers, and incomplete cleanup.
 Verify release or bounded retention after work completes. Stream large data when
 that preserves the required behavior and meaningfully reduces peak resource use.
 
+## Computation and data processing
+
+Separate CPU time from waiting on I/O, locks, or other services before choosing
+a technique. Check how cost grows with input size; a small sample can hide
+superlinear behavior that dominates at realistic volume.
+
+Inspect:
+
+- repeated work, redundant passes, and recomputation inside loops;
+- data structures that fit the dominant lookups and updates;
+- copying, conversion, parsing, and serialization of large values;
+- file access patterns, per-item I/O, and buffering;
+- per-item overhead that batching, vectorized operations, or native libraries
+  can remove.
+
+Profilers add overhead and can distort short or frequently called functions.
+Use sampling for a whole-program view and timing harnesses or tracing for narrow
+comparisons, with the runtime's supported tools.
+
+Parallelism helps only when work divides and the runtime permits it. Account for
+worker start-up, data transfer between workers, runtime limits such as an
+interpreter lock, and contention on shared resources. Report elapsed time and
+total resource use separately.
+
+## Startup, builds, and test suites
+
+Divide elapsed time into phases: dependency installation, compilation or
+discovery, imports and initialization, setup, execution, teardown, and external
+services. Use the tool's timing or duration reports before changing configuration.
+
+Inspect:
+
+- import-time or initialization work that could load on demand;
+- the slowest tests or build steps and how total cost is distributed;
+- expensive setup repeated where sharing preserves isolation;
+- fixed sleeps, generous timeouts, and polling where a readiness signal or
+  controlled clock exists;
+- network, database, or container start-up whose cost exceeds what the
+  protected risk requires;
+- dependency, build, and test caches, including their invalidation keys and
+  hit rates.
+
+For a slow test, separate setup cost from the behavior under test. Share
+fixtures or run tests in parallel only when isolation, ordering, and cleanup
+permit it; confirm with repeated runs and changed ordering. Parallel runs can
+reduce elapsed time while increasing total CPU, memory, or CI cost; report both.
+
+Test count alone does not establish waste. Before removing, merging, skipping,
+or narrowing tests, identify the failures they detect. Proceed when retained
+cases still detect each consequential failure; if protection would be reduced,
+explain the trade-off and obtain authorization unless already granted. Test
+selection and result caching can speed iteration; do not let them replace
+required gates without authorization.
+
 ## Evidence
 
 Record command or instrument, build, environment, workload, cache state,

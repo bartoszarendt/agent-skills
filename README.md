@@ -24,7 +24,7 @@ Markdown; they require no hooks, plugin runtime, scripts, or particular agent ho
 | [incremental-implementation](skills/incremental-implementation/) | Completing work in coherent increments with relevant final-state evidence. |
 | [interview](skills/interview/) | Clarifying consequential choices through focused questions. |
 | [merge-conflict-resolution](skills/merge-conflict-resolution/) | Preserving intent and checking combined behavior during Git conflicts. |
-| [performance-optimization](skills/performance-optimization/) | Improving measured bottlenecks without hiding correctness trade-offs. |
+| [performance-optimization](skills/performance-optimization/) | Diagnosing and improving performance across code, services, builds, and tests without hiding correctness trade-offs. |
 | [planning](skills/planning/) | Defining outcomes, dependencies, task contracts, and evidence of completion. |
 | [security-and-hardening](skills/security-and-hardening/) | Assessing actual trust boundaries and applying relevant controls. |
 | [task-handoff](skills/task-handoff/) | Preserving state, decisions, authorization, and next actions across sessions. |

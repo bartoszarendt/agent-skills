@@ -1,6 +1,6 @@
 ---
 name: performance-optimization
-description: Diagnose and improve a measured performance problem while preserving correctness. Use for latency, throughput, memory, load-time, or bundle regressions, and when evaluating an optimization with material cost or complexity.
+description: Diagnose and improve performance across application code, services, frontends, data processing, builds, and test suites while preserving correctness. Use for slow execution, latency, throughput, memory or resource use, startup, load time, bundle size, or regressions, including problems not yet measured, and when evaluating an optimization with material cost or complexity.
 ---
 
 # Performance Optimization
@@ -46,8 +46,9 @@ Consider less work, fewer round trips, better data structures, reduced payloads,
 or moving non-critical work. Choose according to the measured path rather than a
 fixed ordering of techniques.
 
-For web, database, concurrency, and memory investigation, consult the relevant
-sections of [references/performance-checklist.md](references/performance-checklist.md).
+For web, database, concurrency, cache, memory, computation, startup, build, or
+test-suite investigation, consult the relevant sections of
+[references/performance-checklist.md](references/performance-checklist.md).
 
 ## Evaluate a coherent change
 
@@ -57,7 +58,10 @@ attribution.
 
 Preserve validation, permissions, ordering, durability, and required work.
 If a performance trade-off changes the contract, state it and obtain
-authorization before making it.
+authorization before making it. Before removing, merging, or narrowing tests or
+checks, identify the protection affected. Proceed when consequential failures
+remain covered and required gates are preserved. If protection would be reduced,
+explain the trade-off and obtain authorization unless already granted.
 
 Treat caching as a correctness decision. Identify key inputs, scope, invalidation,
 acceptable staleness, size bounds, and concurrency. Do not cache a value where the
@@ -91,16 +95,24 @@ regression protection before adding a benchmark, query-count check, budget, or
 monitor. Add a guard only when it protects a consequential risk at a justified
 cost, and account for noise and ownership.
 
-Stop when the agreed outcome is met or further improvement is not justified.
-State the baseline, result, conditions, correctness evidence, and limits.
+Stop when the agreed outcome is met, further improvement is not justified, or
+the available access does not allow further checks to distinguish the remaining
+causes. State what remains uncertain and what evidence would resolve it. Report
+the baseline, result, conditions, correctness evidence, and limits.
 Identify any deployment or field confirmation still required.
 
 ## Verification
 
 - [ ] The affected operation, workload, and objective are explicit.
-- [ ] Evidence identifies the cost and supports the retained change.
-- [ ] Before and after measurements are comparable and include relevant variation.
-- [ ] Correctness and resource trade-offs are understood and authorized.
-- [ ] Relevant final-state checks ran without weakening valid protection.
+- [ ] Evidence identifies the cost, or the report states what remains uncertain
+      and what evidence would resolve it.
+- [ ] Any retained change is supported by evidence.
+- [ ] When a change was evaluated, before and after measurements are comparable
+      and include relevant variation.
+- [ ] Correctness and resource trade-offs, including any reduced test or check
+      protection, are understood and authorized.
+- [ ] When files changed, relevant final-state checks ran without weakening
+      valid protection.
 - [ ] Regression protection is proportionate and reuses existing mechanisms.
-- [ ] Local improvement and deployed user impact are reported separately.
+- [ ] When deployed users are affected, local improvement and field impact are
+      reported separately.
