@@ -22,7 +22,7 @@ Markdown; they require no hooks, plugin runtime, scripts, or particular agent ho
 | [frontend-design](skills/frontend-design/) | Visual composition, styling, assets, and rendered web implementation. |
 | [git-workflow-and-versioning](skills/git-workflow-and-versioning/) | Preparing authorized commits, integration, versions, and releases. |
 | [incremental-implementation](skills/incremental-implementation/) | Completing work in coherent increments with relevant final-state evidence. |
-| [interview](skills/interview/) | Clarifying consequential choices through focused questions. |
+| [interview](skills/interview/) | Examining and stress-testing a proposal through rounds of questions and user decisions. |
 | [merge-conflict-resolution](skills/merge-conflict-resolution/) | Preserving intent and checking combined behavior during Git conflicts. |
 | [performance-optimization](skills/performance-optimization/) | Diagnosing and improving performance across code, services, builds, and tests without hiding correctness trade-offs. |
 | [planning](skills/planning/) | Defining outcomes, dependencies, task contracts, and evidence of completion. |
