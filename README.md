@@ -20,10 +20,10 @@ Markdown; they require no hooks, plugin runtime, scripts, or particular agent ho
 | [documentation-and-adrs](skills/documentation-and-adrs/) | Keeping documentation accurate and recording consequential rationale. |
 | [domain-language](skills/domain-language/) | Resolving domain terminology and maintaining a useful glossary. |
 | [frontend-design](skills/frontend-design/) | Visual composition, styling, assets, and rendered web implementation. |
+| [git-conflict-resolution](skills/git-conflict-resolution/) | Preserving intent and checking combined behavior during Git conflicts. |
 | [git-workflow-and-versioning](skills/git-workflow-and-versioning/) | Preparing authorized commits, integration, versions, and releases. |
 | [incremental-implementation](skills/incremental-implementation/) | Completing work in coherent increments with relevant final-state evidence. |
 | [interview](skills/interview/) | Examining and stress-testing a proposal through rounds of questions and user decisions. |
-| [merge-conflict-resolution](skills/merge-conflict-resolution/) | Preserving intent and checking combined behavior during Git conflicts. |
 | [performance-optimization](skills/performance-optimization/) | Diagnosing and improving performance across code, services, builds, and tests without hiding correctness trade-offs. |
 | [planning](skills/planning/) | Defining outcomes, dependencies, task contracts, and evidence of completion. |
 | [security-and-hardening](skills/security-and-hardening/) | Assessing actual trust boundaries and applying relevant controls. |
@@ -136,6 +136,10 @@ npx skills@1.7.0 remove planning --global --agent codex claude-code opencode
 Removing a shared installation affects consumers of that shared copy. The remove
 command operates on installed paths, not the authored directory in this checkout.
 Check for local changes before removal.
+
+A renamed skill does not replace its previous installation. Remove the old name
+and add the new one with the same scope and hosts. `merge-conflict-resolution`
+is now `git-conflict-resolution`.
 
 ### Project-local or another computer
 

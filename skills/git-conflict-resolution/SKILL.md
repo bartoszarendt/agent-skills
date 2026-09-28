@@ -1,9 +1,9 @@
 ---
-name: merge-conflict-resolution
+name: git-conflict-resolution
 description: Resolve Git merge, rebase, or cherry-pick conflicts by recovering each side's intent and checking the combined behavior. Use when a requested branch update or integration encounters conflicts.
 ---
 
-# Merge Conflict Resolution
+# Git Conflict Resolution
 
 Preserve compatible intent from both sides and verify the combined result.
 A clean textual merge does not establish correct behavior.
