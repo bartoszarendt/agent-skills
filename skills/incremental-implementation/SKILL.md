@@ -1,6 +1,6 @@
 ---
 name: incremental-implementation
-description: Deliver authorized changes in coherent increments with proportionate verification. Use when work has several dependent behaviors, a material implementation risk, or an existing plan to execute.
+description: Deliver authorized changes in coherent increments with proportionate verification. Use while implementing a multi-step change or one with material implementation risk, or when executing an existing plan.
 ---
 
 # Incremental Implementation
@@ -18,6 +18,11 @@ Identify the intended outcome, constraints, acceptance criteria, and any explici
 gates. If working from a plan, preserve its contracts, exclusions, and required
 proof. Resolve consequential ambiguity before dependent work; continue useful
 independent work that is already authorized.
+
+For multi-step work without an existing plan, outline the increments in order
+with each one's check before editing. A few lines are usually enough; state
+them and continue within existing authorization, preserving explicit review
+gates.
 
 ## Choose a coherent increment
 
@@ -104,7 +109,7 @@ pre-existing user processes and identify anything intentionally left running.
 ## Verification
 
 - [ ] The requested outcome and applicable constraints are satisfied or gaps named.
-- [ ] Increments are coherent; unrelated user work is preserved.
+- [ ] Increments are coherent and, for multi-step work, outlined with their checks; unrelated user work is preserved.
 - [ ] Necessary fixes are complete without unrelated scope expansion.
 - [ ] Relevant checks exercised the final affected behavior.
 - [ ] Failures, skips, and unavailable evidence are reported accurately.

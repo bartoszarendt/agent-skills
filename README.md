@@ -25,7 +25,7 @@ Markdown; they require no hooks, plugin runtime, scripts, or particular agent ho
 | [incremental-implementation](skills/incremental-implementation/) | Completing work in coherent increments with relevant final-state evidence. |
 | [interview](skills/interview/) | Examining and stress-testing a proposal through rounds of questions and user decisions. |
 | [performance-optimization](skills/performance-optimization/) | Diagnosing and improving performance across code, services, builds, and tests without hiding correctness trade-offs. |
-| [planning](skills/planning/) | Defining outcomes, dependencies, task contracts, and evidence of completion. |
+| [planning](skills/planning/) | Sequencing multi-step work and parallel opportunities, from a brief outline to detailed task contracts with evidence of completion. |
 | [security-and-hardening](skills/security-and-hardening/) | Assessing actual trust boundaries and applying relevant controls. |
 | [task-handoff](skills/task-handoff/) | Preserving state, decisions, authorization, and next actions across sessions. |
 | [testing-and-verification](skills/testing-and-verification/) | Selecting and maintaining checks that protect consequential behavior. |
@@ -203,8 +203,9 @@ sessions, and Linux/macOS installs were not exercised in that check.
 
 ## Plan format
 
-The plan guidance supports both a short task description and a roadmap with
-phase files. Use the project's existing template first.
+The plan guidance supports both a short task description and a phase-based plan,
+optionally linked from a concise overview. Use the project's existing template,
+work-unit names, and identifiers first; phases are the default without one.
 
 Add detailed contracts, boundaries, anchors, proof, and likely misfires only
 where interpretation risk warrants them. Map acceptance criteria to tasks or

@@ -1,6 +1,6 @@
 ---
 name: planning
-description: Turn an outcome into a proportionate implementation plan with dependencies, observable acceptance criteria, and evidence of completion. Use when asked for a plan or when work has multiple dependent outcomes, material uncertainty, or spans sessions.
+description: Plan multi-step work before implementing it — sequence steps and dependencies, identify work that can proceed in parallel, surface unknowns and decisions, and define acceptance criteria and proportionate verification. Use when a feature, fix, refactor, migration, or other task needs several coordinated steps, when given a spec or requirements, when asked for a plan, breakdown, or roadmap, or when uncertainty or work across sessions makes an explicit approach useful. Scales from a brief outline to a detailed plan.
 ---
 
 # Planning
@@ -8,6 +8,11 @@ description: Turn an outcome into a proportionate implementation plan with depen
 Record the decisions needed to implement the requested outcome correctly.
 Keep the plan small enough to use and detailed enough to prevent materially
 different interpretations.
+
+Before implementing multi-step work, assess sequencing, dependencies, unknowns,
+and verification. When the approach is clear, a brief outline is enough;
+continue into any authorized implementation. Expand detail only where it
+prevents a consequential omission or misunderstanding.
 
 ## Establish the contract
 
@@ -27,16 +32,40 @@ repository evidence. Continue independent work while a dependent choice waits.
 
 - For one coherent change, use a short statement of intent, affected area, and
   verification. A separate document or task table may add no value.
-- For several dependent outcomes, use an ordered task list with acceptance and
-  dependencies.
-- For work spanning phases or sessions, keep a compact roadmap linking to phase
-  files. Keep current detail in the relevant phase rather than copying it into
-  the roadmap.
+- For multiple steps that benefit from explicit ordering or tracking, use an
+  ordered list. Give each step its result and check, and name dependencies
+  where they block.
+- For larger work, group tasks into work units. Keep a concise overview linked
+  to detailed unit records when that separation helps, with current detail in
+  the unit record rather than copied into the overview. Work across sessions
+  does not by itself require several files.
 - Keep distant work at the level of goals, scope, risks, and decisions. Expand it
   when it approaches implementation.
 
-Follow the project's existing format and source of truth. For larger work or
-tasks with interpretation risk, adapt
+A brief ordered plan for one feature:
+
+```markdown
+1. Add the digest frequency setting to the existing settings schema with its
+   default. Check: schema cases cover the default.
+2. Persist it through the current preferences store. Check: a saved value
+   survives reload.
+3. Expose it on the notification settings screen. Check: changing it in the
+   UI updates the stored value.
+```
+
+Follow the project's existing format and source of truth. Inspect applicable
+instructions and representative current plans or work records for naming and
+numbering conventions. Preserve their hierarchy, prefixes, numbering, and
+relationships between work units, tasks, contracts, decisions, and acceptance
+criteria. Continue established identifiers rather than renaming existing
+records to match a template.
+
+Without an established convention, use phases containing tasks when the scope
+warrants structured planning. Use phase-qualified identifiers consistently,
+such as `P3-02` for a task and `P3-02-C1` for its first contract. Small changes
+can still use a brief outline without phases or identifiers.
+
+For larger work or tasks with interpretation risk, adapt
 [references/plan-format.md](references/plan-format.md). Omit unused sections.
 
 ## Define coherent tasks
@@ -50,11 +79,21 @@ new ones. Use an agreed contract first when independent implementations need it.
 For changes with real compatibility commitments, consider an additive transition
 and explicit removal conditions. Do not add migration machinery without a need.
 
+Identify work that can proceed independently. Where practical, organize tasks so
+independent work can run in parallel without weakening coherent outcomes:
+establish shared contracts first, name conflicting edits or shared mutable
+resources, and state where results are integrated and verified. Keep work
+sequential when dependencies, coordination cost, or interference outweigh the
+benefit. Identifying parallel opportunities does not authorize launching agents
+or external processes; keep the plan usable for sequential or parallel
+execution within existing authorization and available capabilities.
+
 Include restructuring that is necessary for a coherent solution. Separate it
 when that makes review or verification materially easier, rather than making
 separate tasks or commits mandatory.
 
-For each task, state:
+For each task, state the following; in a brief outline, one line can carry
+them:
 
 - the result and why it matters;
 - dependencies that actually block it;
@@ -118,17 +157,20 @@ Record material deviations and their reasons in the existing plan. Preserve
 unrelated unfinished work and historical evidence. Add a dated correction when
 later results supersede an earlier closeout.
 
-Distinguish implemented, verified, deployed, blocked, and deferred work. Mark a
-phase done only when its required acceptance and gates are satisfied. A user
-decision to defer work changes the recorded scope; a skipped check is not a pass.
-On completion, keep a short dated roadmap entry with a commit or artifact anchor
-when available, and retain detailed evidence in the phase file.
+Distinguish implemented, verified, deployed, blocked, and deferred work. Mark
+work complete only when its acceptance criteria and required checks are
+satisfied. A user decision to defer work changes the recorded scope; a skipped
+check is not a pass. Record completion and supporting evidence in the existing
+source of truth, with a commit or artifact anchor when available. If an overview
+links to detailed records, summarize completion there without duplicating the
+evidence.
 
 ## Verification
 
 - [ ] The format and detail match the size and risk of the work.
 - [ ] Every requirement maps to a task or explicit gate; proposed exclusions are visible.
 - [ ] Dependencies and unresolved decisions identify what they block.
+- [ ] Independent work is identified where it matters, with conflicts and integration points named.
 - [ ] Tasks with interpretation risk preserve contracts, boundaries, and proof.
 - [ ] Verification is proportionate and does not automatically require new tests.
 - [ ] Existing authorization and explicit project gates are respected.

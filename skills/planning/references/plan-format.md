@@ -1,8 +1,9 @@
 # Plan format
 
-Use the project's established template first. Adapt the following forms when
-they help preserve intent. Do not create phase files or identifiers for work
-that fits a short task description.
+Use the project's established template, work-unit names, and identifier scheme
+first. Adapt the following forms when they help preserve intent. The phase form
+is the default when no project convention exists. Do not create phase files or
+identifiers for work that fits a short task description.
 
 ## Small change
 
@@ -14,7 +15,7 @@ Verify: Run the existing invitation acceptance cases; inspect missing coverage
 before extending them.
 ```
 
-## Phase
+## Phase (default)
 
 ```markdown
 # Phase N: <outcome>
@@ -69,8 +70,11 @@ Dependencies: <prior work or external prerequisites, or none>
 ```
 
 Omit empty sections and task details that add no protection. Add sequencing
-notes only when the dependency table cannot express the constraint. Keep a
-roadmap's entries short and link to these phase records.
+notes only when the dependency table cannot express the constraint. Tasks
+without blocking dependencies are candidates for parallel execution. Confirm
+that shared files, mutable resources, and integration requirements permit it;
+otherwise specify isolation or execution order. When an overview links to
+phase records, keep its entries short.
 
 ## Detail example
 
@@ -98,7 +102,7 @@ a lower-fidelity substitute does not silently discharge the gate.
 
 When a separate task record is useful, include:
 
-- source phase and task ID, plus revision or dated version;
+- source plan and task ID, plus revision or dated version;
 - the exact binding contract and boundary text carried by the task;
 - discovered implementation areas and concrete execution commands;
 - verification results and deviations.
