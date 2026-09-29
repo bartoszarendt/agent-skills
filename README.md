@@ -53,7 +53,7 @@ only some tasks need lives in the skill's `references/` directory.
 
 | Skill | Use it for |
 |---|---|
-| [interview](skills/interview/) | Examining and stress-testing a proposal through rounds of questions and user decisions. |
+| [interview](skills/interview/) | Examining or stress-testing a proposal or open topic through rounds of questions and user decisions, until the work can proceed without invented requirements, including clarifying material uncertainty during other work. |
 | [planning](skills/planning/) | Sequencing multi-step work and parallel opportunities, from a brief outline to detailed task contracts with evidence of completion. |
 
 ### Build

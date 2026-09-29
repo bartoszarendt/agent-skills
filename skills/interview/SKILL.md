@@ -1,13 +1,15 @@
 ---
 name: interview
-description: Examine a proposal, design, or plan through rounds of questions, recommended answers, and the user's decisions. Use when the user asks to be interviewed, grilled, or questioned about an idea, or wants a proposal stress-tested through questions rather than a written assessment.
+description: Examine a proposal, plan, or open topic through rounds of questions, recommended answers, and the user's decisions until the work can proceed without invented requirements. Use when the user asks to be interviewed, grilled, or questioned about an idea, asks for analysis followed by questions, or wants a proposal stress-tested through questions rather than a written assessment. Also use during other work when a material uncertainty about the user's intent, requirements, constraints, or domain knowledge cannot be resolved from available evidence and needs the user's answers.
 ---
 
 # Interview
 
-Reach a shared understanding of a proposal through an exchange of questions and
-answers. The user makes the decisions; the interview surfaces, tests, and
-records them.
+Establish enough shared understanding to carry out or evaluate the requested
+work without inventing material requirements. Actively discover what is
+missing, examine consequential assumptions, and follow answers into the
+questions they expose. The user makes the decisions; the interview surfaces,
+tests, and records them.
 
 ## Conduct an exchange
 
@@ -17,25 +19,50 @@ questions; they do not replace them. Until the interview closes, end each
 response with the current round of questions or a proposal to close, then wait
 for the answers.
 
-A request to analyze, review, or recommend is not an interview request. Deliver
-the assessment, and offer to continue with questions when material decisions
-remain open.
+When the user asks for analysis followed by questions, use the analysis to
+prepare and begin the interview. A request only to analyze, review, or
+recommend is not an interview request. Ask first only the questions without
+which the assessment would be wrong, then deliver it with its assumptions
+stated, and offer to continue with questions when material decisions remain
+open.
+
+During other work, start an interview when a material uncertainty about the
+user's intent, requirements, constraints, or domain knowledge cannot be
+resolved from available evidence and would change what you do next. Scale it
+to the uncertainty: a single question needs no map, progress account, or
+closing proposal. Once the uncertainty is resolved, resume the original task
+within its authorization without asking permission to continue.
 
 ## Prepare the first round
 
-- Identify what the user wants to decide and what is already settled.
+- Identify the outcome the interview serves: what the user wants to decide,
+  build, or change, and what is already settled.
 - Read available code, documents, and examples before asking for discoverable facts.
 - Distinguish current behavior from proposed behavior. Code establishes what
   exists, not necessarily what the user wants; a difference may be the purpose
   of the change.
-- Keep preparation brief in the response. State only the context needed to
-  understand and answer the questions.
+- Map the topic: the areas the outcome depends on, what the evidence settles,
+  and what remains open. Include areas no one has raised when the outcome
+  depends on them.
 
-Investigate facts; ask the user about intent, priorities, and choices. When
-evidence answers a candidate question, drop the question and state the
-established fact where it matters. When an investigation is still running, ask
-the questions that do not depend on it now. If the environment supports
+Treat a question list in project documents as input, not as the interview.
+Fold it into the map: drop questions the evidence answers, sharpen vague ones,
+and add what it misses. Treat questions the user supplies as starting points
+unless the user limits the interview to them. Respect an explicit limit; when a
+material dependency lies outside it, name it once as open rather than asking
+about it. Record answers only where the user or existing authorization permits.
+
+Investigate independently discoverable facts first. Ask the user about intent,
+priorities, choices, and material facts or domain meanings unavailable from
+accessible evidence. When evidence answers a candidate question, drop it and
+state the established fact where it matters. When an investigation is still
+running, ask the questions that do not depend on it now. If the environment supports
 parallel or background investigation, use it rather than delaying the round.
+
+When the topic spans several areas, show the map briefly before the first
+round: the areas, what the evidence established, what is open, and which part
+this round addresses. Keep it to what the user needs to judge the scope and
+answer the questions.
 
 When the user asks for a durable record, or the project maintains a glossary,
 decision records, or a specification the interview may change, read
@@ -44,20 +71,48 @@ first round so decisions are recorded as they settle.
 
 ## Ask in rounds
 
-Treat the proposal as a set of connected decisions. Some can be decided only
-after others are settled.
+Treat the topic as a set of connected decisions. Some can be decided only after
+others are settled.
 
-1. Select open decisions whose prerequisites are settled and that materially
-   affect the outcome, constraints, public contracts, data, security, cost, or
-   reversibility.
+1. Select open decisions or missing factual explanations whose prerequisites
+   are settled and that materially affect the outcome, constraints, public
+   contracts, data, security, cost, or reversibility.
 2. Ask them together as one round. When that set is too large to answer
    thoughtfully, ask first the decisions that others depend on.
 3. Leave a question for a later round when its answer depends on a question
    still open.
 4. Wait for the user's answers before continuing.
 
-Number each question and give it a short title, the question, the relevant
-options or trade-off, and a recommended answer:
+Adapt the number and depth of questions to the topic, its uncertainty and
+consequences, and the user's answers. There is no fixed number of questions or
+rounds: one consequential question can be a round, and a broad topic can need
+many rounds.
+
+Give each question a short title and a clear question. For choices, include
+relevant options or trade-offs and a recommendation when useful. Factual
+explanations need neither options nor a recommended answer. Base a recommendation
+on stated evidence or a named trade-off; when the evidence does not support one,
+state what the answer depends on instead. A recommendation is a proposal. A
+decision is settled only when the user answers it or explicitly delegates it.
+Do not answer on the user's behalf or proceed as if a recommendation were accepted.
+
+### Present the round
+
+When the environment provides a tool or interface for asking the user
+questions, and the current mode permits it, use it for each round:
+
+- Offer discrete options where the choices are clear, and place the
+  recommended option first, marked as recommended.
+- Keep a free-form answer available.
+- When a question has no meaningful discrete options, use the tool's free-text
+  input if it has one; otherwise offer concrete candidates drawn from the
+  evidence, or ask it in the conversation.
+- When the tool limits how many questions fit in one call, split the round
+  across calls, asking prerequisites first, and reassess the remaining
+  questions after each call's answers. The limit governs presentation, not the
+  scope of the interview.
+
+Otherwise ask in the conversation, numbering the questions:
 
 ```markdown
 **Q1. Partial shipments.** Can an order ship in several parts, or does it wait
@@ -68,15 +123,6 @@ Recommendation: allow partial shipments; fulfillment already groups items by
 warehouse.
 ```
 
-Give a recommendation when the evidence supports one; otherwise state what the
-answer depends on. A recommendation is a proposal. A decision is settled only
-when the user answers it or explicitly delegates it. Do not answer on the
-user's behalf or proceed as if a recommendation were accepted.
-
-If a structured question tool is available, it may present a question with
-discrete options; keep the recommendation visible and allow a free-form answer.
-Otherwise use numbered text.
-
 For dependency tracking, partial answers, delegation, and a multi-round example,
 see [references/question-rounds.md](references/question-rounds.md).
 
@@ -86,14 +132,20 @@ After each response, determine what it settles, exposes, or contradicts.
 
 - Record settled decisions. Do not re-ask them unless new evidence changes
   their consequences.
+- Investigate facts the answers make discoverable before asking about them.
 - Follow up when an answer permits materially different implementations. Use a
-  concrete scenario relevant to the proposal to establish its practical meaning.
+  concrete scenario relevant to the topic to establish its practical meaning.
+- Add areas and decisions the answers expose to the map.
 - Accept an explicit revision of an earlier answer and update the decisions
   that depend on it. Name an unclear contradiction with earlier answers, code,
   or project documents, and ask which holds.
 - Accept explicit delegation: decide those choices, state each decision and its
   reason, and continue.
 - Recompute the open decisions and ask the next round.
+
+Open each later round with a short account of progress: what the answers
+settled, what they exposed, and what this round resolves. Ask follow-ups on
+earlier answers before moving to new areas.
 
 When the user asks to be grilled or wants a proposal scrutinized, apply
 [references/stress-testing.md](references/stress-testing.md).
@@ -106,11 +158,18 @@ investigation is not a deferral; decisions that depend on it remain open. Do not
 treat your own recommendation as the user's answer, or conclude from your own
 analysis that a decision is clear.
 
+Before proposing to close, test readiness: draft the brief that the next piece
+of work would start from, and list each point where you would still have to
+guess. Answering an initial question list is not enough. Deferred decisions and
+the work they block stay recorded and excluded. While a guess would materially
+change the work that will proceed, ask about it in another round.
+
 When a standalone interview meets these conditions, propose closing and list
-delegated and deferred decisions. The user closes the interview and may end it at any point. Accept
-clear agreement in context; do not require a particular confirmation phrase.
-If the user already authorized work to follow the interview, summarize and
-continue once these conditions are met, without a separate closing confirmation.
+delegated and deferred decisions. The user closes the interview and may end it
+at any point. Accept clear agreement in context; do not require a particular
+confirmation phrase. If the user already authorized work to follow the
+interview, summarize and continue once these conditions are met, without a
+separate closing confirmation.
 
 Summarize:
 
@@ -130,10 +189,16 @@ next action as blockers; complete independent work that remains authorized.
 
 ## Verification
 
-- [ ] Each response before closing ended with questions or a proposal to close.
-- [ ] Questions addressed decisions rather than discoverable facts.
-- [ ] Recommendations remained proposals until the user answered or delegated them.
+- [ ] While clarification remained unresolved, necessary questions were asked and answers awaited; once resolved, the applicable closure or task-resumption rule was followed.
+- [ ] When the topic spanned several areas, the first round followed a brief map; later rounds opened with progress.
+- [ ] Supplied question lists shaped the map; the user's explicit limits on scope were respected.
+- [ ] An interview started during other work was scaled to the uncertainty, and the task resumed afterwards.
+- [ ] Questions addressed intent, priorities, choices, and material facts or domain meanings unavailable from accessible evidence; independently discoverable facts were investigated first.
+- [ ] Rounds used the environment's question tool when one was available and permitted.
+- [ ] The number of questions and rounds followed the topic, not a fixed count.
+- [ ] Recommendations cited evidence or a trade-off and stayed proposals until answered or delegated.
 - [ ] Vague or contradictory answers received a follow-up.
+- [ ] The readiness test left no material guess in the work that will proceed.
 - [ ] Settled, delegated, and deferred decisions are recorded with their reasons.
 - [ ] Closure followed the user's decision or previously authorized continuation.
 - [ ] The next action stays within the user's authorization.

@@ -52,9 +52,15 @@ Split a question when the user could reasonably answer its parts differently.
 
 Proposal: add a CSV export of invoices.
 
-Round 1:
+Map and round 1:
 
 ```markdown
+The export touches audience and permissions, the consuming system and its
+column layout, volume and delivery, and filtering. The billing code already
+stores invoices per customer with issue dates; nothing yet defines who exports
+or where the file goes. This round settles audience and consumer, which the
+other areas depend on.
+
 **Q1. Audience.** Is the export for finance staff in the admin area, or for
 customers in their accounts? This determines permissions and data volume.
 
@@ -75,6 +81,11 @@ Investigation found that a month-end export covers about 40,000 invoices.
 Round 2:
 
 ```markdown
+Audience is settled: finance staff in the admin area. The accounting import
+leaves the column layout open and raises volume: a month-end export covers
+about 40,000 invoices. This round resolves the layout source and delivery;
+filtering follows once the layout is known.
+
 **Q2. Column layout.** Can someone in finance provide a sample import file or
 the system's import specification?
 
@@ -87,4 +98,6 @@ within the request, or as a background job with a download link?
 Recommendation: background job; existing reports already use one.
 ```
 
-Q3 was not ready in round 1 because the volume depended on the audience.
+Q3 was not ready in round 1 because the volume depended on the audience. The
+round opens with progress, follows up on the partial answer before the new
+area, and keeps filtering on the map for a later round.
