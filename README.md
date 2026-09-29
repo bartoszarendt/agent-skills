@@ -2,9 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Agent skills I use in my own engineering work with Claude Code, Codex, and
-OpenCode. Each skill is a plain Markdown directory that works on its own, so you
-can install only the ones you want.
+A lightweight skill set for coding agents: plain Markdown, no plugins or
+scripts, and one set of files for Claude Code, Codex, OpenCode, and other tools
+that read [Agent Skills](https://agentskills.io/specification).
 
 ## Quick start
 
