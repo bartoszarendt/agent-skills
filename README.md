@@ -54,7 +54,6 @@ only some tasks need lives in the skill's `references/` directory.
 | Skill | Use it for |
 |---|---|
 | [interview](skills/interview/) | Examining and stress-testing a proposal through rounds of questions and user decisions. |
-| [domain-language](skills/domain-language/) | Resolving domain terminology and maintaining a useful glossary. |
 | [planning](skills/planning/) | Sequencing multi-step work and parallel opportunities, from a brief outline to detailed task contracts with evidence of completion. |
 
 ### Build
@@ -216,9 +215,10 @@ existing copies; remove them by name:
 |---|---|
 | `git-conflict-resolution` (formerly `merge-conflict-resolution`) | Agents did not load it in practice and handle conflicts without it. |
 | `git-workflow-and-versioning` | Largely repeated Git safety rules that agent hosts already apply. |
+| `domain-language` | Rarely loaded; resolving overloaded terms is covered by `api-design`, and recording settled terms by `interview`. |
 
 ```bash
-npx skills@1.7.0 remove git-conflict-resolution git-workflow-and-versioning --global --agent codex claude-code opencode
+npx skills@1.7.0 remove git-conflict-resolution git-workflow-and-versioning domain-language --global --agent codex claude-code opencode
 ```
 
 ## Contributing
