@@ -22,7 +22,7 @@ project-local installs, refresh, removal, and existing files.
 ## Approach
 
 **A working set, not a catalogue.** The collection contains skills I use. When a
-skill stops changing how agents work, I remove it; see [Retired skills](#retired-skills).
+skill stops changing how agents work, I remove it.
 
 **Judgment, not process.** The skills do not define phases, slash commands, or
 personas. Each one covers decisions in a specific area, such as what to test,
@@ -205,21 +205,6 @@ isolated user profile. Linux, macOS, installing from GitHub, and live agent
 sessions were not part of that check.
 
 </details>
-
-## Retired skills
-
-These skills have been removed. Installing from this repository does not remove
-existing copies; remove them by name:
-
-| Skill | Reason |
-|---|---|
-| `git-conflict-resolution` (formerly `merge-conflict-resolution`) | Agents did not load it in practice and handle conflicts without it. |
-| `git-workflow-and-versioning` | Largely repeated Git safety rules that agent hosts already apply. |
-| `domain-language` | Rarely loaded; resolving overloaded terms is covered by `api-design`, and recording settled terms by `interview`. |
-
-```bash
-npx skills@1.7.0 remove git-conflict-resolution git-workflow-and-versioning domain-language --global --agent codex claude-code opencode
-```
 
 ## Contributing
 
