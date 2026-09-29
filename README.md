@@ -13,7 +13,7 @@ selection for your user account:
 
 ```bash
 npx skills@1.7.0 add bartoszarendt/skills --list
-npx skills@1.7.0 add bartoszarendt/skills --global --agent codex claude-code opencode --skill planning debugging code-review
+npx skills@1.7.0 add bartoszarendt/skills --global --agent codex claude-code opencode --skill planning debugging code-audit
 ```
 
 Start a new agent session to pick them up. See [Install](#install) for
@@ -76,7 +76,7 @@ can involve all three.
 |---|---|
 | [testing-and-verification](skills/testing-and-verification/) | Selecting and maintaining checks that protect consequential behavior. |
 | [debugging](skills/debugging/) | Diagnosing failures, testing explanations, and verifying focused corrections. |
-| [code-review](skills/code-review/) | Investigating actionable defects and reporting evidence, impact, and gaps. |
+| [code-audit](skills/code-audit/) | Auditing a codebase, module, or change for actionable defects, with evidence, impact, and stated coverage. |
 | [code-simplification](skills/code-simplification/) | Removing demonstrated complexity while preserving intended behavior. |
 | [performance-optimization](skills/performance-optimization/) | Diagnosing and improving performance across code, services, builds, and tests without hiding correctness trade-offs. |
 | [security-and-hardening](skills/security-and-hardening/) | Assessing actual trust boundaries and applying relevant controls. |

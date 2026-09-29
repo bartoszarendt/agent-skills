@@ -1,11 +1,11 @@
-# Review dimensions
+# Audit dimensions
 
-Use the questions relevant to the changed surface. These are investigation
+Use the questions relevant to the code in scope. These are investigation
 prompts, not automatic findings or requirements to redesign the code.
 
 ## Correctness and contracts
 
-- Does the delivered behavior match the request and supported consumers?
+- Does the behavior match the request, documented intent, and supported consumers?
 - Can realistic missing, malformed, stale, duplicate, or concurrent inputs break
   an invariant?
 - What happens after partial failure, cancellation, or retry?
@@ -58,7 +58,7 @@ or worker merely because such mechanisms could improve a hypothetical workload.
 
 ## Tests and evidence
 
-- Does existing coverage exercise the consequential changed behavior?
+- Does existing coverage exercise the consequential behavior in scope?
 - Would a new test protect a meaningful gap, or duplicate another case?
 - Are assertions independent of the production computation?
 - Are async assertions executed, discovered, and isolated?
@@ -78,6 +78,11 @@ For upgrades, read the relevant release notes and inspect both manifest and
 lockfile changes. Group related upgrades when compatibility requires it; separate
 independent changes when attribution or rollback benefits.
 
+When existing dependencies are in scope, inspect resolved versions and the
+support, compatibility, license, and security concerns relevant to the audit.
+Check advisories against actual usage and exposure; an advisory match is not by
+itself a demonstrated reachable defect.
+
 Use the package manager and repository workflow. Reuse existing integration
 coverage; add a check only for a consequential gap. Do not silently force upgrades
 or alter installation policy to resolve an advisory.
@@ -85,9 +90,9 @@ or alter installation policy to resolve an advisory.
 ## Scope and report
 
 Keep findings focused on the requested area. Fixes required by an implementation
-task differ from optional improvements identified during a review.
+task differ from optional improvements identified during an audit.
 
 Explain the smallest coherent remedy, meaningful alternatives, and residual
-uncertainty. State review coverage and an acceptance assessment without claiming
-that reported issues were fixed. When execution is blocked, distinguish the
+uncertainty. State audit coverage and, for a change, an acceptance assessment
+without claiming that reported issues were fixed. When execution is blocked, distinguish the
 missing evidence from a proven implementation defect.
