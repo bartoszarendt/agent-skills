@@ -55,6 +55,11 @@ only some tasks need lives in the skill's `references/` directory.
 |---|---|
 | [interview](skills/interview/) | Examining or stress-testing a proposal or open topic through rounds of questions and user decisions, until the work can proceed without invented requirements, including clarifying material uncertainty during other work. |
 | [planning](skills/planning/) | Sequencing multi-step work and parallel opportunities, from a brief outline to detailed task contracts with evidence of completion. |
+| [exploration](skills/exploration/) | Answering how something works, where it lives, or what depends on it, with cited evidence and stated coverage. |
+
+`exploration` establishes what exists and how it works. `code-audit` judges
+whether it is defective, `debugging` explains why it misbehaves, `interview`
+settles what the user intends, and `planning` sequences the agreed work.
 
 ### Build
 
