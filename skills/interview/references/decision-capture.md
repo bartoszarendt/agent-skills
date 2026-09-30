@@ -6,7 +6,9 @@ that the interview changes.
 
 ## Choose the destination
 
-Use the project's existing documents, locations, and formats. An interview does
+Use the project's existing documents, locations, and formats. Look beyond
+conventional documentation directories: workflow tooling the project uses may
+keep decision records in a hidden directory. An interview does
 not by itself authorize creating files. When the user asks for a record and no
 convention exists, propose a location, or use a single summary document in the
 project's documentation location when the request already covers it.

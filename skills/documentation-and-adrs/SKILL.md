@@ -53,10 +53,26 @@ choice. A short note in the existing decision log may be sufficient.
 Distinguish proposed and accepted decisions. Recording a proposal does not
 authorize changing architecture, data, or public behavior.
 
-Follow existing location, numbering, format, and lifecycle rules. If no convention
-exists and a separate record is justified, use a short numbered file under
-`docs/adr/`. Record context, decision, reason, and material consequences.
-Add rejected alternatives only when useful to a future reader.
+Choose the destination in this order:
+
+1. Use a destination named by the user or by applicable project instructions.
+2. Otherwise, locate existing decision records: documents the project points to,
+   such as architecture or planning documents, directories holding records, and
+   record locations established by workflow tooling the project uses. Include
+   hidden directories at the repository root, and read their own documentation
+   or project files for conventions and pointers. A tool's decision directory
+   may be absent from a fresh clone until it holds a record. A decisions
+   directory is a valid ADR location without an `adr` name. An undocumented
+   empty directory is weak evidence of a convention.
+3. Use the location that owns the decision's scope, with its numbering, format,
+   and lifecycle. Use its creation command or template when one is available.
+4. If competing locations remain materially ambiguous, clarify the destination
+   before creating the record. Do not migrate or duplicate existing records.
+5. If no convention applies and a separate record is justified, use a short
+   numbered file under `docs/adr/`.
+
+Record context, decision, reason, and material consequences. Add rejected
+alternatives only when useful to a future reader.
 
 For examples and lifecycle handling, read
 [references/adr-format.md](references/adr-format.md).
@@ -93,6 +109,7 @@ or explicitly established by the user or project.
 - [ ] The document serves an identified reader and follows the existing source of truth.
 - [ ] Affected behavior, examples, and operational steps match the implementation.
 - [ ] Consequential rationale is recorded without unnecessary new documents.
+- [ ] A decision record uses the requested or discovered convention, without a competing location.
 - [ ] Proposed decisions and historical evidence remain distinguishable.
 - [ ] Changed executable instructions were checked where authorized, with gaps stated.
 - [ ] Unrelated documentation and user work were preserved.

@@ -3,6 +3,16 @@
 Use the repository's existing decision-log location, numbering, markup, and
 lifecycle. Do not create a second convention.
 
+When an existing store defines frontmatter, identifiers, or section names, keep
+them and fill its sections from the evidence available. A creation command or
+template may default the status to accepted; set the status to match the actual
+decision, such as proposed, before finishing the record.
+
+If the established directory is missing, create it within the authorized
+recording work, then use the existing creation command or template. Write the
+record manually when no usable command exists and the format and numbering
+convention are known.
+
 ## Minimal record
 
 A short paragraph is sufficient when it preserves the reason:
