@@ -1,9 +1,9 @@
 ---
-name: incremental-implementation
+name: implementation
 description: Deliver authorized changes in coherent increments with proportionate verification. Use while implementing a multi-step change or one with material implementation risk, or when executing an existing plan.
 ---
 
-# Incremental Implementation
+# Implementation
 
 Complete the requested outcome in increments that make failures attributable
 and progress reviewable. A small task may need only one increment.
