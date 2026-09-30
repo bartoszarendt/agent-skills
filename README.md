@@ -86,7 +86,7 @@ can involve all three.
 | Skill | Use it for |
 |---|---|
 | [documentation-and-adrs](skills/documentation-and-adrs/) | Keeping documentation accurate and recording consequential rationale. |
-| [task-handoff](skills/task-handoff/) | Preserving state, decisions, authorization, and next actions across sessions. |
+| [handoff](skills/handoff/) | Transferring or resuming any kind of work with its state, decisions, authorization, and next actions. |
 | [agent-delegation](skills/agent-delegation/) | Running tasks in a separate Claude Code, Codex, OpenCode, or Pi CLI process and verifying the result. |
 | [agent-instructions](skills/agent-instructions/) | Writing clear, scoped agent guidance and checking how its rules interact. |
 
