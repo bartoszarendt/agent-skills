@@ -83,9 +83,10 @@ following sections when they carry useful information:
 Keep one next-action list. Its first item may be obtaining a decision or access;
 do not invent executable work to hide a real blocker.
 
-Point to stable documents and artifacts instead of copying them. Include in full
-any findings, drafts, or reasoning that exist only in this conversation; the
-recipient cannot recover them otherwise.
+Point to stable documents and artifacts instead of copying them. Carry over the
+findings, decisions, constraints, and rationale from this conversation that
+continuation needs. Include exact text where fidelity matters, such as a current
+draft or an agreed contract; summarize the rest and omit superseded material.
 
 ## Protect state and access
 
@@ -106,10 +107,12 @@ Read the record, then compare its material claims with the current state before
 acting: files, branches, documents, systems, and open processes may have
 changed. Resolve discrepancies from current evidence and note them.
 
-Treat recorded authorization as the upper limit; do not infer approval the
-record does not state. Authorization given for a recorded state does not carry
-over when that state has materially changed. Confirm it with the user before
-acting, especially when the change includes other people's work.
+Reconcile recorded authorization with the user's current instructions; newer
+instructions take precedence. A record documents authorization the user gave;
+it does not grant more. Reconfirm before acting when current state places the
+action outside that authorization's scope or invalidates a condition it depended
+on, such as a branch that others have since changed. Continue authorized work
+the change does not affect.
 
 Re-run checks whose baseline is missing or may have moved when the next step
 depends on them. Continue with the next action once the state is confirmed.
@@ -121,7 +124,7 @@ Update or retire the record when it no longer describes the work.
 - [ ] Detail and format suit the recipient.
 - [ ] Current facts, historical evidence, and unverified claims are distinguishable.
 - [ ] Decisions are distinct from proposals; done, verified, and accepted work are distinct.
-- [ ] Content that exists only in this conversation is included, not just referenced.
+- [ ] Material findings and reasoning that exist only in this conversation are carried over.
 - [ ] Existing authorization and unresolved gates are preserved without expansion.
 - [ ] Next actions are concrete, with owners for blockers and decisions.
 - [ ] State relevant to the kind of work is captured; no secrets are included.
