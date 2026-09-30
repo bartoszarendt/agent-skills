@@ -22,19 +22,24 @@ this conversation.
 ## Choose the destination
 
 Use the destination requested by the user or established by the project. When
-a plan, issue, pull request, or document already tracks the work, update it and
-point to it rather than creating a parallel record.
+a plan, issue, pull request, or document already tracks the work, record the
+handoff there or point to it rather than creating a parallel record.
 
 Otherwise choose by recipient:
 
 - A later session or agent on the same machine: a descriptive file in the
-  operating system's temporary directory, with its full path.
+  operating system's temporary directory, with its full path. Use a durable
+  location instead when continuation may be delayed long enough for temporary
+  files to be cleaned.
 - A person, or a session on another host: self-contained content in the
   conversation, or a file at a location the recipient can actually reach.
 
 A local path is not evidence that another host or person can access it. Writing
-to a shared location, sending a message, or uploading requires existing
-authorization; a handoff request alone does not grant it.
+to a shared location, posting a message, or uploading requires authorization. A
+request to post the handoff to a named place authorizes that post; a general
+handoff request does not authorize editing shared trackers or sending messages.
+Without that authorization, prepare the content and tell the user where it
+should go.
 
 ## Check the current state
 
@@ -58,7 +63,9 @@ current proof. Label unverified recollections and stale results explicitly.
 
 ## Preserve what matters
 
-Use the following sections when they carry useful information:
+Start with when the record was written, by whom or what, and the revision or
+snapshot it describes, so the recipient can judge staleness. Then use the
+following sections when they carry useful information:
 
 - **Goal and scope:** requested outcome, constraints, and deliberate exclusions.
 - **Current state:** what is done, what is verified, and what is accepted by its
@@ -76,16 +83,17 @@ Use the following sections when they carry useful information:
 Keep one next-action list. Its first item may be obtaining a decision or access;
 do not invent executable work to hide a real blocker.
 
-Point to stable documents and artifacts instead of copying them. Include enough
-reasoning to explain choices that are otherwise unrecoverable.
+Point to stable documents and artifacts instead of copying them. Include in full
+any findings, drafts, or reasoning that exist only in this conversation; the
+recipient cannot recover them otherwise.
 
 ## Protect state and access
 
 Do not include credentials, tokens, private keys, session data, or unnecessary
 personal data. Describe the approved access mechanism without its secret value.
 
-Identify background processes started for the work and whether they should
-remain. Stop temporary processes no longer needed; preserve pre-existing user
+When the work started background processes, identify them and whether they
+should remain. Stop temporary processes no longer needed; preserve pre-existing user
 processes.
 
 Writing a handoff does not authorize commits, uploads, external messages, or
@@ -99,17 +107,22 @@ acting: files, branches, documents, systems, and open processes may have
 changed. Resolve discrepancies from current evidence and note them.
 
 Treat recorded authorization as the upper limit; do not infer approval the
-record does not state. Re-run checks whose baseline is missing or may have
-moved when the next step depends on them. Continue with the next action once
-the state is confirmed.
+record does not state. Authorization given for a recorded state does not carry
+over when that state has materially changed. Confirm it with the user before
+acting, especially when the change includes other people's work.
+
+Re-run checks whose baseline is missing or may have moved when the next step
+depends on them. Continue with the next action once the state is confirmed.
+Update or retire the record when it no longer describes the work.
 
 ## Verification
 
 - [ ] The recipient can reach the record, and the user has its location or content.
 - [ ] Detail and format suit the recipient.
 - [ ] Current facts, historical evidence, and unverified claims are distinguishable.
-- [ ] Accepted decisions, proposals, done, verified, and accepted work are distinct.
+- [ ] Decisions are distinct from proposals; done, verified, and accepted work are distinct.
+- [ ] Content that exists only in this conversation is included, not just referenced.
 - [ ] Existing authorization and unresolved gates are preserved without expansion.
 - [ ] Next actions are concrete, with owners for blockers and decisions.
 - [ ] State relevant to the kind of work is captured; no secrets are included.
-- [ ] When resuming, recorded state was checked against current reality.
+- [ ] When resuming, recorded state and authorization were checked against current reality.
