@@ -72,7 +72,7 @@ for reproducible verification; assess behavior before changing that pin.
 
 - Prefer user-level shared installation for a personal set used across projects.
   Use project-local installation for a repository-specific selection.
-- Use `bartoszarendt/skills` as the normal installation source. Local checkout
+- Use `bartoszarendt/agent-skills` as the normal installation source. Local checkout
   paths are for testing unpublished changes in isolated destinations. Publishing
   requires its own authorization; do not commit or push merely to test installation.
 - Installed directories are managed snapshots. Edit this repository, then

@@ -12,8 +12,8 @@ Requires Node.js 22.20.0 or newer. List the available skills, then install a
 selection for your user account:
 
 ```bash
-npx skills@1.7.0 add bartoszarendt/skills --list
-npx skills@1.7.0 add bartoszarendt/skills --global --agent codex claude-code opencode --skill planning debugging code-audit
+npx skills@1.7.0 add bartoszarendt/agent-skills --list
+npx skills@1.7.0 add bartoszarendt/agent-skills --global --agent codex claude-code opencode --skill planning debugging code-audit
 ```
 
 Start a new agent session to pick them up. See [Install](#install) for
@@ -116,7 +116,7 @@ installed, then add the skills you want:
 
 ```bash
 npx skills@1.7.0 list --global --agent codex claude-code opencode
-npx skills@1.7.0 add bartoszarendt/skills --global --agent codex claude-code opencode --skill planning interview ui-ux
+npx skills@1.7.0 add bartoszarendt/agent-skills --global --agent codex claude-code opencode --skill planning interview ui-ux
 ```
 
 Omit `--skill` to choose interactively in a terminal. When an agent or script
@@ -152,7 +152,7 @@ An installation is a snapshot. To pick up published changes, repeat `add` with
 the same names, scope, and hosts:
 
 ```bash
-npx skills@1.7.0 add bartoszarendt/skills --global --agent codex claude-code opencode --skill planning
+npx skills@1.7.0 add bartoszarendt/agent-skills --global --agent codex claude-code opencode --skill planning
 ```
 
 The CLI also supports updates for Git sources; keep the source and scope
@@ -172,7 +172,7 @@ Use a project-local installation when a repository needs its own skill set. Run
 from that project's root without `--global`:
 
 ```bash
-npx skills@1.7.0 add bartoszarendt/skills --agent codex claude-code opencode --skill planning interview
+npx skills@1.7.0 add bartoszarendt/agent-skills --agent codex claude-code opencode --skill planning interview
 ```
 
 The shared copy goes under `.agents/skills/`, with per-skill Claude links and a
@@ -182,7 +182,7 @@ To commit skills for a team, use `--copy` rather than committing Windows
 junctions:
 
 ```bash
-npx skills@1.7.0 add bartoszarendt/skills --agent codex claude-code opencode --skill planning interview --copy
+npx skills@1.7.0 add bartoszarendt/agent-skills --agent codex claude-code opencode --skill planning interview --copy
 ```
 
 Review and commit the complete installed directories together with
