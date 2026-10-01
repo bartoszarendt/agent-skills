@@ -1,4 +1,4 @@
-# Skills
+# Agent Skills
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -18,6 +18,11 @@ npx skills@1.7.0 add bartoszarendt/agent-skills --global --agent codex claude-co
 
 Start a new agent session to pick them up. See [Install](#install) for
 project-local installs, refresh, removal, and existing files.
+
+Once installed, ask for a skill by name. For example:
+
+- "Use code-audit to review this change."
+- "Use planning to break down this feature."
 
 ## Approach
 
