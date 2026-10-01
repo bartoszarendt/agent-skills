@@ -15,9 +15,11 @@ tests, and records them.
 
 When the user asks for an interview, grilling, or question-led examination,
 each response advances the exchange. Analysis and recommendations support the
-questions; they do not replace them. Until the interview closes, end each
-response with the current round of questions or a proposal to close, then wait
-for the answers.
+questions; they do not replace them. Until the interview closes, each response
+presents the current round of questions or a proposal to close and waits for the
+answers. End a response only after the round's answers have arrived, the user
+has dismissed the round, or its unanswered questions are written in the
+conversation.
 
 When the user asks for analysis followed by questions, use the analysis to
 prepare and begin the interview. A request only to analyze, review, or
@@ -98,8 +100,10 @@ Do not answer on the user's behalf or proceed as if a recommendation were accept
 
 ### Present the round
 
-When the environment provides a tool or interface for asking the user
-questions, and the current mode permits it, use it for each round:
+Use a question tool for a round only when the current mode permits it and its
+description shows that it waits for the user to submit and returns their
+answers. Otherwise, or when you cannot tell, ask in the conversation. When you
+use such a tool:
 
 - Offer discrete options where the choices are clear, and place the
   recommended option first, marked as recommended.
@@ -112,7 +116,14 @@ questions, and the current mode permits it, use it for each round:
   questions after each call's answers. The limit governs presentation, not the
   scope of the interview.
 
-Otherwise ask in the conversation, numbering the questions:
+An acknowledgement or timeout is not an answer, and neither is a preselected
+option or automatic default that the user did not submit. When a tool returns
+without the user's answers, keep the answers received and ask the unanswered
+questions in the conversation before ending the response. When the user
+dismisses or cancels the questions, do not ask them again; note that they
+remain open and wait for direction.
+
+In the conversation, number the questions:
 
 ```markdown
 **Q1. Partial shipments.** Can an order ship in several parts, or does it wait
@@ -194,7 +205,7 @@ next action as blockers; complete independent work that remains authorized.
 - [ ] Supplied question lists shaped the map; the user's explicit limits on scope were respected.
 - [ ] An interview started during other work was scaled to the uncertainty, and the task resumed afterwards.
 - [ ] Questions addressed intent, priorities, choices, and material facts or domain meanings unavailable from accessible evidence; independently discoverable facts were investigated first.
-- [ ] Rounds used the environment's question tool when one was available and permitted.
+- [ ] A question tool was chosen only when its description showed that it waits for and returns the user's answers; unanswered questions from a presented round, other than dismissed ones, were in the conversation when a response ended; no acknowledgement, timeout, or unsubmitted default settled a decision.
 - [ ] The number of questions and rounds followed the topic, not a fixed count.
 - [ ] Recommendations cited evidence or a trade-off and stayed proposals until answered or delegated.
 - [ ] Vague or contradictory answers received a follow-up.
