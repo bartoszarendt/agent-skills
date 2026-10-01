@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Preserve the context, current state, decisions, evidence, responsibilities, and next actions needed to continue or transfer any kind of work, and resume from such a record. Use when handing work to another person, agent, team, session, or environment, when preparing a continuation record, or when picking up work from one.
+description: Preserve the context, current state, decisions, evidence, responsibilities, and next actions needed to continue or transfer any kind of work, and resume from such a record. Use when handing work to another person, agent, team, session, or environment, when preparing a continuation record, or when picking up work from one. A request to stop the work for now, in whatever words or language, is not on its own a request for a handoff.
 ---
 
 # Handoff
@@ -8,6 +8,12 @@ description: Preserve the context, current state, decisions, evidence, responsib
 Write a record that lets the recipient continue without reconstructing the
 history or repeating settled decisions. The work may be software, research,
 review, planning, design, writing, operations, or a mix.
+
+A request to stop the work for now, in whatever words or language, does not by
+itself request a handoff: stop the work first. Write a handoff when the user asks for one or an applicable
+project instruction requires one. When it is unclear whether the user wants
+context kept for another session or recipient, ask whether they want a handoff
+or just the pause before writing it.
 
 ## Identify the recipient
 
