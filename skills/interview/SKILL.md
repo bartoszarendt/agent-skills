@@ -1,6 +1,6 @@
 ---
 name: interview
-description: Examine a proposal, plan, or open topic through rounds of questions, recommended answers, and the user's decisions until the work can proceed without invented requirements. Use when the user asks to be interviewed, grilled, or questioned about an idea, asks for analysis followed by questions, or wants a proposal stress-tested through questions rather than a written assessment. Also use during other work when a material uncertainty about the user's intent, requirements, constraints, or domain knowledge cannot be resolved from available evidence and needs the user's answers.
+description: Examine a proposal, plan, or open topic through rounds of questions, recommended answers, and the user's decisions until the work can proceed without invented requirements. Use when the user asks to examine an idea through an exchange of questions and answers, such as being interviewed or grilled, asks for analysis followed by questions, or wants a proposal stress-tested through questions rather than a written assessment. Also use during other work when a material uncertainty about the user's intent, requirements, constraints, or domain knowledge cannot be resolved from available evidence and needs the user's answers.
 ---
 
 # Interview

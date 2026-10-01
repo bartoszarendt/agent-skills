@@ -31,11 +31,12 @@ Split a question when the user could reasonably answer its parts differently.
 
 - **Partial answer.** Record what was settled and ask the remainder in the next
   round, narrowed to what is still open.
-- **"You decide."** Treat it as delegation of that decision. Choose from the
-  evidence, state the choice and reason, and mark it as delegated.
-- **"I don't know."** Identify whether the answer depends on a fact you can
-  investigate, someone else's decision, or information not yet available. Offer
-  a provisional default when one is safe, and record what it blocks otherwise.
+- **Delegation of a decision**, such as "you decide." Choose from the evidence,
+  state the choice and reason, and mark it as delegated.
+- **Uncertainty or missing knowledge**, such as "I don't know." Identify
+  whether the answer depends on a fact you can investigate, someone else's
+  decision, or information not yet available. Offer a provisional default when
+  one is safe, and record what it blocks otherwise.
 - **Disagreement with a recommendation.** Accept the user's decision. If it
   carries a material consequence they may not have considered, state it once and
   ask whether it changes the answer.

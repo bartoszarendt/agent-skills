@@ -48,6 +48,12 @@ must work after copying its complete directory without running that tooling.
 Use imperative, concrete language with explicit conditions. Avoid personas,
 slogans, arbitrary quotas, and unsupported universal claims.
 
+Describe triggers, answers, confirmations, deferrals, and cancellation by their
+meaning, not by required phrases, so they hold in any wording or language. Mark
+quoted wording as an example, and avoid synonym lists. Call for clarification
+only when ambiguity materially affects scope, authorization, or the next action.
+State each consequential condition within the skill that depends on it.
+
 Preserve the requested outcome, existing authorization, and user work. Separate
 analysis, implementation, and external actions. Permit routine autonomy and
 continued independent work without adding approval gates.

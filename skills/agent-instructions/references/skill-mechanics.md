@@ -25,6 +25,9 @@ context cost.
 
 Express user-requested applicability in ordinary language when a procedure needs
 an explicit request. Do not claim that wording enforces a host permission gate.
+Describe requests, answers, confirmations, and cancellation by their meaning in
+context, not by required phrases or language. Mark quoted wording as an example
+rather than an exclusive trigger, and do not substitute a list of synonyms.
 A loaded skill never grants additional authority for external effects.
 
 Keep host-specific metadata and tools out of portable requirements. If an optional
