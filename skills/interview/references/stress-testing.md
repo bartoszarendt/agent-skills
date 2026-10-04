@@ -41,10 +41,11 @@ When the user states how something works, compare it with the code, documents,
 and established terminology. Present a contradiction with its evidence, and ask
 whether the difference is the intended change or a misunderstanding.
 
-## Track consistency
+## Test choices against priorities
 
-Compare each answer with earlier answers. Name a conflict as soon as it appears
-and resolve it before building further decisions on either side.
+Compare each choice with the priorities and success criteria the user stated.
+When a choice trades away a stated priority the user has not already accepted,
+name the trade-off and ask whether it is intended.
 
 ## Keep pressure useful
 

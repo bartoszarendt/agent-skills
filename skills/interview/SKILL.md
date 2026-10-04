@@ -147,12 +147,23 @@ After each response, determine what it settles, exposes, or contradicts.
 - Follow up when an answer permits materially different implementations. Use a
   concrete scenario relevant to the topic to establish its practical meaning.
 - Add areas and decisions the answers expose to the map.
-- Accept an explicit revision of an earlier answer and update the decisions
-  that depend on it. Name an unclear contradiction with earlier answers, code,
-  or project documents, and ask which holds.
 - Accept explicit delegation: decide those choices, state each decision and its
   reason, and continue.
 - Recompute the open decisions and ask the next round.
+
+Compare each answer with the original request and with the answers, decisions,
+constraints, and term meanings established throughout the interview, including
+across topic areas, and with code or project documents. Accept a clear revision
+of an earlier answer and update the decisions that depend on it; a position that
+shifts without being clearly revised is not a revision. Otherwise, when an
+apparent discrepancy materially affects the outcome and its explanation is
+unclear, state both positions and their consequence, using a concrete scenario
+in which they cannot both hold, then ask what explains the difference, such as
+different contexts, an exception, or a revision. When one explanation is
+likely, propose it as the recommended answer. Check whether the reply resolves
+it; if not, ask a narrower follow-up before relying on either position. Respect
+deferral or cancellation, keeping unresolved discrepancies and the work they
+block explicit.
 
 Open each later round with a short account of progress: what the answers
 settled, what they exposed, and what this round resolves. Ask follow-ups on
@@ -171,7 +182,10 @@ analysis that a decision is clear.
 
 Before proposing to close, test readiness: draft the brief that the next piece
 of work would start from, and list each point where you would still have to
-guess. Answering an initial question list is not enough. Deferred decisions and
+guess. Also check the draft against the original request and the decisions as
+clearly revised during the interview; treat each unresolved material conflict
+as an open discrepancy, not a guess.
+Answering an initial question list is not enough. Deferred decisions and
 the work they block stay recorded and excluded. While a guess would materially
 change the work that will proceed, ask about it in another round.
 
@@ -208,7 +222,7 @@ next action as blockers; complete independent work that remains authorized.
 - [ ] A question tool was chosen only when its description showed that it waits for and returns the user's answers; unanswered questions from a presented round, other than dismissed ones, were in the conversation when a response ended; no acknowledgement, timeout, or unsubmitted default settled a decision.
 - [ ] The number of questions and rounds followed the topic, not a fixed count.
 - [ ] Recommendations cited evidence or a trade-off and stayed proposals until answered or delegated.
-- [ ] Vague or contradictory answers received a follow-up.
+- [ ] Vague answers received a follow-up; material discrepancies across the interview were raised with their consequence and resolved as a revision, context, or exception, delegated, or kept open with the work they block.
 - [ ] The readiness test left no material guess in the work that will proceed.
 - [ ] Settled, delegated, and deferred decisions are recorded with their reasons.
 - [ ] Closure followed the user's decision or previously authorized continuation.
