@@ -37,6 +37,31 @@ exclude them when the task needs a controlled environment.
 accepts `provider/id` and an optional `:<thinking>` suffix. `--thinking <level>`
 sets reasoning effort. Without them, Pi uses its configured default.
 
+## Named agent
+
+Pi has no `--agent` option. A named role file is not selected automatically by
+starting the CLI in a project. Pass its instructions explicitly:
+
+```sh
+pi --mode json --no-approve --tools read,grep,find,ls \
+  --append-system-prompt ".pi/agents/verifier.md" \
+  < "$RUN/brief.md" > "$RUN/events.jsonl" 2> "$RUN/stderr.txt"
+echo $? > "$RUN/exit.txt"
+```
+
+`--append-system-prompt` accepts a file path and appends its contents to Pi's
+normal system prompt. Alternatively, make the brief explicitly tell Pi to read
+that role file before anything else and follow its instructions. A role file's
+frontmatter does not configure a standalone CLI run: pass any project-selected
+model, including its thinking suffix, through `--model` explicitly. Keep the
+chosen tool boundary and `--no-approve`; the role and its procedure references
+can be read by path and do not need trusted project-resource discovery.
+
+Repeat the role instruction on every resume: pass `--append-system-prompt` again
+or repeat the read-first instruction in the follow-up brief, as well as the
+original tool, trust, and model options. Do not assume a resumed session selects
+a named role itself.
+
 ## Read-only run
 
 ```sh
@@ -80,10 +105,12 @@ status 0, so rely on the recorded cancellation and the missing events.
 
 ## Resume
 
-Repeat the original tool, trust, and model options. For a read-only session:
+Repeat the original tool, trust, model, and role instructions. For a read-only
+session started with a role prompt:
 
 ```sh
 pi --mode json --no-approve --tools read,grep,find,ls --session "<id>" \
+  --append-system-prompt ".pi/agents/verifier.md" \
   < "$RUN/followup.md" > "$RUN/events-2.jsonl" 2> "$RUN/stderr-2.txt"
 echo $? > "$RUN/exit-2.txt"
 ```
