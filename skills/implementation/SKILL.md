@@ -24,6 +24,12 @@ with each one's check before editing. A few lines are usually enough; state
 them and continue within existing authorization, preserving explicit review
 gates.
 
+When work spans several turns, begin each progress update with the current
+increment, what has changed, what verification has established or remains
+pending, and the next step or blocker. When a task or plan tracker is in use,
+keep it current and do not restate the full plan in prose; it does not replace
+the update.
+
 ## Choose a coherent increment
 
 Prefer one observable behavior or resolved risk. Include the layers and
@@ -98,10 +104,21 @@ Compare the delivered behavior with acceptance criteria as well as check results
 Do not claim completion while introduced defects or required verification remain
 unresolved. Complete independent authorized work when another part is blocked.
 
-State what changed, why, what was checked, and material gaps. A focused test run
-supports a focused claim. Distinguish implemented, verified, and deployed work.
-Record material deviations in the existing source of truth rather than creating
-a parallel report by default.
+Lead with what the request needs: the outcome, the answer, or a decision
+required from the user. Then state what changed, why, what was checked, and
+material gaps. A focused test run supports a focused claim. Distinguish
+implemented, verified, and deployed work. Report a failure by its observed
+facts first. When evidence supports a possible cause, label it as a hypothesis
+and state its basis; otherwise say the cause is unknown. Record material
+deviations in the existing source of truth rather than creating a parallel
+report by default.
+
+Name a next action for the user only when the user owns it, specific enough to
+act on without reconstructing context. Report significant independent issues
+after the main result, as separate items, unless an urgent risk such as a
+security or data-integrity problem should lead. Group long lists by relation,
+most consequential first, without dropping items the reader needs. Use literal,
+specific wording; omit preamble, restated plans, and closing offers.
 
 Stop temporary processes you started unless needed for the handoff. Preserve
 pre-existing user processes and identify anything intentionally left running.
@@ -113,5 +130,6 @@ pre-existing user processes and identify anything intentionally left running.
 - [ ] Necessary fixes are complete without unrelated scope expansion.
 - [ ] Relevant checks exercised the final affected behavior.
 - [ ] Failures, skips, and unavailable evidence are reported accurately.
+- [ ] The report leads with the outcome, answer, or required decision and includes relevant progress, failures, and remaining work without requiring the reader to reconstruct context.
 - [ ] Documentation and operational consequences are accounted for where relevant.
 - [ ] Commits and external actions stay within existing authorization.
