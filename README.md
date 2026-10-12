@@ -99,6 +99,7 @@ can involve all three.
 | [handoff](skills/handoff/) | Transferring or resuming any kind of work with its state, decisions, authorization, and next actions. |
 | [agent-delegation](skills/agent-delegation/) | Running tasks in a separate Claude Code, Codex, OpenCode, or Pi CLI process and verifying the result. |
 | [agent-instructions](skills/agent-instructions/) | Writing clear, scoped agent guidance and checking how its rules interact. |
+| [retrospective](skills/retrospective/) | Learning from completed or stopped agent work, retaining effective practices, and recommending improvements supported by evidence. |
 
 ## How skills load
 
