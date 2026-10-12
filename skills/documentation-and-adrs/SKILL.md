@@ -40,6 +40,10 @@ Update affected examples, names, and instructions in the same change. Report
 significant unrelated stale material without expanding into a documentation
 rewrite. Preserve historical evidence and deliberate records of old behavior.
 
+When rewording existing documentation, preserve its facts, conditions,
+uncertainty, identifiers, numbers, and units unless the documented behavior
+changed.
+
 ## Record consequential decisions
 
 Use an ADR when rationale would be difficult to reconstruct and the decision has

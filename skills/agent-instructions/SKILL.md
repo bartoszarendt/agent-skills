@@ -79,6 +79,14 @@ Preserve useful constraints rather than optimizing only for token count.
 Remove redundant explanations, unsupported claims, stale facts, and instructions
 that add no useful decision guidance.
 
+When rewriting or condensing guidance, preserve its facts, requirement strength,
+uncertainty, actors, conditions, exceptions, and authorization. Do not turn a
+recommendation into a requirement or a possible outcome into a confirmed result,
+and do not add facts, causes, or steps the source does not state. Present
+intended behavioral changes separately from a faithful rewrite. Keep necessary
+precision even when the wording becomes longer. Use one term for each concept,
+and keep distinct terms for distinct concepts.
+
 ## Validate proportionately
 
 Check packaging, links, naming, and project-specific limits. These establish
@@ -97,7 +105,7 @@ behavioral uncertainty rather than presenting static checks as runtime proof.
 
 - [ ] Purpose, applicability, and authority are clear.
 - [ ] Rules state concrete actions, conditions, and meaningful exceptions.
-- [ ] User intent and existing authorization are preserved.
+- [ ] User intent, existing authorization, and the meaning of rewritten guidance are preserved.
 - [ ] Entry point, checklists, and references give consistent guidance.
 - [ ] Required resources are discoverable and portable for the intended environment.
 - [ ] Structural checks passed and behavioral assessment matched the change's risk.
