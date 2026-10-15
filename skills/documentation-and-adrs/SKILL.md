@@ -44,6 +44,22 @@ When rewording existing documentation, preserve its facts, conditions,
 uncertainty, identifiers, numbers, and units unless the documented behavior
 changed.
 
+## Add a diagram only when it shows a mechanism
+
+Add a diagram when it lets a reader see a mechanism they would otherwise have
+to assemble from prose: where data moves, which boundary is crossed, what
+differs between options, or which states a request passes through. If a
+sentence says it faster, write the sentence.
+
+Depict the mechanism, not a box that only repeats a name. Label what an arrow
+does. When comparing options, draw the difference rather than restating the
+option list as disconnected boxes. Include a hop the argument depends on,
+and leave out parts that do not. When the user asks for an inventory diagram,
+include every requested part, and still show the relationships between them.
+
+Put explanatory sentences in the caption, not in the drawing. Give the figure
+a text equivalent that states the same claim.
+
 ## Record consequential decisions
 
 Use an ADR when rationale would be difficult to reconstruct and the decision has
@@ -113,6 +129,7 @@ or explicitly established by the user or project.
 - [ ] The document serves an identified reader and follows the existing source of truth.
 - [ ] Affected behavior, examples, and operational steps match the implementation.
 - [ ] Consequential rationale is recorded without unnecessary new documents.
+- [ ] A diagram, if present, makes a mechanism easier to see than prose alone, labels its relationships, and matches its text equivalent.
 - [ ] A decision record uses the requested or discovered convention, without a competing location.
 - [ ] Proposed decisions and historical evidence remain distinguishable.
 - [ ] Changed executable instructions were checked where authorized, with gaps stated.

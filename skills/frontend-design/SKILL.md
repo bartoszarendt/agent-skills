@@ -43,7 +43,9 @@ a package because the brief resembles its aesthetic.
 
 Make deliberate choices grounded in content and brand. Familiar patterns are
 appropriate when they support the task. Distinctiveness is not a reason to
-replace clear navigation or introduce decorative complexity.
+replace clear navigation or introduce decorative complexity. Draw distinctive
+details from the subject's own world: its real units and scales, its document
+conventions, its terms of art. Use them as content rather than ornament.
 
 Use a short token list or sketch when useful. A small component change may only
 need the existing tokens and a stated adjustment.
@@ -52,7 +54,14 @@ need the existing tokens and a stated adjustment.
 
 Implement the requested behavior, including consequential loading, empty, error,
 disabled, and success states. Preserve existing interactions and avoid presenting
-a static mockup as a working feature.
+a static mockup as a working feature. Keep essential content readable without
+a decorative reveal. For such a reveal, provide a usable static fallback and
+show the final state when reduced motion is requested. Preserve content in
+print where relevant. Intentional disclosure controls, such as tabs and
+accordions, are not decorative reveals. For screenshots of a settled state,
+wait for intended transitions to finish. Do not let a decorative lead element
+push the content the page exists for out of the first view unless the brief
+calls for it.
 
 Design for the supported viewport and input range. Check keyboard access, visible
 focus, meaningful labels, semantics, contrast, and reduced-motion behavior.
