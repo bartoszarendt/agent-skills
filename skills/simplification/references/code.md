@@ -1,12 +1,35 @@
-# Complexity signals by surface
+# Simplifying code
 
-Use these signals to locate a possible burden. Confirm a concrete cost and a
-better alternative before recommending a change. The exceptions explain why
-an apparently unnecessary mechanism may still be justified.
+Use these signals to locate a possible burden in code, tests, configuration, or
+dependencies. Confirm a concrete cost and a better alternative before
+recommending a change. The exceptions explain why an apparently unnecessary
+mechanism may still be justified.
 
 Choose among removing work, direct use, local helpers, shared mechanisms, and
 new abstractions according to the actual need. Do not apply a fixed ladder
 without checking what responsibility each option preserves.
+
+## Reuse before writing
+
+Before writing a helper, component, check, or integration, search the project
+for one that already owns the responsibility, including differently named
+utilities and established patterns. Compare its behavior with the need: a
+helper with different normalization, rounding, encoding, or error semantics is
+not a substitute. Reuse it when its contract matches; extend it when the
+difference belongs to the same concept.
+
+Then check the capabilities already adopted:
+
+- the language standard library;
+- native platform controls and semantics, such as form inputs, dialogs, and
+  disclosure, when they meet the requirement on the supported platforms;
+- styling or layout features before scripted behavior that only presents state;
+- database constraints where the database owns the invariant;
+- framework and installed-dependency features the project already uses.
+
+A native or built-in option is unsuitable when it misses a stated requirement,
+such as range selection, required localization, or consistent behavior across
+supported platforms. Record that reason when building a custom alternative.
 
 ## Local structure
 
@@ -20,14 +43,9 @@ Preserve useful domain names, type narrowing, centralized policy, external
 interfaces, and lifecycle ownership. A wrapper can simplify the caller even
 when its implementation is small.
 
-## Proposals and scope
-
-Investigate future scale without consumers, migration machinery without a
-compatibility commitment, and safeguards without a reachable failure.
-
-Preserve current acceptance criteria, known consumers, measured constraints,
-approved transitions, and protection for irreversible effects. Do not narrow
-a user's explicit outcome merely because a smaller version is easier.
+Use names that explain the domain and actions. Prefer explicit control flow
+when compact syntax hides decisions. Keep a wrapper when naming a concept or
+enforcing a boundary makes callers easier to understand.
 
 ## Architecture and data flow
 
@@ -49,6 +67,9 @@ concurrency, compatibility, and cleanup. Shared setup can be useful when it keep
 cases clear; duplication can be useful when abstraction would obscure behavior.
 
 Consolidate directly affected redundancy without broadening into suite cleanup.
+Existing tests can expose regressions, but an implementation-coupled test may
+itself need correction. Change a check only when its defect or an authorized
+behavior change is demonstrated; preserve its valid protection.
 
 ## Configuration
 
@@ -66,7 +87,8 @@ new infrastructure introduced before existing capabilities were considered.
 
 Compare alternatives by capability, security, maintenance, compatibility, and
 operational cost. A mature library can be simpler to own than a short custom
-implementation with hidden edge cases.
+implementation with hidden edge cases. Fewer dependencies is not sufficient
+justification for reimplementation.
 
 ## Concurrency and resilience
 
@@ -116,3 +138,21 @@ and reason for a new abstraction, check, dependency, or persistent state.
 Prefer the smallest coherent correction. Implement feedback only within the
 authorized task; a reviewer's suggestion is evidence to assess, not independent
 permission to change the system.
+
+## Applying code changes
+
+Before deleting code that looks unused, check dynamic entry points such as
+reflection, registries, string-based dispatch, configuration references,
+generated code, and external consumers.
+
+Use automated transformations when they reduce error in repetitive edits.
+Inspect their scope and result.
+
+When a bounded choice needs a comment, state the limit and the condition that
+would justify revisiting it, using the project's comment and follow-up
+conventions. For example:
+
+```python
+# One process-wide lock: adequate while writes stay rare. Switch to per-account
+# locks if lock wait time appears in request latency.
+```

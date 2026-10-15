@@ -66,6 +66,12 @@ failures can reveal a design problem, but do not establish one by themselves.
 
 ## Correct and verify
 
+When the cause lies in code that other paths share, find those paths before
+editing, such as other callers of the function you will change, and check
+whether they show the same defect. Fix where the paths converge when each of
+them should receive the corrected behavior; otherwise fix at the boundary that
+owns the rule and report the paths left unchanged.
+
 Fix the cause at the appropriate boundary. Preserve required validation,
 authorization, invariants, and cleanup. Add checks at distinct boundaries when
 each protects a demonstrated risk; do not duplicate validation mechanically.
@@ -103,6 +109,7 @@ For common failure shapes and rare failures, read
 - [ ] The reported symptom and expected behavior are understood.
 - [ ] The correction follows evidence rather than repeated speculative edits.
 - [ ] The original scenario and relevant affected behavior were checked.
+- [ ] When the cause lay in shared code, other paths through it were checked and corrected or reported.
 - [ ] Added tests protect a concrete gap rather than duplicating coverage.
 - [ ] Temporary state is accounted for and diagnostic output contains no secrets.
 - [ ] Confirmed results, containment, and unresolved uncertainty are distinguished.

@@ -48,14 +48,27 @@ safe defaults, and removal or recovery conditions.
 ## Implement the smallest sufficient solution
 
 - Check whether the requested behavior already exists before adding another path.
-- Prefer direct code and existing libraries or platform capabilities when they
-  meet the contract clearly.
+- Before introducing a new mechanism, look at existing project code, the standard
+  library, platform capabilities such as native controls or database
+  constraints, and installed dependencies. Choose among suitable options by
+  clarity and total cost of ownership, avoiding new mechanisms without a
+  demonstrated benefit. Check the full contract, including edge cases; a mechanism
+  that resembles the need but enforces a different contract is not a substitute.
+- Choose the mechanism as a routine decision when only the outcome is specified
+  or the implementation choice is delegated. Implement an expressly required
+  mechanism or binding decision unless existing authorization covers changing
+  it; background mentions and proposed options do not make a mechanism binding.
+  When a simpler alternative would meet the same outcome, state it with its
+  trade-off without holding back the requested work.
 - Compare dependencies by capability and total maintenance cost. Do not recreate
   mature functionality merely to avoid adding a dependency.
 - Introduce an abstraction only when it removes a demonstrated burden or
   represents a real boundary. Implementation count alone does not decide.
 - Prefer clear behavior over a shorter diff. Preserve error handling, validation,
   lifecycle ownership, and accessibility that the outcome requires.
+- When a deliberately bounded choice has a known limit that later work depends
+  on, or that a reader could mistake for an oversight, record the limit and the
+  condition for revisiting it in a comment or the plan.
 
 Fix defects introduced by the change. Address existing defects that block a
 correct solution with the smallest necessary expansion. Report significant

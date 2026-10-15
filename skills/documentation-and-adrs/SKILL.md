@@ -102,6 +102,12 @@ For examples and lifecycle handling, read
 Explain non-obvious intent, constraints, or a necessary workaround. Reference a
 decision or upstream issue when it helps reconstruct the reason.
 
+When code deliberately accepts a known limit that later work depends on, or that
+a reader could mistake for an oversight, name the limit and the observable
+condition that would justify revisiting it. Examples include a single lock or a
+linear scan sized for current volume. Use the project's comment and follow-up
+conventions rather than a special marker or a separate ledger.
+
 Avoid narrating assignments, describing the edit just made, or leaving
 commented-out implementation behind. Remove confirmed obsolete comments within
 the affected scope.

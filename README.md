@@ -64,7 +64,9 @@ only some tasks need lives in the skill's `references/` directory.
 
 `exploration` establishes what exists and how it works. `code-audit` judges
 whether it is defective, `debugging` explains why it misbehaves, `interview`
-settles what the user intends, and `planning` sequences the agreed work.
+settles what the user intends, `simplification` judges whether the work and its
+structure need to be as complex as proposed, and `planning` sequences the
+agreed work.
 
 ### Build
 
@@ -87,7 +89,7 @@ can involve all three.
 | [testing-and-verification](skills/testing-and-verification/) | Selecting and maintaining checks that protect consequential behavior. |
 | [debugging](skills/debugging/) | Diagnosing failures, testing explanations, and verifying focused corrections. |
 | [code-audit](skills/code-audit/) | Auditing a codebase, module, or change for actionable defects, with evidence, impact, and stated coverage. |
-| [code-simplification](skills/code-simplification/) | Removing demonstrated complexity while preserving intended behavior. |
+| [simplification](skills/simplification/) | Judging whether the scope, mechanisms, and structure of plans, decisions, and code are justified, and reducing what is not without losing required outcomes. |
 | [performance-optimization](skills/performance-optimization/) | Diagnosing and improving performance across code, services, builds, and tests without hiding correctness trade-offs. |
 | [security-and-hardening](skills/security-and-hardening/) | Assessing actual trust boundaries and applying relevant controls, including keeping untrusted content and denied actions from steering an agent. |
 
@@ -170,6 +172,14 @@ npx skills@1.7.0 remove planning --global --agent codex claude-code opencode
 
 Removal affects every host that reads the shared copy. It operates on installed
 paths, not on this repository.
+
+A renamed skill installs under its new name and leaves the old directory in
+place. For `code-simplification` to `simplification`, wait until the replacement
+is published, inspect the selected destinations, then add the new name for the
+intended scope and hosts. Verify its complete contents and availability before
+removing the unchanged obsolete installation. Preserve a locally modified old
+installation until its changes are resolved, and account for every host that
+shares it.
 
 <details>
 <summary>Project-local installation, team copies, and other computers</summary>

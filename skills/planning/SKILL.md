@@ -28,6 +28,13 @@ Ask about unresolved choices that change the outcome, contracts, persisted data,
 security, significant cost, or irreversible behavior. Make routine choices from
 repository evidence. Continue independent work while a dependent choice waits.
 
+Before breaking down the work, separate the required outcome from the
+mechanisms proposed to reach it. For each new service, dependency, abstraction,
+configuration, migration path, or process step, name the current requirement it
+serves and check whether an existing mechanism or platform capability meets it.
+Do not narrow the user's outcome to shrink the plan; present a narrower option
+as a choice with its trade-off.
+
 ## Choose the smallest useful form
 
 - For one coherent change, use a short statement of intent, affected area, and
@@ -169,6 +176,7 @@ evidence.
 
 - [ ] The format and detail match the size and risk of the work.
 - [ ] Every requirement maps to a task or explicit gate; proposed exclusions are visible.
+- [ ] New mechanisms serve a named current requirement, and the outcome was not narrowed to simplify the plan.
 - [ ] Dependencies and unresolved decisions identify what they block.
 - [ ] Independent work is identified where it matters, with conflicts and integration points named.
 - [ ] Tasks with interpretation risk preserve contracts, boundaries, and proof.
