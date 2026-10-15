@@ -12,6 +12,9 @@ without checking what responsibility each option preserves.
 
 Investigate forwarding wrappers, re-export-only files, unclear names, repeated
 conditions, speculative options, and multiple owners of the same state.
+Investigate code placed at the wrong level: policy buried below the owner that
+decides it, callers assembling steps one concept should own, or a name pitched
+above or below the decision the code makes.
 
 Preserve useful domain names, type narrowing, centralized policy, external
 interfaces, and lifecycle ownership. A wrapper can simplify the caller even
