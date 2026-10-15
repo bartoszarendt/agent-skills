@@ -159,5 +159,12 @@ Record command or instrument, build, environment, workload, cache state,
 repetitions, spread, and observed result. Keep personally identifying or
 secret data out of captures.
 
+Resource metrics differ in time basis and scope. On Linux, procps `ps` reports
+%CPU averaged over the process lifetime, and load averages are system-wide,
+smoothed figures that also count tasks in uninterruptible sleep, commonly
+waiting on disk I/O. Neither shows which processes used CPU during a run; derive
+per-process CPU-time deltas across the measured window instead, and note that an
+interval average can still hide bursts.
+
 Use an existing performance guard when it covers the risk. Add a new guard only
 when its protection outweighs runtime, noise, and maintenance costs.

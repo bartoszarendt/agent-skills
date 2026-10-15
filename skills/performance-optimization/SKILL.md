@@ -32,6 +32,14 @@ where practical. Measure cold and warm behavior separately when both matter.
 Record repetitions and spread so noise is visible. Protect sensitive data in
 profiles and captures.
 
+When background activity could affect a comparison, measure relevant resource
+use over the same window as the workload. Check each metric's time basis and
+scope, and prefer interval sampling or counter deltas over lifetime or smoothed
+averages; the Evidence section of
+[references/performance-checklist.md](references/performance-checklist.md#evidence)
+gives platform examples. Attributing a timing difference to contention requires
+further evidence, such as a controlled comparison or a scheduling trace.
+
 Use production-like builds for user-facing claims. Separate controlled local
 evidence from field evidence. A synthetic improvement does not establish that
 deployed users received it.
@@ -72,8 +80,10 @@ improved read or request path. Moving cost elsewhere is not automatically a win.
 
 ## Compare and retain justified changes
 
-Use comparable conditions for before and after measurements. Report the change
-and run-to-run variation. A difference inside noise is inconclusive.
+Use comparable conditions for before and after measurements. When background
+load may drift, interleave baseline and candidate runs where practical,
+preserving comparable cache and setup state. Report the change and run-to-run
+variation. A difference inside noise is inconclusive.
 
 Retain changes with a demonstrated benefit that outweighs their costs. If the
 performance hypothesis fails, remove only the experiment's edits while preserving
