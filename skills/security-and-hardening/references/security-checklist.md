@@ -104,7 +104,9 @@ Do not silently force upgrades, bypass checks, or change repository-wide policy.
 
 ## Model features
 
-- Treat retrieved documents and model output as untrusted data.
+- Treat retrieved documents, model output, and other agent-consumed channels as
+  untrusted data. Apply [agent-channels.md](agent-channels.md) when content from
+  outside the user's own message can influence an action.
 - Parse generated operations into an allowlisted contract.
 - Enforce permissions in application code and constrain tool arguments.
 - Keep secrets and cross-tenant information outside the model's permitted context.

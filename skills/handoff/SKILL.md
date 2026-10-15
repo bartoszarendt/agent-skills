@@ -92,7 +92,8 @@ do not invent executable work to hide a real blocker.
 Point to stable documents and artifacts instead of copying them. Carry over the
 findings, decisions, constraints, and rationale from this conversation that
 continuation needs. Include exact text where fidelity matters, such as a current
-draft or an agreed contract; summarize the rest and omit superseded material.
+draft, an agreed contract, an authorization limit, or a security constraint.
+Summarize the rest and omit superseded material.
 
 ## Protect state and access
 
@@ -131,7 +132,7 @@ Update or retire the record when it no longer describes the work.
 - [ ] Current facts, historical evidence, and unverified claims are distinguishable.
 - [ ] Decisions are distinct from proposals; done, verified, and accepted work are distinct.
 - [ ] Material findings and reasoning that exist only in this conversation are carried over.
-- [ ] Existing authorization and unresolved gates are preserved without expansion.
+- [ ] Existing authorization and unresolved gates are preserved without expansion, with exact wording where fidelity matters.
 - [ ] Next actions are concrete, with owners for blockers and decisions.
 - [ ] State relevant to the kind of work is captured; no secrets are included.
 - [ ] When resuming, recorded state and authorization were checked against current reality.
