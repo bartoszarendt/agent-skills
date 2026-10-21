@@ -198,7 +198,7 @@ run, reconcile any partial edits, and dispatch a corrected brief.
 - After a read-only run, confirm the workspace is unchanged. Report any edits
   it made and do not keep them without the user's decision.
 - For review and research results, confirm that cited files, lines, and
-  behavior exist before relaying conclusions.
+  behavior exist before relaying conclusions. When a project record or document will cite the result, save the final report where the project keeps such notes; the run directory is temporary.
 
 ## Rework and sequences
 
@@ -247,4 +247,4 @@ and give the run directory's location.
 - [ ] Changes were compared with the starting state and reviewed against the brief.
 - [ ] Acceptance was checked in proportion to risk; unverified claims are labeled.
 - [ ] No commit, push, or external action exceeded existing authorization.
-- [ ] Delegate processes are stopped, and the run directory location was reported.
+- [ ] Delegate processes are stopped, the run directory location was reported, and a result a project record cites was saved with the project's notes.

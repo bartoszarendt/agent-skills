@@ -31,8 +31,9 @@ merely to complete a pattern.
 Read relevant primary evidence where available: conversation or session events,
 task records, changes, check results, review findings, and the user's account.
 Use summaries and reports to locate evidence, then inspect the underlying
-material needed to support consequential claims. State which sources were
-available and what the review cannot establish without the missing ones.
+material needed to support consequential claims. State which sources you read,
+including memory systems and documents outside the repository, which were
+available, and what the review cannot establish without the missing ones.
 
 If transcripts are unavailable, work from the available sources. Do not invent
 intermediate actions or infer an entire session from its final result. Ask for
@@ -63,9 +64,10 @@ attempt. A recorded failure does not explain why it occurred. Measure time,
 tokens, or cost only when the sources support the measurement, and state its
 coverage.
 
-Prioritize recurring problems and serious isolated incidents. Do not turn an
-ordinary one-off into a permanent rule without a reason it should affect future
-work. Separate a practice worth retaining from proof that it caused success;
+Prioritize recurring problems and serious isolated incidents. Where earlier
+reviews of the same project or work are kept, read them and say which causes
+recur and whether their proposed changes helped. Do not turn an ordinary
+one-off into a permanent rule without a reason it should affect future work. Separate a practice worth retaining from proof that it caused success;
 one successful run does not establish that it will work in every context.
 
 ## Inspect relevant areas
@@ -108,7 +110,10 @@ prevent and why the protection is worth its cost.
 Revise or remove instructions when evidence shows they are redundant,
 superseded, contradictory, or counterproductive. Preserve necessary safety and
 authorization boundaries; infrequent use does not make a rule unnecessary.
-Place guidance where the agent responsible for applying it will read it. Weigh
+Place guidance where the agent responsible for applying it will read it, and
+name who can make each change: the project, a tool or framework that directs
+the agents, the host, or a user-level instruction or skill. A cause outside the
+project goes to its owner as a proposal; a project workaround names it. Weigh
 the cost of material loaded for every task against guidance read only when
 needed, while keeping essential safety and authorization boundaries available.
 
@@ -145,6 +150,9 @@ When saving is requested or required by applicable instructions, use the
 project's existing destination. Keep task-specific findings with that work and
 durable accepted decisions where the project records them. Distinguish proposals
 from decisions; do not create a lessons store, mandatory task, or new record type.
+Open a saved report with what it covers, when a later reader should read it,
+the conclusion, and the proposals, each with its destination, whose approval it
+needs, and its status, so later work can use it without reading all of it.
 A retrospective does not accept a result or override an existing review verdict.
 
 ## Verification
@@ -152,6 +160,8 @@ A retrospective does not accept a result or override an existing review verdict.
 - [ ] The review stayed within the requested work, evidence, and time boundaries.
 - [ ] Observations, explanations, measurements, and uncertainties are distinct.
 - [ ] Material findings have sources, and existing mechanisms were considered.
+- [ ] Earlier reviews of the same work, where kept, were checked for recurring causes.
+- [ ] Each proposed change names who can make it.
 - [ ] Recommendations address supported causes with proportionate costs and checks.
 - [ ] Effective practices and a no-change outcome were considered.
 - [ ] Privacy, existing authorization, decisions, and review boundaries are preserved.
