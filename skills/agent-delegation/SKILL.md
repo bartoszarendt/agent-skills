@@ -101,7 +101,7 @@ reconcile its partial edits before any fallback.
 The delegate starts without the conversation. Write a self-contained brief:
 
 ```text
-Goal: <outcome in one or two sentences>
+Goal: <outcome in one or two sentences, and the larger result it serves>
 Workspace: <absolute path>; <branch and starting commit, when in Git>
 Current state: <relevant facts, known failures, pre-existing changes to leave alone>
 Scope: <files or areas to change, and what must remain untouched>
@@ -112,7 +112,7 @@ Not permitted: <everything else relevant; by default commits, pushes,
   external messages, and starting other agents>
 Acceptance: <observable criteria>; run: <exact check commands>
 Report: changes and reasons; files touched; checks run with results;
-  deviations, open questions, and anything not verified
+  deviations, open questions, unverified points, and whether the task fits that result
 ```
 
 - Keep one coherent task per brief. Split unrelated work into separate runs.

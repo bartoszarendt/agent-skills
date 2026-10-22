@@ -155,6 +155,22 @@ Direct execution from the plan is sufficient. Do not introduce a tracker or
 duplicate task records solely to follow this process. External task creation
 requires authorization covering that action.
 
+## Replan work that stopped converging
+
+When rounds keep going to the same gate, instrument, or approval while the
+outcome does not move, replan from the outcome rather than from the current
+step. Restate what the work is for and what still stands between the current
+state and a usable result. Separate the commitments made to users or the owner
+from the mechanisms, gates, and evidence methods chosen to meet them: a
+mechanism the outcome does not need can change, and a commitment changes only
+with the person who made it.
+
+Then choose the simplest credible route from here: cancel, reorder, or narrow
+work; deliver a thin slice before a larger programme it does not depend on; or
+prove the behavior another way. Effort already spent is not a reason to keep a
+route. Keep unmet criteria recorded as unmet rather than relabelling them, and
+present the decisions the new route needs together, each with a recommendation.
+
 ## Track acceptance and closeout
 
 Map every acceptance criterion to a task contract or an explicit integration
@@ -181,5 +197,6 @@ evidence.
 - [ ] Independent work is identified where it matters, with conflicts and integration points named.
 - [ ] Tasks with interpretation risk preserve contracts, boundaries, and proof.
 - [ ] Verification is proportionate and does not automatically require new tests.
+- [ ] Work that stopped converging was replanned from its outcome, with unmet criteria kept visible.
 - [ ] Existing authorization and explicit project gates are respected.
 - [ ] The plan has one maintained source of truth and an honest completion state.

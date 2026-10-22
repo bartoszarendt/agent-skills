@@ -49,6 +49,13 @@ Use the lowest-cost layer that reliably observes the contract.
 - Use representative cases instead of large parameter combinations that exercise
   the same behavior.
 
+Run a check where the behavior runs in production. When a check fails only on a
+platform or configuration the behavior never runs on there, question the check
+before repairing its harness again. Prefer an environment created for each run
+and discarded afterwards over proving a long-lived one unchanged. When building
+or repairing an instrument costs more than the change it checks, revisit the
+evidence method first.
+
 Test observable outcomes and stable contracts. Exact text, call counts, database
 state, or snapshots can be appropriate when that is the contract at risk.
 Avoid freezing private structure merely because it is convenient to assert.
@@ -116,7 +123,7 @@ Repeat after edits that could invalidate evidence, not simply for reassurance.
 ## Verification
 
 - [ ] Each added test protects a named consequential risk absent from existing coverage.
-- [ ] The selected layer exercises the behavior being claimed.
+- [ ] The selected layer and environment exercise the behavior being claimed, where it runs.
 - [ ] Expectations are independent and valid protection was preserved.
 - [ ] Cases execute, handle async work, and clean up owned resources.
 - [ ] Relevant final-state checks and required gates ran, or gaps are explicit.
