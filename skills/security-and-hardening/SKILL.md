@@ -143,6 +143,15 @@ Exercise denied capabilities and preserved invariants where those are the risk:
 a user cannot read another tenant's record, a rejected write has no side effect,
 or an unsafe path is refused. A status code alone may not establish protection.
 
+A functional pass, or the absence of prohibited actions, does not show that
+required safeguards hold. Verify those the task or an applicable security
+requirement calls for, such as server-side session expiry. Close temporary
+access or exposure introduced to perform the work, such as a test credential or
+a port opened for a check, once it is no longer needed and where existing
+authorization allows. Preserve access the delivered result or an authorized
+handoff requires, and report anything left open and why, with any authorization
+needed to address it.
+
 Reuse existing coverage and add only consequential missing cases. Separate local,
 mocked, and authenticated runtime evidence. Run scans and required gates where
 relevant; a clean scanner result is not proof that every path is secure.
@@ -158,6 +167,7 @@ expand a focused task into unrelated hardening.
 - [ ] Secrets and unnecessary personal data are absent from produced artifacts.
 - [ ] Destructive targets and external destinations are checked where applicable.
 - [ ] Relevant negative scenarios ran, or the evidence gap is explicit.
+- [ ] Required safeguards were verified; temporary access or exposure no longer needed was closed within authorization, or what remains open and any authorization it needs is explicit.
 - [ ] Changes and external actions stay within the authorized scope.
 - [ ] A denial or refusal was not bypassed; technical workarounds kept the same scope, permissions, and safeguards.
 - [ ] A required control without a passing verdict was not treated as passed or as waived by approval of the action alone.
