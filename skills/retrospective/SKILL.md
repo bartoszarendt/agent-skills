@@ -66,7 +66,10 @@ coverage.
 
 Prioritize recurring problems and serious isolated incidents. Where earlier
 reviews of the same project or work are kept, read them and say which causes
-recur and whether their proposed changes helped. Do not turn an ordinary
+recur and whether their proposed changes helped. Count an earlier review's
+cause as recurring only when evidence from the current work supports it; the
+cause being named again, including by work shaped by that review's proposals,
+does not confirm it. Do not turn an ordinary
 one-off into a permanent rule without a reason it should affect future work. Separate a practice worth retaining from proof that it caused success;
 one successful run does not establish that it will work in every context.
 
@@ -160,7 +163,7 @@ A retrospective does not accept a result or override an existing review verdict.
 - [ ] The review stayed within the requested work, evidence, and time boundaries.
 - [ ] Observations, explanations, measurements, and uncertainties are distinct.
 - [ ] Material findings have sources, and existing mechanisms were considered.
-- [ ] Earlier reviews of the same work, where kept, were checked for recurring causes.
+- [ ] Earlier reviews of the same work, where kept, were checked for recurring causes, each supported by evidence from the current work.
 - [ ] Each proposed change names who can make it.
 - [ ] Recommendations address supported causes with proportionate costs and checks.
 - [ ] Effective practices and a no-change outcome were considered.
