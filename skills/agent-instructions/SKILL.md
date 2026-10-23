@@ -96,7 +96,10 @@ For material changes, walk through realistic requests including a routine case,
 an ambiguous case, and an authorization or evidence limit. Where supported and
 appropriate, use an isolated evaluation to observe the resulting decisions.
 Judge whether the outcome preserves intent and boundaries rather than whether
-the response repeats the document's wording.
+the response repeats the document's wording. Where a decision is consequential,
+also present one case in different words or format, with the same facts and
+authority; the decision should not change. If it does, repeat the original case
+before attributing the difference to wording.
 
 For a narrow correction, a focused review may be sufficient. State material
 behavioral uncertainty rather than presenting static checks as runtime proof.

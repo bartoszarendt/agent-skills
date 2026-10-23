@@ -56,6 +56,14 @@ and discarded afterwards over proving a long-lived one unchanged. When building
 or repairing an instrument costs more than the change it checks, revisit the
 evidence method first.
 
+A disposable copy does not by itself isolate processes or external resources;
+check what the execution environment isolates. When a check can change shared
+resources, isolate them or keep its effects within existing authorization.
+Distinguish the project's normal setup, such as installing declared
+dependencies, from repairs: if a pass requires changing the candidate or a
+relevant condition outside that setup, report the changed state and what
+remains unverified for the original.
+
 Test observable outcomes and stable contracts. Exact text, call counts, database
 state, or snapshots can be appropriate when that is the contract at risk.
 Avoid freezing private structure merely because it is convenient to assert.
@@ -124,6 +132,7 @@ Repeat after edits that could invalidate evidence, not simply for reassurance.
 
 - [ ] Each added test protects a named consequential risk absent from existing coverage.
 - [ ] The selected layer and environment exercise the behavior being claimed, where it runs.
+- [ ] The reported result identifies the candidate and relevant environment, distinguishes setup from repairs, and accounts for shared resources the check could change.
 - [ ] Expectations are independent and valid protection was preserved.
 - [ ] Cases execute, handle async work, and clean up owned resources.
 - [ ] Relevant final-state checks and required gates ran, or gaps are explicit.
