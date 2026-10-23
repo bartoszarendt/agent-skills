@@ -112,6 +112,12 @@ Do not silently force upgrades, bypass checks, or change repository-wide policy.
 - Keep secrets and cross-tenant information outside the model's permitted context.
 - Do not treat a hidden prompt as an access-control mechanism.
 - Bound consumption, recursion, and external effects.
+- Where the work relies on isolation between agents or restricted network access,
+  check shared services, credentials, and direct or transitive outbound paths,
+  such as DNS, package registries, caches, and artifact stores. Separate
+  workspaces do not establish communication or network isolation.
+- Establish that a prohibited path is blocked, not only that a probe through it
+  returned nothing useful; an alert shows detection, not that the run stopped.
 - Preserve existing authorization and require it for additional destructive effects.
 - Separate local or mocked validation from live-provider proof.
 
