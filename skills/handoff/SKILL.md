@@ -89,6 +89,12 @@ following sections when they carry useful information:
 Keep one next-action list. Its first item may be obtaining a decision or access;
 do not invent executable work to hide a real blocker.
 
+When another agent will carry the work on, note beside the authorization the
+owner checkpoints the remaining work is expected to reach, as a forecast rather
+than a complete list. Add no rule of your own that sends stalled work to the
+user after a number of failed attempts; such work goes to replanning or
+independent review. A limit or stop the user set stays as they wrote it.
+
 Point to stable documents and artifacts instead of copying them. Carry over the
 findings, decisions, constraints, and rationale from this conversation that
 continuation needs. Include exact text where fidelity matters, such as a current
@@ -133,6 +139,7 @@ Update or retire the record when it no longer describes the work.
 - [ ] Decisions are distinct from proposals; done, verified, and accepted work are distinct.
 - [ ] Material findings and reasoning that exist only in this conversation are carried over.
 - [ ] Existing authorization and unresolved gates are preserved without expansion, with exact wording where fidelity matters.
+- [ ] Where another agent continues the work, expected owner checkpoints are noted as a forecast.
 - [ ] Next actions are concrete, with owners for blockers and decisions.
 - [ ] State relevant to the kind of work is captured; no secrets are included.
 - [ ] When resuming, recorded state and authorization were checked against current reality.

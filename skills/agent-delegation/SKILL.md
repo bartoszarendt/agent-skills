@@ -144,7 +144,7 @@ run, reconcile any partial edits, and dispatch a corrected brief.
 - Deliver the brief through stdin or a file, never as a command-line argument.
 - Launch from the workspace with the reference's command. Redirect stdout and
   stderr into the run directory and record the exit status of every run,
-  including resumed runs.
+  including resumed runs. Apply a time limit proportionate to the task.
 - In PowerShell 7 or later, `<` redirection is unavailable; pipe the brief and
   record `$LASTEXITCODE`. Windows PowerShell 5.1 re-encodes piped text and
   redirected output, so prefer PowerShell 7 or a POSIX shell.
@@ -154,9 +154,9 @@ run, reconcile any partial edits, and dispatch a corrected brief.
   $LASTEXITCODE | Set-Content "$run\exit.txt"
   ```
 
-- For a long run, use the host's background execution when it provides completion
-  notification; otherwise background the process and poll for the exit-status
-  file. Apply a time limit proportionate to the task.
+- For a long run, use background execution only when the host notifies you of
+  its end. Otherwise its monitoring is yours: run it in the foreground, or poll
+  its exit-status file with bounded waits, and never end your turn while it runs.
 - Classify a run as successful only when the process has exited, the output
   shows the successful terminal state described in the reference, and no
   unresolved error remains in the output. An exit status of 0 or a closing
@@ -169,8 +169,8 @@ run, reconcile any partial edits, and dispatch a corrected brief.
   to, such as that invocation's output file name. The recorded cancellation or
   timeout makes that invocation incomplete regardless of its exit status or
   events; a forcibly terminated launcher can still exit with status 0. Keep the
-  record when a later invocation resumes the session, and judge that
-  invocation on its own evidence.
+  record when a later invocation resumes the session, and judge that invocation
+  on its own evidence.
 - To stop a run, interrupt the delegate first. If it does not exit, terminate
   the process tree you started:
   - Confirm the target's identity (executable, command line, working

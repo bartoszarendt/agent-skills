@@ -28,6 +28,12 @@ Ask about unresolved choices that change the outcome, contracts, persisted data,
 security, significant cost, or irreversible behavior. Make routine choices from
 repository evidence. Continue independent work while a dependent choice waits.
 
+Before the plan is approved, surface any substantial involvement it needs from
+the user, such as a decision, an action, a review, or labor, with its purpose
+and the alternatives, including what an agent could do with the access the work
+already has, such as research or a bounded observation. An agent route still
+needs the authorization the action itself needs.
+
 Before breaking down the work, separate the required outcome from the
 mechanisms proposed to reach it. For each new service, dependency, abstraction,
 configuration, migration path, or process step, name the current requirement it
@@ -171,6 +177,11 @@ prove the behavior another way. Effort already spent is not a reason to keep a
 route. Keep unmet criteria recorded as unmet rather than relabelling them, and
 present the decisions the new route needs together, each with a recommendation.
 
+A trigger the plan sets for stalled work, such as a number of failed attempts,
+returns the work to this replanning or to an independent review. It reaches the
+user only when what follows changes a commitment of theirs. A limit or stop the
+user set or supplied binds as written.
+
 ## Track acceptance and closeout
 
 Map every acceptance criterion to a task contract or an explicit integration
@@ -199,4 +210,5 @@ evidence.
 - [ ] Verification is proportionate and does not automatically require new tests.
 - [ ] Work that stopped converging was replanned from its outcome, with unmet criteria kept visible.
 - [ ] Existing authorization and explicit project gates are respected.
+- [ ] Substantial user involvement was surfaced before approval, with its purpose and alternatives.
 - [ ] The plan has one maintained source of truth and an honest completion state.

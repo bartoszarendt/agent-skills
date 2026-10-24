@@ -199,7 +199,8 @@ separate closing confirmation.
 Summarize:
 
 - the outcome, intended users, and evidence of success;
-- decisions and the reasons that matter;
+- decisions and the reasons that matter, keeping what the user committed to
+  apart from the implementation choices proposed to meet it;
 - delegated decisions and the choices made;
 - deliberate exclusions;
 - deferred and remaining questions, their consequences, and which work they block.
