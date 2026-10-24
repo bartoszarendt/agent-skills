@@ -119,12 +119,29 @@ Run from the repository root in Git Bash on Windows:
 # Discover skills without installing them
 npx -y skills@1.7.0 add ./ --list
 
-# Frontmatter keys and directory/name agreement
-for f in skills/*/SKILL.md; do d=$(basename "$(dirname "$f")")
-  keys=$(awk 'NR==1{next} /^---$/{exit} /^[a-zA-Z-]+:/{sub(/:.*/,""); printf "%s ", $0}' "$f")
-  [ "$keys" = "name description " ] || echo "frontmatter keys [$keys]: $f"
-  grep -q "^name: $d$" "$f" || echo "name mismatch: $f"
-done
+# Frontmatter: a leading YAML block with exactly `name`, matching the
+# directory, and a non-empty `description` of at most 1024 characters
+yamldir=$(mktemp -d)
+npm install --prefix "$yamldir" --no-save --no-package-lock --ignore-scripts --no-audit --no-fund yaml@2.9.1 >/dev/null \
+  && NODE_PATH="$yamldir/node_modules" node -e '
+const fs = require("fs"), YAML = require("yaml");
+for (const d of fs.readdirSync("skills")) {
+  const f = `skills/${d}/SKILL.md`, say = (s) => console.log(`${s}: ${f}`);
+  if (!fs.existsSync(f)) { say("missing"); continue; }
+  const lines = fs.readFileSync(f, "utf8").replace(/\r\n/g, "\n").split("\n");
+  const end = lines.indexOf("---", 1);
+  if (lines[0] !== "---" || end < 0) { say("no leading frontmatter block"); continue; }
+  const doc = YAML.parseDocument(lines.slice(1, end).join("\n"));
+  if (doc.errors.length) { say(`invalid YAML (${doc.errors[0].code})`); continue; }
+  const m = doc.toJS();
+  if (!m || typeof m !== "object" || Array.isArray(m)) { say("frontmatter is not a mapping"); continue; }
+  const keys = Object.keys(m).sort().join(" ");
+  if (keys !== "description name") say(`frontmatter keys [${keys}]`);
+  if (typeof m.name !== "string" || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(m.name) || m.name.length > 64) say("invalid name");
+  else if (m.name !== d) say("name does not match directory");
+  if (typeof m.description !== "string" || !m.description.trim() || m.description.length > 1024) say("description must be non-empty text of at most 1024 characters");
+}' || echo "frontmatter check could not run"
+rm -rf "$yamldir"
 
 # Entrypoint line budget
 wc -l skills/*/SKILL.md | awk '$2 != "total" && $1 > 250 {print "over budget:", $2}'
@@ -133,10 +150,19 @@ wc -l skills/*/SKILL.md | awk '$2 != "total" && $1 > 250 {print "over budget:", 
 for d in skills/*/; do n=$(basename "$d")
   grep -rlF --include='*.md' -e "\`$n\`" -e "skills/$n/" -e "../$n/" -e "\$$n" skills | grep -v "^skills/$n/" | sed "s|$| references $n|"
 done
+
+# Invisible or bidirectional Unicode (zero-width, joiners, BOM, bidi controls)
+LC_ALL=C grep -rlP '\xE2\x80[\x8B-\x8D\xAA-\xAE]|\xE2\x81[\xA0\xA6-\xA9]|\xEF\xBB\xBF' skills README.md AGENTS.md
+
+# README skill tables list exactly the skill directories
+diff <(grep -o '](skills/[a-z0-9-]*/)' README.md | sed 's|](skills/||; s|/)||' | sort -u) <(ls skills | sort)
 ```
 
-All checks except discovery must print nothing. Also verify name and description
-lengths, checklists, local links, and required legal files for affected material.
+All checks except discovery must print nothing. The frontmatter check installs
+a pinned `yaml` into a temporary directory and parses every entrypoint in one
+Node process; it adds no dependency to the skills. Before changing that pin,
+check the candidate version for published advisories. Also verify checklists,
+local links, and required legal files for affected material.
 Review indirect dependencies manually; token matching cannot establish semantics.
 
 For material instruction changes, assess realistic routine, ambiguous, and
