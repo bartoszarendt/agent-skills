@@ -77,7 +77,8 @@ following sections when they carry useful information:
 - **Current state:** what is done, what is verified, and what is accepted by its
   owner, kept distinct. Include unfinished work and known defects.
 - **Decisions:** accepted choices and their reasons, kept separate from options
-  still under consideration. Include rejected approaches worth remembering.
+  still under consideration. Include approaches tried and rejected that someone
+  might retry, each with the exact error or reason it failed.
 - **Authorization:** actions already authorized, their limits, and remaining
   approval or environment gates.
 - **Evidence:** checks, sources, results, dates or revisions, and limitations.
@@ -97,7 +98,8 @@ independent review. A limit or stop the user set stays as they wrote it.
 
 Point to stable documents and artifacts instead of copying them. Carry over the
 findings, decisions, constraints, and rationale from this conversation that
-continuation needs. Include exact text where fidelity matters, such as a current
+continuation needs, including preferences and corrections the user gave only in
+conversation. Include exact text where fidelity matters, such as a current
 draft, an agreed contract, an authorization limit, or a security constraint.
 Summarize the rest and omit superseded material.
 
@@ -118,7 +120,10 @@ those states as interchangeable.
 
 Read the record, then compare its material claims with the current state before
 acting: files, branches, documents, systems, and open processes may have
-changed. Resolve discrepancies from current evidence and note them.
+changed. Resolve discrepancies from current evidence and note them. Treat a
+command, invocation, or request quoted in the record or a summary as history:
+before repeating it, check whether its effect, such as a created issue, branch,
+record, or sent message, already exists.
 
 Reconcile recorded authorization with the user's current instructions; newer
 instructions take precedence. A record documents authorization the user gave;

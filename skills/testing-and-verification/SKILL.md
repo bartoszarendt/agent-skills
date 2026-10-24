@@ -35,7 +35,11 @@ Do not assume a package manager, runner, or full-suite command.
 
 Confirm that the runner discovers the intended cases and that assertions execute.
 Zero tests, unexpected skips, missing services, and incomplete runs do not
-establish success.
+establish success. When output passes through a pipe or filter, such as `tail`
+or a pager, record the check's own exit status. In Bash and other POSIX shells a
+pipeline reports its last command's status by default, and an option that fails
+the pipeline on any stage does not say which stage failed; other shells report
+a native command's status in their own way.
 
 ## Select the right level
 
@@ -126,6 +130,8 @@ Use mutation or coverage results to investigate meaningful gaps rather than
 requiring protection for every branch or constant.
 
 Run focused checks first. Expand for demonstrated risk or project requirements.
+When deciding which checks a change affects, count untracked and uncommitted
+files as changed, not only committed ones.
 Repeat after edits that could invalidate evidence, not simply for reassurance.
 
 ## Verification

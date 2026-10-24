@@ -91,7 +91,7 @@ can involve all three.
 | [code-audit](skills/code-audit/) | Auditing a codebase, module, or change for actionable defects, with evidence, impact, and stated coverage. |
 | [simplification](skills/simplification/) | Judging whether the scope, mechanisms, and structure of plans, decisions, and code are justified, and reducing what is not without losing required outcomes. |
 | [performance-optimization](skills/performance-optimization/) | Diagnosing and improving performance across code, services, builds, and tests without hiding correctness trade-offs. |
-| [security-and-hardening](skills/security-and-hardening/) | Assessing actual trust boundaries and applying relevant controls, including keeping untrusted content and denied actions from steering an agent and establishing missing evidence before a consequential action. |
+| [security-and-hardening](skills/security-and-hardening/) | Assessing actual trust boundaries and applying relevant controls, including reviewing agent configuration such as hooks and tool servers, keeping untrusted content and denied actions from steering an agent, and establishing missing evidence before a consequential action. |
 
 ### Continuity and agents
 

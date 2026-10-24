@@ -35,6 +35,10 @@ Distinguish defects the change introduces or exposes from pre-existing problems.
 Report a pre-existing problem as part of the change's assessment only when it
 blocks the requested outcome.
 
+When you produced the change yourself, your review carries the assumptions that
+produced it. Rely on executed checks and independent evidence over your own
+confidence, and say that the review is the author's.
+
 Evaluate both whether the requested outcome was delivered and whether the
 implementation is correct and maintainable. State when missing requirements
 prevent assessing intent. Do not require unrelated improvements as a condition

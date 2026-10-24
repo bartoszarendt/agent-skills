@@ -101,6 +101,15 @@ also present one case in different words or format, with the same facts and
 authority; the decision should not change. If it does, repeat the original case
 before attributing the difference to wording.
 
+Include requests the guidance should not affect, and count following a user's
+explicit, authorized override of a default as correct. Checking that a change
+keeps the expected decisions differs from showing that it improves them. A
+claim of improvement needs a comparison with the unchanged guidance: for
+accuracy, on cases it could plausibly get wrong; for efficiency, on cost where
+both versions give acceptable results. To evaluate a consequential change in repeated runs,
+or to judge whether guidance helps at all, read
+[references/behavior-assessment.md](references/behavior-assessment.md).
+
 For a narrow correction, a focused review may be sufficient. State material
 behavioral uncertainty rather than presenting static checks as runtime proof.
 

@@ -1,6 +1,6 @@
 ---
 name: security-and-hardening
-description: Assess and strengthen controls at demonstrated trust boundaries. Use for security reviews, changes to authentication or authorization, sensitive data handling, destructive operations, external inputs and integrations with material security risk, or when untrusted content, a denied action, or an unavailable required check could steer an agent's own actions, or missing evidence could change whether a consequential action is permitted.
+description: Assess and strengthen controls at demonstrated trust boundaries. Use for security reviews, changes to authentication or authorization, sensitive data handling, destructive operations, external inputs and integrations with material security risk, agent configuration such as hooks and tool servers, or when untrusted content, a denied action, or an unavailable required check could steer an agent's own actions, or missing evidence could change whether a consequential action is permitted.
 ---
 
 # Security and Hardening
@@ -64,7 +64,14 @@ another agent's messages, and model output.
 
 Consider impersonation, tampering, disclosure, denial of service, and privilege
 changes where relevant. State concrete abuse cases rather than applying every
-security category to every feature.
+security category to every feature. When one agent run combines access to
+private data, exposure to untrusted content, and a way to send data out, such
+as web requests, messages, or writes others can read, treat exfiltration as an
+abuse case. Remove one of the three where the untrusted content is read, by a
+boundary it cannot cross: for example, process it where the private data or the
+outbound capability is unavailable, and pass on only values validated against a
+narrow schema. Summarizing the content, or splitting the work into steps that
+share the same context and capabilities, removes none of them.
 
 Determine whether an existing control prevents the path before reporting a
 finding or adding another mechanism.
@@ -136,6 +143,11 @@ Treat retrieved content and model output as untrusted data. Parse outputs into
 constrained operations and enforce permissions in code. Keep tool access,
 resource consumption, and tenant retrieval scoped. Prompt wording does not
 replace authorization or isolation.
+
+Agent configuration, such as hooks, tool server definitions, settings, and
+environment overrides, can run commands or route credentials when a host loads
+it. Before loading or adding configuration from a source you do not control,
+read [references/agent-configuration.md](references/agent-configuration.md).
 
 ## Verify and report
 

@@ -12,12 +12,24 @@ and progress reviewable. A small task may need only one increment.
 
 Inspect the relevant implementation, callers, tests, configuration, and
 documentation. Check the working tree before editing and preserve unrelated
-changes. Use existing mechanisms when they meet the need.
+changes. Use existing mechanisms when they meet the need. Where the project has
+competing patterns for the same concern, follow the one it is moving toward, as
+recent changes, recorded decisions, or a migration in progress show; ask only
+when the evidence is evenly split on a consequential choice. Reuse an example's
+structure without copying its defects, and report the defects.
 
 Identify the intended outcome, constraints, acceptance criteria, and any explicit
 gates. If working from a plan, preserve its contracts, exclusions, and required
 proof. Resolve consequential ambiguity before dependent work; continue useful
-independent work that is already authorized.
+independent work that is already authorized. When the result depends on a
+convention set outside the code, such as which time zone defines a day, the
+format a consumer expects, a retention or quota policy, or whether an external
+service tolerates repeated requests, and neither the request nor accessible
+evidence states it, a default the data suggests is a guess. Where the guess
+would affect persisted data, external effects, security, or a commitment to the
+user, resolve it before dependent work, from an authoritative source or by
+asking. For a routine, reversible choice within existing authorization, state
+the assumption where the user will see it and continue.
 
 When a prerequisite is unavailable or a requirement cannot be met as specified,
 work around it only by means that keep the same scope, permissions, and
@@ -135,7 +147,10 @@ coherent increments only when the requested workflow authorizes it.
 ## Report the actual result
 
 Compare the delivered behavior with acceptance criteria as well as check results.
-Do not claim completion while introduced defects or required verification remain
+Before reporting, read the full diff of what you changed: each change is in
+scope or reported, no debug output, experiment code, or temporary access
+remains, and any compatibility mechanism has its removal condition. Do not
+claim completion while introduced defects or required verification remain
 unresolved. Complete independent authorized work when another part is blocked.
 
 Lead with what the request needs: the outcome, the answer, or a decision
@@ -162,6 +177,7 @@ pre-existing user processes and identify anything intentionally left running.
 - [ ] The requested outcome and applicable constraints are satisfied or gaps named.
 - [ ] Increments are coherent and, for multi-step work, outlined with their checks; unrelated user work is preserved.
 - [ ] Necessary fixes are complete without unrelated scope expansion.
+- [ ] The final diff was read: changes are in scope or reported, and no debug, experiment, or temporary material remains.
 - [ ] Relevant checks exercised the final affected behavior.
 - [ ] Failures, skips, and unavailable evidence are reported accurately.
 - [ ] The report leads with the outcome, answer, or required decision and includes relevant progress, failures, and remaining work without requiring the reader to reconstruct context.

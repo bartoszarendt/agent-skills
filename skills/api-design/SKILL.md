@@ -105,7 +105,9 @@ idempotency keys, read [references/retry-safety.md](references/retry-safety.md).
 
 Exercise representative consumers and consequential error or concurrency paths.
 Reuse existing checks before adding new cases. For a changed public interface,
-check compatibility using the relevant consumers or contract fixtures.
+check compatibility using the relevant consumers or contract fixtures. When a
+provider and its consumers change or deploy separately, read
+[references/shared-contracts.md](references/shared-contracts.md).
 
 Update the existing documentation or schema source. State what was verified and
 which consumer, provider, or runtime assumptions remain unproven.

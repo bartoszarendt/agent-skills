@@ -137,7 +137,9 @@ Report: changes and reasons; files touched; checks run with results;
   selects.
 
 The brief's premises are fixed once the run starts. If one proves wrong, stop the
-run, reconcile any partial edits, and dispatch a corrected brief.
+run, reconcile any partial edits, and dispatch a corrected brief. Before retrying
+a stalled or failed run, name what it lacked, such as a source, access, a decision,
+or a sound approach, and update the brief with it or the way to obtain it.
 
 ## Run
 
@@ -161,16 +163,14 @@ run, reconcile any partial edits, and dispatch a corrected brief.
   shows the successful terminal state described in the reference, and no
   unresolved error remains in the output. An exit status of 0 or a closing
   event alone is not success; task acceptance is judged separately in Review.
-- Record the session identifier. Resume by that identifier. Use a "most recent
-  session" option only when no identifier exists and no other session of that
-  CLI can have started in between.
+- Record the session identifier and resume by it. Use a "most recent session"
+  option only when no identifier exists and no other session of that CLI can have started since.
 - Before stopping a run for timeout or cancellation, record that decision in
   the run directory with its reason, a timestamp, and the invocation it applies
-  to, such as that invocation's output file name. The recorded cancellation or
-  timeout makes that invocation incomplete regardless of its exit status or
-  events; a forcibly terminated launcher can still exit with status 0. Keep the
-  record when a later invocation resumes the session, and judge that invocation
-  on its own evidence.
+  to, such as that invocation's output file name. That invocation is then
+  incomplete whatever its exit status or events; a forcibly terminated launcher
+  can still exit with status 0. Keep the record when a later invocation resumes
+  the session, and judge that invocation on its own evidence.
 - To stop a run, interrupt the delegate first. If it does not exit, terminate
   the process tree you started:
   - Confirm the target's identity (executable, command line, working

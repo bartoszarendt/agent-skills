@@ -21,6 +21,11 @@ For build failures, inspect:
 - manifest, lockfile, installation state, and generated artifacts;
 - differences between the local and CI environment.
 
+When one change produces many build errors, fix them in dependency order, from
+the definitions others rely on outward; later errors often follow from earlier
+ones. If a correction raises more errors than it removes, reassess the cause
+before adding another.
+
 Correct demonstrated test defects deliberately. Preserve unrelated valid
 assertions and do not skip a check merely because it is inconvenient.
 
@@ -33,6 +38,13 @@ state, resource cleanup, partial effects, and deduplication.
 For a blank UI, inspect console, network, error boundaries, and state transitions
 before changing rendering. For a slow path, establish a representative
 measurement before selecting an optimization.
+
+When an action appears to have no effect, trace the calls it triggers in order:
+a later call may reset or overwrite state the action set, such as a refresh,
+a form reset, or a default reapplied. When a fix works in one path but not
+another, look for a second implementation of the same contract, such as a
+sandbox and a production path or a client and a server copy, that the fix did
+not reach.
 
 ## Intermittent or unavailable reproductions
 

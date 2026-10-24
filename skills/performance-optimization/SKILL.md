@@ -85,6 +85,12 @@ load may drift, interleave baseline and candidate runs where practical,
 preserving comparable cache and setup state. Report the change and run-to-run
 variation. A difference inside noise is inconclusive.
 
+When trying many variants against one benchmark, decide the search budget
+first and compare each variant with the best one accepted so far, not only with
+the previous run. Repeated selection on one workload favors variants fitted to
+its noise: confirm the chosen variant on a workload or replay not used for
+tuning, and report it as the best measured variant, not an optimum.
+
 Retain changes with a demonstrated benefit that outweighs their costs. If the
 performance hypothesis fails, remove only the experiment's edits while preserving
 user work. A neutral timing result can still leave a justified memory or

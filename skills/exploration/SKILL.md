@@ -79,6 +79,12 @@ change the path, and configuration that differs by environment. Record
 contradictions between code, documentation, and tests rather than choosing one
 silently.
 
+A claim that something is absent, such as no callers, unused, or not
+configured, holds only for the scope and methods searched. Check the indirect
+connections above before making one, and state what was searched. A search tool
+or index that was unavailable or incomplete leaves a gap in coverage, not a
+negative result.
+
 When the answer depends on a dependency, tool, or platform, check the installed
 version and its source, including installed packages and package caches outside
 the repository, or official documentation for that version. Prefer primary
@@ -158,7 +164,7 @@ already uses for such notes.
 ## Verification
 
 - [ ] The questions and required depth were framed before broad searching.
-- [ ] Claims rest on sources read or checks run; inferences are labeled.
+- [ ] Claims rest on sources read or checks run; inferences are labeled, and a claim of absence states what was searched.
 - [ ] Traced paths account for indirect wiring, configuration, and versions where relevant.
 - [ ] Contradictions and unknowns are reported rather than resolved silently.
 - [ ] A standalone answer states its coverage and cites precise locations; embedded exploration carries forward the facts and limitations the work needs.

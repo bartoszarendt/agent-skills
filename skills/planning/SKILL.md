@@ -91,6 +91,11 @@ Put consequential unknowns early. Discover existing interfaces before proposing
 new ones. Use an agreed contract first when independent implementations need it.
 For changes with real compatibility commitments, consider an additive transition
 and explicit removal conditions. Do not add migration machinery without a need.
+When a change crosses a deployment boundary or cannot be fully undone, such as a
+data migration or a contract other systems consume, order the work so each
+deployed step leaves the system working. State the deployment order, how long
+old and new forms coexist, and the point after which rolling back no longer
+restores the previous state, with the recovery path beyond it.
 
 Identify work that can proceed independently. Where practical, organize tasks so
 independent work can run in parallel without weakening coherent outcomes:

@@ -87,6 +87,25 @@ Use the package manager and repository workflow. Reuse existing integration
 coverage; add a check only for a consequential gap. Do not silently force upgrades
 or alter installation policy to resolve an advisory.
 
+## Check before reporting
+
+Many false findings come from reading a snippet without its context. Before
+reporting, check whether:
+
+- a caller, framework, or middleware the snippet does not show already handles
+  the error;
+- an internal function's callers already validate its input; trace at least one
+  caller;
+- a call that looks unawaited or detached is intentionally left to run, with its
+  failure handled elsewhere;
+- repeated queries run over a small, fixed set where their cost cannot matter;
+- randomness or hashing serves a purpose without security requirements, such as
+  sampling or cache keys.
+
+A high-impact finding names the input or state that triggers it, the wrong
+outcome, and why existing safeguards do not catch it. One that cannot is a
+question or an unresolved risk, not a finding.
+
 ## Scope and report
 
 Keep findings focused on the requested area. Fixes required by an implementation

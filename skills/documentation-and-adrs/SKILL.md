@@ -94,6 +94,11 @@ Choose the destination in this order:
 Record context, decision, reason, and material consequences. Add rejected
 alternatives only when useful to a future reader.
 
+When intentionally removing a file, feature, dependency, or approach that a
+person or agent could plausibly bring back, record what was removed, why, what
+replaces it, and when the decision should be revisited, in the place the
+project's readers check first, such as its existing decision log or changelog.
+
 For examples and lifecycle handling, read
 [references/adr-format.md](references/adr-format.md).
 

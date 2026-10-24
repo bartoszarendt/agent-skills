@@ -45,7 +45,11 @@ Make deliberate choices grounded in content and brand. Familiar patterns are
 appropriate when they support the task. Distinctiveness is not a reason to
 replace clear navigation or introduce decorative complexity. Draw distinctive
 details from the subject's own world: its real units and scales, its document
-conventions, its terms of art. Use them as content rather than ornament.
+conventions, its terms of art. Use them as content rather than ornament. Weigh
+how often people use the interface with task complexity, their expertise,
+accessibility needs, and device constraints when setting its register: a tool
+used daily often rewards a dense, quiet, scannable layout, while an occasional
+or promotional page can carry more expressive composition.
 
 Use a short token list or sketch when useful. A small component change may only
 need the existing tokens and a stated adjustment.
@@ -69,7 +73,9 @@ Use current applicable accessibility requirements and project standards.
 
 Choose layouts from content needs rather than numerical quotas. Cards, tables,
 lists, centered headings, repeated sections, and visual emphasis are options.
-Use each where it clarifies relationships or supports scanning.
+Use each where it clarifies relationships or supports scanning. Keep dimensions
+stable when labels, counters, selection, hover, or loading content change, so
+the layout does not shift under the pointer or the reader.
 
 Animate when feedback, hierarchy, or state change benefits. Prefer inexpensive
 properties when suitable, measure problematic effects, and clean up observers
