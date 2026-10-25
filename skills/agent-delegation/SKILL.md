@@ -126,7 +126,10 @@ Report: changes and reasons; files touched; checks run with results;
 - For read-only work, state the question, the positions or hypotheses to test,
   and the evidence expected. Ask the delegate to separate observations from
   inferences. Forbid changes, not inspection: permit the read-only commands the
-  CLI needs, because some CLIs read files only through shell commands.
+  CLI needs, because some CLIs read files only through shell commands. For a
+  second opinion on an approach, rule out no conclusion, marking one that changes
+  what the user approved as theirs. Point it at code and tests as well as records;
+  where the answer turns on behavior, allow an authorized, isolated scratch probe.
 - When the project defines the agent that should do the task, such as a role
   file in the selected CLI's agent directory, start that agent by name where the
   reference gives an option for it; otherwise have the brief tell the delegate
@@ -217,8 +220,7 @@ or a sound approach, and update the brief with it or the way to obtain it.
   permissions only within existing authorization; moving from a read-only run
   to edits requires write access warranted by the request.
 - Review a resumed or replacement run from the state before that run.
-- If rework repeats the same failure, stop and report the pattern instead of
-  iterating further.
+- If rework repeats the same failure, stop iterating and report the pattern.
 - For a sequence of tasks, dispatch them in order, carry forward settled
   decisions and constraints, and review each result before starting a task
   that depends on it. Check the combined result at the end.
@@ -235,13 +237,11 @@ and give the run directory's location.
 
 - [ ] CLI, model, and permission level match the request and existing authorization.
 - [ ] Requested scope and enforced isolation were distinguished and reported.
-- [ ] The brief is self-contained, names exact checks, and contains no secrets.
-- [ ] A project-defined agent was started by name or read first, with any model
-      and effort the project sets passed explicitly.
+- [ ] The brief is self-contained, names exact checks, and contains no secrets; a second opinion's brief rules out no conclusion.
+- [ ] A project-defined agent was started by name or read first, with any model and effort the project sets passed explicitly.
 - [ ] Any fallback was one the user or project instructions allow, and was reported.
 - [ ] The starting state was recorded, and pre-existing user work is intact.
-- [ ] Success was judged from process exit, terminal state, and errors together;
-      a recorded cancellation or timeout overrode them.
+- [ ] Success was judged from process exit, terminal state, and errors together; a recorded cancellation or timeout overrode them.
 - [ ] Resume commands repeated or explicitly updated authorized permission options.
 - [ ] A newly authorized excluded action was checked against current state; session replacement matched context and permission needs.
 - [ ] Changes were compared with the starting state and reviewed against the brief.

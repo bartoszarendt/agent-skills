@@ -60,6 +60,17 @@ and discarded afterwards over proving a long-lived one unchanged. When building
 or repairing an instrument costs more than the change it checks, revisit the
 evidence method first.
 
+After a change, determine which earlier conclusions it could affect and rerun
+those. A change to what observes or judges results, such as an observer, oracle,
+classifier, or fixture, can affect them even when the product is unchanged: a fix
+to a shared false-pass condition affects every result it judged, while a change
+to a branch only one case uses affects that case. Say why each reused result
+still stands. By default, run an expensive matrix, such as every supported
+platform and version, once on the final change and develop against one
+representative configuration. Check a configuration earlier where it differs
+materially, the change is compatibility-sensitive, the project sets a cadence,
+or an earlier result could change the design or catch a costly regression.
+
 A disposable copy does not by itself isolate processes or external resources;
 check what the execution environment isolates. When a check can change shared
 resources, isolate them or keep its effects within existing authorization.
@@ -142,4 +153,5 @@ Repeat after edits that could invalidate evidence, not simply for reassurance.
 - [ ] Expectations are independent and valid protection was preserved.
 - [ ] Cases execute, handle async work, and clean up owned resources.
 - [ ] Relevant final-state checks and required gates ran, or gaps are explicit.
+- [ ] Reruns followed the conclusions a change could affect, including through what observes or judges, and reuse was justified.
 - [ ] The report distinguishes passing, failing, skipped, and unexecuted checks.

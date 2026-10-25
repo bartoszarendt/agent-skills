@@ -87,7 +87,12 @@ Prefer a complete observable behavior or a resolved risk per task. A schema,
 endpoint, and UI for one behavior may form one task. File count, line count, and
 the word "and" do not determine the boundary.
 
-Put consequential unknowns early. Discover existing interfaces before proposing
+Put consequential unknowns early. Run the step whose result could change the
+design, such as the real operation under its failure conditions, before building
+proof or instruments around it. A probe that ships and enables nothing can run
+ahead of the work it informs when it stays within existing authorization and
+approved decisions and keeps off shared resources; one that cannot is the
+change to propose. Discover existing interfaces before proposing
 new ones. Use an agreed contract first when independent implementations need it.
 For changes with real compatibility commitments, consider an additive transition
 and explicit removal conditions. Do not add migration machinery without a need.
@@ -179,8 +184,12 @@ with the person who made it.
 Then choose the simplest credible route from here: cancel, reorder, or narrow
 work; deliver a thin slice before a larger programme it does not depend on; or
 prove the behavior another way. Effort already spent is not a reason to keep a
-route. Keep unmet criteria recorded as unmet rather than relabelling them, and
-present the decisions the new route needs together, each with a recommendation.
+route. Name the simplest route even when it changes a commitment, such as an
+approved gate or sequence: it then goes to the person who made it, with what it
+saves and risks, and a cheaper version of the current route says why it beats
+changing the commitment. Keep unmet criteria recorded as unmet rather than
+relabelling them, and present the decisions the new route needs together, each
+with a recommendation.
 
 A trigger the plan sets for stalled work, such as a number of failed attempts,
 returns the work to this replanning or to an independent review. It reaches the
@@ -214,6 +223,7 @@ evidence.
 - [ ] Tasks with interpretation risk preserve contracts, boundaries, and proof.
 - [ ] Verification is proportionate and does not automatically require new tests.
 - [ ] Work that stopped converging was replanned from its outcome, with unmet criteria kept visible.
+- [ ] A step whose result could change the design runs before proof is built around it, within authorization and off shared resources.
 - [ ] Existing authorization and explicit project gates are respected.
 - [ ] Substantial user involvement was surfaced before approval, with its purpose and alternatives.
 - [ ] The plan has one maintained source of truth and an honest completion state.

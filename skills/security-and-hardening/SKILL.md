@@ -103,7 +103,11 @@ For per-area checks and destructive-target constraints, read
 
 Resolve a derived filesystem target and verify that it stays inside the intended
 root, has the permitted depth, and carries trustworthy ownership evidence.
-Do not confuse a valid path shape with authorization to delete it.
+Do not confuse a valid path shape with authorization to delete it. The same holds
+for other named resources, such as databases, containers, branches, or cloud
+objects: before proposing or performing a deletion, establish from evidence, such
+as the configuration or records that created it, that each one belongs to the
+work. A name resembling the project's is not that evidence.
 
 Account for symlinks and check/use races when untrusted actors can change the
 hierarchy. Refuse uncertain targets without falling back to a broader path.
@@ -177,7 +181,7 @@ expand a focused task into unrelated hardening.
 - [ ] Controls address demonstrated risks without weakening existing protection.
 - [ ] Authorization covers the operation and all relevant callers.
 - [ ] Secrets and unnecessary personal data are absent from produced artifacts.
-- [ ] Destructive targets and external destinations are checked where applicable.
+- [ ] Destructive targets and external destinations are checked where applicable, with each deleted resource's ownership established from evidence.
 - [ ] Relevant negative scenarios ran, or the evidence gap is explicit.
 - [ ] Required safeguards were verified; temporary access or exposure no longer needed was closed within authorization, or what remains open and any authorization it needs is explicit.
 - [ ] Changes and external actions stay within the authorized scope.
