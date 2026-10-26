@@ -54,6 +54,12 @@ Avoid duplicate sources of truth. Some local repetition may be necessary when
 documents are distributed independently; retain the boundary needed for each
 standalone document to work.
 
+A sentence telling the agent to read another file loads nothing by itself:
+whether it takes effect depends on the agent opening that file. Where the host
+can import one instruction file into another, such as an `@AGENTS.md` line in a
+`CLAUDE.md`, use the import, and confirm which instruction files the host
+actually loads, since some hosts skip one file when another is present.
+
 Use checkable completion criteria scaled to the task. Do not turn every guideline
 into a mandatory gate or require exhaustive work without a material reason.
 

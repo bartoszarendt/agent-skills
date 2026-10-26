@@ -101,7 +101,9 @@ findings, decisions, constraints, and rationale from this conversation that
 continuation needs, including preferences and corrections the user gave only in
 conversation. Include exact text where fidelity matters, such as a current
 draft, an agreed contract, an authorization limit, or a security constraint.
-Summarize the rest and omit superseded material.
+Summarize the rest and omit superseded material. When length makes you leave
+out something the recipient may need, such as a constraint, a rule, or a source,
+name it and say where it is: a silent cut reads as nothing more to know.
 
 ## Protect state and access
 

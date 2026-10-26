@@ -44,6 +44,15 @@ implementation is correct and maintainable. State when missing requirements
 prevent assessing intent. Do not require unrelated improvements as a condition
 of accepting a focused change.
 
+Look for what the change leaves out as well as what it gets wrong. For each
+piece of state it sets, such as a registration, flag, cache entry, lock, or
+temporary resource, establish its intended lifetime and owner, and trace its
+cleanup on every path where that lifetime ends, including errors and
+cancellation. Check what each reader does when that state is absent or stale.
+Treat a silent fallback where the state is read, like a missing cleanup, as a
+candidate finding. Where two paths produce the same result, such as a primary
+path and its fallback, compare their inputs.
+
 ## Audit an existing area
 
 Map the structure before reading in depth: entry points, main modules, data
