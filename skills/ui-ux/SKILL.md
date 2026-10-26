@@ -1,6 +1,6 @@
 ---
 name: ui-ux
-description: Design and evaluate user journeys, navigation, interaction patterns, accessibility, and information presentation for web, mobile, and desktop products. Use when defining a workflow, selecting controls, investigating usability friction, or reviewing whether people can complete a task; visual restyling alone does not require a workflow redesign.
+description: Design and evaluate user journeys, navigation, interaction patterns, interface wording, accessibility, and information presentation for web, mobile, and desktop products. Use when defining a workflow, selecting controls, wording labels, errors, or empty states, investigating usability friction, or reviewing whether people can complete a task; visual restyling alone does not require a workflow redesign.
 ---
 
 # UI / UX
@@ -19,6 +19,12 @@ a framework or apply mobile conventions unchanged to desktop software.
 Distinguish observed friction, supplied research, and design hypotheses. A
 heuristic review can identify likely problems but does not establish what real
 users did or why they abandoned a flow. Do not invent research or metrics.
+
+When using supplied research, count distinct participants rather than repeated
+mentions, and report a finding with its base, such as five of eight
+participants, without extending it to all users. Weigh what participants did
+over what they said they would do, and keep differences between user groups
+visible instead of averaging them away.
 
 Clarify consequential unknowns after investigating what the project already
 answers. Make routine decisions independently within the requested outcome.
@@ -59,7 +65,8 @@ Give responsive feedback and distinguish pending, succeeded, failed, and unknown
 outcomes. A timeout does not prove that a write failed. Offer retries only when
 the operation's actual contract makes them safe.
 
-For forms, navigation, asynchronous actions, and recovery patterns, read
+For forms, navigation, asynchronous actions, recovery patterns, and the wording
+of confirmations, errors, and empty states, read
 [references/interaction-patterns.md](references/interaction-patterns.md).
 
 ## Preserve usability across access methods

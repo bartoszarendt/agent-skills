@@ -79,6 +79,18 @@ change the path, and configuration that differs by environment. Record
 contradictions between code, documentation, and tests rather than choosing one
 silently.
 
+When the answer draws on records such as issues, decision logs, conversations,
+notes, or memory entries, count a claim repeated or copied across them as one
+source unless each record observed it independently. A proposal, a draft, or a
+position still under discussion is not a decision; an explicit decision holds
+within the scope it settled, even while related questions stay open. A later
+record replaces an earlier decision only when it is itself a decision by someone
+who can make it; a newer comment or summary alone does not. For current state,
+prefer the most recent record and check it against the code or configuration
+where possible; for an established rule, prefer the record that owns it, such as
+an accepted decision or the applicable instructions. Report a superseded version
+as history and state which version is current.
+
 A claim that something is absent, such as no callers, unused, or not
 configured, holds only for the scope and methods searched. Check the indirect
 connections above before making one, and state what was searched. A search tool
@@ -157,6 +169,10 @@ Report in this order, omitting parts that add nothing:
 6. Implications for the decision or work at hand, including conventions a change
    should follow and risks noticed but not investigated.
 
+Give a web address for a source only when a tool returned it or it follows a
+scheme confirmed for that system. Otherwise cite the path, identifier, or title;
+do not assemble an address from a guessed host, repository, or path pattern.
+
 Answer in the conversation by default. Save findings to a file only when
 requested or when the work continues elsewhere; use the location the project
 already uses for such notes.
@@ -166,7 +182,8 @@ already uses for such notes.
 - [ ] The questions and required depth were framed before broad searching.
 - [ ] Claims rest on sources read or checks run; inferences are labeled, and a claim of absence states what was searched.
 - [ ] Traced paths account for indirect wiring, configuration, and versions where relevant.
-- [ ] Contradictions and unknowns are reported rather than resolved silently.
+- [ ] Contradictions and unknowns are reported rather than resolved silently; copies of one claim count once, and superseded records are reported as history.
+- [ ] Web addresses come from tool results or confirmed schemes; other sources are cited by path, identifier, or title.
 - [ ] A standalone answer states its coverage and cites precise locations; embedded exploration carries forward the facts and limitations the work needs.
 - [ ] No edits, writes, installs, or external effects occurred beyond existing authorization.
 - [ ] Secrets and live or sensitive data were accessed only as authorized; secret values were not disclosed.

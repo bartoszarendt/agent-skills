@@ -84,6 +84,13 @@ For destructive or costly actions, identify the affected object and consequence.
 Use confirmation when accidental execution is consequential, or undo when the
 operation is actually reversible. Do not promise undo for an irreversible effect.
 
+Word messages for the decision in front of the user. Label a confirmation's
+buttons with the action and its alternative, such as "Delete 3 files" and "Keep
+files", rather than a generic acknowledgement. An error states what happened,
+what the user can do next, and, where it is in doubt, whether their input was
+kept. An empty state says what would appear there, and offers a way to add or
+find it only when one exists and the user can take it.
+
 For interrupted sessions, canceled work, or offline states, explain what was
 saved, submitted, or lost according to actual behavior. Offline messaging does
 not imply authorization to build synchronization or an offline data store.

@@ -74,7 +74,7 @@ agreed work.
 |---|---|
 | [implementation](skills/implementation/) | Completing work in coherent increments with relevant final-state evidence. |
 | [api-design](skills/api-design/) | Defining programming contracts, consumer compatibility, and retry safety. |
-| [ui-ux](skills/ui-ux/) | User journeys, navigation, interaction states, accessibility, and usable data presentation. |
+| [ui-ux](skills/ui-ux/) | User journeys, navigation, interaction states, interface wording, accessibility, and usable data presentation. |
 | [frontend-design](skills/frontend-design/) | Visual composition, styling, assets, and rendered web implementation. |
 
 `api-design` covers contracts between pieces of software, including internal

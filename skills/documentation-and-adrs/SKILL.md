@@ -15,8 +15,10 @@ whether the reader needs usage instructions, an interface contract, operational
 guidance, or the reason behind a decision.
 
 Prefer updating an existing document over adding a competing one. Link to
-authoritative detail rather than copying it. Follow the project's location,
-format, language, and generation tooling.
+authoritative detail rather than copying it, using an address a tool returned or
+one that follows a scheme confirmed for that system, not one assembled from a
+guessed pattern. Follow the project's location, format, language, and generation
+tooling.
 
 A request to analyze documentation does not authorize edits. Within an authorized
 implementation, update documentation necessary to keep the affected contract and
@@ -123,6 +125,23 @@ convention.
 
 ## Verify operational instructions
 
+Write a procedure someone will carry out, such as setup, release, recovery, or
+maintenance, so it can be followed without its author. State prerequisites,
+required access, and inputs before the first step, and give each step its exact
+action and where to run it. Where success is not self-evident or a failure is
+consequential, state the result that shows the step worked and what to do when
+it differs. At a step that cannot be undone, or after which undoing no longer
+restores the previous state, say so before the action and name the recovery that
+remains, or that none does. End with how to confirm completion and, where it is
+possible, how to undo the procedure. For example:
+
+```markdown
+3. From the repository root, run `npm run db:migrate`. This drops the old
+   column; afterwards, only the backup from step 2 restores it.
+   Expected: `Applied 1 migration`. If it reports a held lock, stop and check
+   for a deployment in progress; do not clear the lock.
+```
+
 For changed setup or usage, run the relevant steps where safe and practical.
 Check that commands, prerequisites, outputs, and example paths match the actual
 environment. Do not run destructive, paid, or shared-environment operations
@@ -139,6 +158,7 @@ or explicitly established by the user or project.
 
 - [ ] The document serves an identified reader and follows the existing source of truth.
 - [ ] Affected behavior, examples, and operational steps match the implementation.
+- [ ] A procedure states its prerequisites, the expected results and failure responses its readers need, recovery limits before the steps they affect, and a completion check.
 - [ ] Consequential rationale is recorded without unnecessary new documents.
 - [ ] A diagram, if present, makes a mechanism easier to see than prose alone, labels its relationships, and matches its text equivalent.
 - [ ] A decision record uses the requested or discovered convention, without a competing location.

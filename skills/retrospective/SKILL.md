@@ -64,6 +64,19 @@ attempt. A recorded failure does not explain why it occurred. Measure time,
 tokens, or cost only when the sources support the measurement, and state its
 coverage.
 
+Decide what a count measures before counting. For how widespread a problem is,
+count each affected session, run, or task once; for how often it happens, count
+distinct events. In both, one event repeated across notes, reports, and
+summaries counts once. Report a count with its base, such as three of eight
+sessions or twelve questions in one session, and how those cases were chosen;
+do not generalize beyond them. Compare counts or rates across
+sessions, models, tools, or periods only when the groups did comparable work
+under the same definitions over complete periods, and were not selected by the
+outcome being compared, such as sessions opened to rescue work that had already
+gone wrong. Otherwise compare the kinds of events, or state why the rates differ
+in meaning. Recompute a figure that drives a recommendation by a second route
+where practical.
+
 Prioritize recurring problems and serious isolated incidents. Where earlier
 reviews of the same project or work are kept, read them and say which causes
 recur and whether their proposed changes helped. Count an earlier review's
@@ -169,6 +182,7 @@ A retrospective does not accept a result or override an existing review verdict.
 
 - [ ] The review stayed within the requested work, evidence, and time boundaries.
 - [ ] Observations, explanations, measurements, and uncertainties are distinct.
+- [ ] Counts state what they measure and their base, each event counts once, and compared groups are comparable or their differences are stated.
 - [ ] Material findings have sources, and existing mechanisms were considered.
 - [ ] Earlier reviews of the same work, where kept, were checked for recurring causes, each supported by evidence from the current work.
 - [ ] Each proposed change names who can make it.
