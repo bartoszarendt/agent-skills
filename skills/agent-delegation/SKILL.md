@@ -105,6 +105,7 @@ Goal: <outcome in one or two sentences, and the larger result it serves>
 Workspace: <absolute path>; <branch and starting commit, when in Git>
 Current state: <relevant facts, known failures, pre-existing changes to leave alone>
 Scope: <files or areas to change, and what must remain untouched>
+Sources: <what to read, with sections or anchors in large files; read in bounded parts, narrowing after a size-limit or timeout error>
 Constraints: <load-bearing project rules the CLI will not read by itself>
 Permitted actions: <edits, commands, network access, and any action already
   authorized for the delegate>
@@ -150,24 +151,25 @@ or a sound approach, and update the brief with it or the way to obtain it.
 - Launch from the workspace with the reference's command. Redirect stdout and
   stderr into the run directory and record the exit status of every run,
   including resumed runs. Apply a time limit proportionate to the task.
-- In PowerShell 7 or later, `<` redirection is unavailable; pipe the brief and
-  record `$LASTEXITCODE`. Windows PowerShell 5.1 re-encodes piped text and
-  redirected output, so prefer PowerShell 7 or a POSIX shell.
-
-  ```powershell
-  Get-Content -Raw "$run\brief.md" | <command> > "$run\output.jsonl" 2> "$run\stderr.txt"
-  $LASTEXITCODE | Set-Content "$run\exit.txt"
-  ```
-
-- For a long run, use background execution only when the host notifies you of
-  its end. Otherwise its monitoring is yours: run it in the foreground, or poll
-  its exit-status file with bounded waits, and never end your turn while it runs.
+- In PowerShell 7 or later, `<` redirection is unavailable: pipe the brief with
+  `Get-Content -Raw` and record `$LASTEXITCODE`. Windows PowerShell 5.1
+  re-encodes piped text and redirected output; prefer PowerShell 7 or a POSIX shell.
+- Establish whether the host shell tool stops a command at its timeout or
+  returns a handle to one still running. Where it stops commands, allow time
+  for the run and its cleanup or use supported background execution; where it
+  returns a handle, keep monitoring that handle. Without an end notification,
+  poll the exit-status file with bounded waits; never end your turn while it runs.
+- For each invocation, record the native process ID and start time of the
+  delegate, and of its launcher where they differ, and the session identifier
+  when available. Resume by that identifier; use a "most recent session" option
+  only when none exists and no other session of that CLI can have started since.
+- Judge progress by whether recent events advance the task; some output formats
+  write the result only at exit. Neither silence nor activity alone establishes
+  a stall or success, and activity does not extend an agreed time limit.
 - Classify a run as successful only when the process has exited, the output
   shows the successful terminal state described in the reference, and no
   unresolved error remains in the output. An exit status of 0 or a closing
   event alone is not success; task acceptance is judged separately in Review.
-- Record the session identifier and resume by it. Use a "most recent session"
-  option only when no identifier exists and no other session of that CLI can have started since.
 - Before stopping a run for timeout or cancellation, record that decision in
   the run directory with its reason, a timestamp, and the invocation it applies
   to, such as that invocation's output file name. That invocation is then
@@ -176,8 +178,9 @@ or a sound approach, and update the brief with it or the way to obtain it.
   the session, and judge that invocation on its own evidence.
 - To stop a run, interrupt the delegate first. If it does not exit, terminate
   the process tree you started:
-  - Confirm the target's identity (executable, command line, working
-    directory, parent) immediately before terminating; process IDs are reused.
+  - Select it by the process ID and start time recorded for that invocation,
+    never by a command-line pattern, which can match another run; confirm them
+    right before terminating, with executable, parent, and session marker as corroboration.
   - On Windows, use the Windows process ID, not a Git Bash or MSYS process ID
     (Git Bash exposes it as `/proc/<pid>/winpid`), with
     `taskkill /PID <pid> /T /F`; in Git Bash, write `taskkill //PID <pid> //T //F`.
@@ -235,16 +238,13 @@ and give the run directory's location.
 
 ## Verification
 
-- [ ] CLI, model, and permission level match the request and existing authorization.
-- [ ] Requested scope and enforced isolation were distinguished and reported.
+- [ ] CLI, model, and permission level match the request and existing authorization; requested scope and enforced isolation were distinguished and reported.
 - [ ] The brief is self-contained, names exact checks, and contains no secrets; a second opinion's brief rules out no conclusion.
 - [ ] A project-defined agent was started by name or read first, with any model and effort the project sets passed explicitly.
 - [ ] Any fallback was one the user or project instructions allow, and was reported.
-- [ ] The starting state was recorded, and pre-existing user work is intact.
-- [ ] Success was judged from process exit, terminal state, and errors together; a recorded cancellation or timeout overrode them.
-- [ ] Resume commands repeated or explicitly updated authorized permission options.
-- [ ] A newly authorized excluded action was checked against current state; session replacement matched context and permission needs.
-- [ ] Changes were compared with the starting state and reviewed against the brief.
+- [ ] Progress was judged from events and process state, not a missing result; success from process exit, terminal state, and errors together, with a recorded cancellation or timeout overriding them.
+- [ ] Resume commands repeated or explicitly updated authorized permission options; a newly authorized excluded action was checked against current state, and session replacement matched context and permission needs.
+- [ ] The starting state was recorded, pre-existing user work is intact, and changes were compared with that state and reviewed against the brief.
 - [ ] Acceptance was checked in proportion to risk; unverified claims are labeled.
 - [ ] No commit, push, or external action exceeded existing authorization.
-- [ ] Delegate processes are stopped, the run directory location was reported, and a result a project record cites was saved with the project's notes.
+- [ ] Only processes recorded for an invocation were terminated; delegate processes are stopped, the run directory location was reported, and a result a project record cites was saved with the project's notes.

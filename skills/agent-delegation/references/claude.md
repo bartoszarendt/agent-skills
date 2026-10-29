@@ -74,12 +74,20 @@ When the child has more than one shell tool, as on Windows where `Bash` and
 `PowerShell` can both be present, add the same exact rule for each shell tool
 it may use; a denial under one tool appears in `permission_denials`.
 
+## Session identifier
+
+Generate a new UUID as `$SID` for each new session, for example with `uuidgen`
+or PowerShell's `[guid]::NewGuid()`, and pass it as `--session-id`. The
+identifier is then known before the run for resuming, and it marks the
+process's command line. A resumed invocation carries the same identifier, so it
+corroborates a recorded process ID and start time rather than replacing them.
+
 ## Read-only run
 
 ```sh
-claude -p --output-format json --permission-mode plan --tools Read,Glob,Grep \
-  --strict-mcp-config \
-  < "$RUN/brief.md" > "$RUN/result.json" 2> "$RUN/stderr.txt"
+claude -p --output-format stream-json --verbose --session-id "$SID" \
+  --permission-mode plan --tools Read,Glob,Grep --strict-mcp-config \
+  < "$RUN/brief.md" > "$RUN/events.jsonl" 2> "$RUN/stderr.txt"
 echo $? > "$RUN/exit.txt"
 ```
 
@@ -91,9 +99,10 @@ workspace state after the run.
 ## Write run
 
 ```sh
-claude -p --output-format json --permission-mode acceptEdits \
+claude -p --output-format stream-json --verbose --session-id "$SID" \
+  --permission-mode acceptEdits \
   --allowedTools "Bash(npm test *)" "Bash(npm run lint *)" \
-  < "$RUN/brief.md" > "$RUN/result.json" 2> "$RUN/stderr.txt"
+  < "$RUN/brief.md" > "$RUN/events.jsonl" 2> "$RUN/stderr.txt"
 echo $? > "$RUN/exit.txt"
 ```
 
@@ -142,7 +151,9 @@ file; compare the workspace after the run.
 
 ## Output
 
-`--output-format json` writes one result object. Read:
+`--output-format stream-json --verbose` writes one JSON event per line while
+the run works: tool calls, tool results, and messages. The final
+`type: "result"` line carries:
 
 - `result`: the final report text. Failures inside the run, such as missing
   authentication, also appear here, with a non-zero exit status.
@@ -154,17 +165,24 @@ file; compare the workspace after the run.
 - `num_turns`, `total_cost_usd`, `usage`: run metadata; cost is an estimate.
 - `permission_denials`, when present: requests the run was refused.
 
-For progress monitoring, use `--output-format stream-json --verbose` and read the
-final `type: "result"` line, which carries the same fields.
+Each invocation's events file is its primary log: judge progress from its
+newest events, including tool errors in tool results. The session transcript,
+which Claude Code keeps as `<session id>.jsonl` under `~/.claude/projects/` in
+a directory named after the workspace path, accumulates across resumes; use
+only its entries from the current invocation.
+
+`--output-format json` writes a single object with the same fields, and only
+when the run ends: an empty file while the process runs is normal, not a stall.
+Use it only for short calls where nothing but the result matters.
 
 ## Resume
 
 Repeat the original permission and tool options. For a read-only session:
 
 ```sh
-claude -p --output-format json --resume "<session_id>" \
+claude -p --output-format stream-json --verbose --resume "$SID" \
   --permission-mode plan --tools Read,Glob,Grep --strict-mcp-config \
-  < "$RUN/followup.md" > "$RUN/result-2.json" 2> "$RUN/stderr-2.txt"
+  < "$RUN/followup.md" > "$RUN/events-2.jsonl" 2> "$RUN/stderr-2.txt"
 echo $? > "$RUN/exit-2.txt"
 ```
 
@@ -197,3 +215,9 @@ the controls for actions a rule cannot contain.
 - `error_max_turns` or a budget error: resume with a narrower follow-up, or raise
   the limit if the user accepts the cost.
 - Empty `result`: inspect stderr and the workspace, and require the report next time.
+- No `type: "result"` event and a non-zero exit status: the invocation ended
+  incomplete. Inspect stderr, the launcher's status, and termination records
+  before attributing a cause or retrying, and do not switch model for it. A
+  host tool timeout or another session's termination can cause this; in one
+  tested Git Bash setup on Windows, a process ended by `Stop-Process` reported
+  127, which Bash otherwise uses for a command not found.
