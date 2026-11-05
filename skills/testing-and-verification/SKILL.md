@@ -101,6 +101,14 @@ version or one bounded mutation in a scratch copy when practical and worthwhile.
 Never discard user work to manufacture a failing run. If sensitivity remains
 unproven, say so when that limits the conclusion.
 
+When a test claims a particular guard or behavior, keep the inputs it does not
+test valid, and confirm which condition decided the result: a refusal from
+another check, or the test's own conditional, can pass a case the guard never
+reached. A case meant to show a behavior must fail for a run that never
+performs it, such as one that refuses, returns empty data, or serializes what
+should run at once. A pass shows present behavior; sensitivity to a regression
+is a separate showing.
+
 Use the test-first sequence as a method, not as a reason to delete valid work,
 block diagnosis, or require a new test for every edit.
 
@@ -150,7 +158,7 @@ Repeat after edits that could invalidate evidence, not simply for reassurance.
 - [ ] Each added test protects a named consequential risk absent from existing coverage.
 - [ ] The selected layer and environment exercise the behavior being claimed, where it runs.
 - [ ] The reported result identifies the candidate and relevant environment, distinguishes setup from repairs, and accounts for shared resources the check could change.
-- [ ] Expectations are independent and valid protection was preserved.
+- [ ] Expectations are independent, a claimed guard is shown to have decided the result, and valid protection was preserved.
 - [ ] Cases execute, handle async work, and clean up owned resources.
 - [ ] Relevant final-state checks and required gates ran, or gaps are explicit.
 - [ ] Reruns followed the conclusions a change could affect, including through what observes or judges, and reuse was justified.

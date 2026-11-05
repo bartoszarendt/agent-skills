@@ -80,14 +80,14 @@ Delegating to the same product as the current agent is valid when requested.
 - Protect existing work. If user changes overlap the task, or another process is
   writing the same files, use a separate worktree (`git worktree add`) and copy
   any uncommitted inputs the task needs, or ask. A worktree separates checkouts;
-  it is not a security boundary.
+  it is not a security boundary. Ignored files, such as machine setup notes and installed tools, and uncommitted changes, to task records, decisions, and findings included, do not pass between checkouts: name in the brief the checkout whose task record is the one updated, and the setup facts and tools the worktree lacks, so a copy elsewhere points there instead of advancing on its own.
 - Create a run directory outside the workspace, such as under the system
   temporary directory. Keep the brief, output, stderr, exit status, session
   identifier, and any cancellation record there.
 - Expect the delegate to load the user's own configuration: instruction files,
   skills, plugins, extensions, and MCP servers. That is normal. Exclude it only
   when the task needs a controlled environment, using the options the reference
-  lists, and note what those options leave in place.
+  lists, and note what those options leave in place. Where the task forbids network access, account for what can still reach the network, such as a package runner resolving a tool the workspace does not install, a plugin, or a memory integration, and disable or name each.
 
 If the CLI is missing or not ready, or a required enforced boundary is
 unavailable, report the blocker. A prepared brief is useful fallback work, but it
@@ -150,7 +150,7 @@ or a sound approach, and update the brief with it or the way to obtain it.
 - Deliver the brief through stdin or a file, never as a command-line argument.
 - Launch from the workspace with the reference's command. Redirect stdout and
   stderr into the run directory and record the exit status of every run,
-  including resumed runs. Apply a time limit proportionate to the task.
+  including resumed runs. Apply a time limit proportionate to the task. Where the host caps one run, fit setup, reading, checks, and recording the results within it together, and give a check that cannot fit with them a run of its own.
 - In PowerShell 7 or later, `<` redirection is unavailable: pipe the brief with
   `Get-Content -Raw` and record `$LASTEXITCODE`. Windows PowerShell 5.1
   re-encodes piped text and redirected output; prefer PowerShell 7 or a POSIX shell.
@@ -239,7 +239,7 @@ and give the run directory's location.
 ## Verification
 
 - [ ] CLI, model, and permission level match the request and existing authorization; requested scope and enforced isolation were distinguished and reported.
-- [ ] The brief is self-contained, names exact checks, and contains no secrets; a second opinion's brief rules out no conclusion.
+- [ ] The brief is self-contained, names exact checks, fits a capped run including recording, names the authoritative record when work spans checkouts, and contains no secrets; a second opinion's brief rules out no conclusion.
 - [ ] A project-defined agent was started by name or read first, with any model and effort the project sets passed explicitly.
 - [ ] Any fallback was one the user or project instructions allow, and was reported.
 - [ ] Progress was judged from events and process state, not a missing result; success from process exit, terminal state, and errors together, with a recorded cancellation or timeout overriding them.

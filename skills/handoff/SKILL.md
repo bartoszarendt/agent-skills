@@ -85,7 +85,10 @@ following sections when they carry useful information:
 - **Next actions:** ordered concrete steps, each blocker or decision with its
   owner.
 - **Pointers:** locations of documents, artifacts, repositories, services, and
-  processes relevant to continuation.
+  processes relevant to continuation. When the work spans checkouts, such as
+  worktrees, name the one whose task record is authoritative and the setup
+  facts or tools the others lack; ignored files, and uncommitted changes to
+  records, decisions, and findings, do not pass between checkouts.
 
 Keep one next-action list. Its first item may be obtaining a decision or access;
 do not invent executable work to hide a real blocker.
