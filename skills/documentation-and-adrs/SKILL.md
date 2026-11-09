@@ -46,6 +46,36 @@ When rewording existing documentation, preserve its facts, conditions,
 uncertainty, identifiers, numbers, and units unless the documented behavior
 changed.
 
+Before changing a document because it disagrees with the code, establish what
+the document claims to be: a description of current behavior, an accepted
+requirement or decision, a proposal, or a record of the past. Correct a
+description that is wrong. Where the code departs from an accepted requirement
+or decision, report that as a finding about the implementation; rewrite the
+requirement only when a decision changed it. A proposal not yet built is not an
+error, and neither is a file or interface the document says will be created.
+When the evidence does not show which side is right, report both.
+
+## Check what a reader takes from it
+
+For a consequential specification, design, or procedure that someone will act
+on without its author, and whose meaning may rest on a conversation that reader
+never saw, have a reader explain what it proposes, how it says the system works
+today, and which constraints hold, from the document and the references it
+expects them to use. Compare that explanation with what was meant. This finds a
+document whose terms are all defined but whose parts do not connect, which a
+check of terminology misses.
+
+Where the environment can start a reader that has not seen the conversation,
+and existing authorization permits, use one and give it only what the intended
+reader will have. Otherwise reread the document yourself as that reader, and say
+the check was the author's: an author fills gaps without noticing them.
+
+Treat a mismatch, or a part the reader could not explain, as evidence to
+investigate. The document may be ambiguous, the reader may have lacked a source
+the intended reader has, or the reader may be wrong. Add context where the
+intended reader needs it, not only because the checking reader did. Routine
+documentation needs no such check.
+
 ## Add a diagram only when it shows a mechanism
 
 Add a diagram when it lets a reader see a mechanism they would otherwise have
@@ -158,6 +188,8 @@ or explicitly established by the user or project.
 
 - [ ] The document serves an identified reader and follows the existing source of truth.
 - [ ] Affected behavior, examples, and operational steps match the implementation.
+- [ ] A disagreement between a document and the code was classified by what the document claims to be; an accepted requirement was rewritten only where a decision changed it, and a difference the evidence does not settle was reported with both sides.
+- [ ] Where a consequential document's meaning could rest on an unseen conversation, a reader's explanation was compared with the intent, and an author's own check was reported as such.
 - [ ] A procedure states its prerequisites, the expected results and failure responses its readers need, recovery limits before the steps they affect, and a completion check.
 - [ ] Consequential rationale is recorded without unnecessary new documents.
 - [ ] A diagram, if present, makes a mechanism easier to see than prose alone, labels its relationships, and matches its text equivalent.

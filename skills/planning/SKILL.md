@@ -151,6 +151,24 @@ Record decisions and reasons where they constrain implementation. Mark a decisio
 as locked only when the user or project has actually established that commitment.
 Include rejected alternatives when their rationale is likely to matter again.
 
+## Check the plan before handing it over
+
+When a plan is derived from another record, such as a brief, a specification,
+or decisions reached in an interview, compare the finished plan with that
+source: commitments it omits, points it decides differently, and additions that
+change the outcome, an interface, a dependency, or a cost. The plan can be right
+where it differs, because planning reads code the source did not; say what
+differs and why. Settle routine detail within existing authority, and take a
+changed commitment to the person who made it.
+
+When someone else will carry out a plan with interpretation risk, have a reader
+explain, from the plan and the sources it names, what will be delivered, what it
+assumes about the current system, and what is excluded, and compare that with
+the intent. Prefer a reader that has not seen the conversation, where the
+environment and existing authorization allow; an author's own rereading is
+weaker evidence, so say when that is what was done. A mismatch is evidence to
+investigate, not proof the plan is wrong. A brief outline needs neither check.
+
 ## Preserve intent through execution
 
 The plan owns the intended outcome, exclusions, binding decisions, and required
@@ -221,6 +239,7 @@ evidence.
 - [ ] Dependencies and unresolved decisions identify what they block.
 - [ ] Independent work is identified where it matters, with conflicts and integration points named.
 - [ ] Tasks with interpretation risk preserve contracts, boundaries, and proof.
+- [ ] Beyond a brief outline, a derived plan was compared with its source for omissions, contradictions, and consequential additions, and a plan with interpretation risk that someone else carries out was checked by what a reader explains from it.
 - [ ] Verification is proportionate and does not automatically require new tests.
 - [ ] Work that stopped converging was replanned from its outcome, with unmet criteria kept visible.
 - [ ] A step whose result could change the design runs before proof is built around it, within authorization and off shared resources.
