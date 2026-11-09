@@ -97,6 +97,12 @@ finding or exhaustive inspection in every area:
   unavailable, misused, or disconnected from the affected behavior?
 - **Instructions:** were applicable rules visible, current, and consistent?
   Distinguish unclear guidance from guidance that was not read or followed.
+  Where guidance from a tool or framework that directs the agents already
+  covered what went wrong, say why it did not hold, from the session events
+  where they exist: it was never in context, the model that ran did not
+  follow it, a brief overrode it, or its wording fit a different case. Propose
+  the change for that cause to whoever owns it, rather than repeating the
+  guidance in the project.
 - **Tools and effort:** did repeated calls, large outputs, or setup work provide
   useful evidence? Look for a cheaper way to obtain the same confidence.
 - **Information access:** was missing information material? Consider existing
