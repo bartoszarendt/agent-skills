@@ -204,7 +204,7 @@ or a sound approach, and update the brief with it or the way to obtain it.
 - After a read-only run, confirm the workspace is unchanged. Report any edits
   it made and do not keep them without the user's decision.
 - For review and research results, confirm that cited files, lines, and
-  behavior exist before relaying conclusions. When a project record or document will cite the result, save the final report where the project keeps such notes; the run directory is temporary.
+  behavior exist before relaying conclusions. When a project record or document will cite the result, save the final report unchanged where the project keeps such notes, naming what it reviewed, with your own reconciliation in a separate, labelled part; the run directory is temporary.
 
 ## Rework and sequences
 

@@ -42,6 +42,15 @@ Update affected examples, names, and instructions in the same change. Report
 significant unrelated stale material without expanding into a documentation
 rewrite. Preserve historical evidence and deliberate records of old behavior.
 
+When a change retires or alters behavior that several documents describe, a
+search for the old names finds leftovers, not every statement the change made
+false. Name the kinds of claim it affects, such as where data lives, what a
+command requires, or what a screen shows, and the code or decision that owns
+each. Read the sections that make those claims, including setup,
+configuration files, examples, and descriptions of what users see, against
+their owner, and correct each kind together rather than the one sentence a
+review reported.
+
 When rewording existing documentation, preserve its facts, conditions,
 uncertainty, identifiers, numbers, and units unless the documented behavior
 changed.
@@ -188,6 +197,7 @@ or explicitly established by the user or project.
 
 - [ ] The document serves an identified reader and follows the existing source of truth.
 - [ ] Affected behavior, examples, and operational steps match the implementation.
+- [ ] For a retired or altered behavior, each affected kind of claim was read against its owner across the documents that make it; a search was used to find leftovers, not to show completion.
 - [ ] A disagreement between a document and the code was classified by what the document claims to be; an accepted requirement was rewritten only where a decision changed it, and a difference the evidence does not settle was reported with both sides.
 - [ ] Where a consequential document's meaning could rest on an unseen conversation, a reader's explanation was compared with the intent, and an author's own check was reported as such.
 - [ ] A procedure states its prerequisites, the expected results and failure responses its readers need, recovery limits before the steps they affect, and a completion check.

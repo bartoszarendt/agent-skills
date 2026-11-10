@@ -182,6 +182,8 @@ material into it: saved guidance acts on later sessions.
 Open a saved report with what it covers, when a later reader should read it,
 the conclusion, and the proposals, each with its destination, whose approval it
 needs, and its status, so later work can use it without reading all of it.
+Keep each proposal's status in that one place, and change it there when the
+proposal is later approved, declined, or applied; other sections point to it.
 A retrospective does not accept a result or override an existing review verdict.
 
 ## Verification

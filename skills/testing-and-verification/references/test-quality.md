@@ -102,6 +102,15 @@ Keep expected and actual values and the minimum useful reproduction context.
 Preserve relevant seeds, correlation IDs, versions, and timing without credentials,
 personal data, or excessive dumps.
 
+When a probe, harness, or observer is copied, simplified, or promoted into a
+maintained check, keep the condition that decides its failure, the sanitized
+detail that tells one failure from another, and its cleanup assertions, not
+only its success counters. A failure delivered during teardown still fails the
+check. A run that does not perform its required work cannot report success;
+an expected refusal or timeout counts only where the check shows the
+protection it is meant to show. A load or capacity run records that its
+workload actually ran, such as a completion marker and the work done.
+
 ## Assess existing tests
 
 Treat these as defects when demonstrated:

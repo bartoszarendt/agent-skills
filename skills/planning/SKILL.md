@@ -92,9 +92,11 @@ design, such as the real operation under its failure conditions, before building
 proof or instruments around it. A probe that ships and enables nothing can run
 ahead of the work it informs when it stays within existing authorization and
 approved decisions and keeps off shared resources; one that cannot is the
-change to propose. Discover existing interfaces before proposing
-new ones. Use an agreed contract first when independent implementations need it.
-For changes with real compatibility commitments, consider an additive transition
+change to propose. A tool given its own task, such as a grader or harness, is
+accepted only once its result on one real, representative input serves what it
+is for; request any approval that input needs with the plan. Discover existing interfaces
+before proposing new ones. Use an agreed contract first when independent
+implementations need it. For changes with real compatibility commitments, consider an additive transition
 and explicit removal conditions. Do not add migration machinery without a need.
 When a change crosses a deployment boundary or cannot be fully undone, such as a
 data migration or a contract other systems consume, order the work so each
