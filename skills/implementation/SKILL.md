@@ -51,7 +51,9 @@ the update.
 
 Prefer one observable behavior or resolved risk. Include the layers and
 necessary restructuring that make it complete. Split independent concerns when
-that improves review, attribution, or reversibility.
+that improves review, attribution, or reversibility. When a session must end
+before an increment is complete, keep the authorized work that holds and hand
+it on as partial with its next step; do not discard it for being incomplete.
 
 Investigate consequential unknowns before building on them. Use a small
 experiment when it can resolve the uncertainty cheaply. Keep experiments
