@@ -59,6 +59,14 @@ Use readiness signals, controllable clocks, or bounded polling instead of
 arbitrary sleeps. Timing injection can help expose a race in a temporary harness;
 it is not a production workaround.
 
+When the failure is a timeout, establish which clock expired, such as the
+product's own deadline, a fixture's scheduling, an observer's or harness's
+guard, or a launcher's limit on the command, and whether the behavioral
+assertions ran before it did. Do this before changing any budget, and know what
+that budget protects: widening an observer's guard says nothing about product
+latency. A pass on another platform, in isolation, or at another priority does
+not rule out a product defect.
+
 If a rare event cannot be reproduced, preserve evidence and narrow the next
 observation needed. Permanent instrumentation requires a useful signal, bounded
 data, and an authorized deployment. State when the cause remains unconfirmed.

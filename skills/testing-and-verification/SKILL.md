@@ -71,6 +71,16 @@ representative configuration. Check a configuration earlier where it differs
 materially, the change is compatibility-sensitive, the project sets a cadence,
 or an earlier result could change the design or catch a costly regression.
 
+When a change alters a shape that other code reads, such as markup, identifiers,
+emitted configuration, or a payload, find every consumer of it across the
+repository, test tools and harnesses included, not only the files next to the
+change. Before an expensive assembled run, match each acceptance observation,
+those originally required as well as any added, to the assertion or manual
+observation that will show it, and run the affected parts focused first. At an
+integration boundary, feed the check what the producer actually emits: a fixture
+that supplies or rewrites those values can pass while the real pair fails, so
+state any transformation it makes.
+
 A disposable copy does not by itself isolate processes or external resources;
 check what the execution environment isolates. When a check can change shared
 resources, isolate them or keep its effects within existing authorization.
@@ -162,4 +172,5 @@ Repeat after edits that could invalidate evidence, not simply for reassurance.
 - [ ] Cases execute, handle async work, and clean up owned resources.
 - [ ] Relevant final-state checks and required gates ran, or gaps are explicit.
 - [ ] Reruns followed the conclusions a change could affect, including through what observes or judges, and reuse was justified.
+- [ ] For a changed shape, consumers were traced across the repository; before an expensive assembled run, original and added acceptance observations were mapped to planned assertions or manual observations, and completed proof and remaining gaps are explicit.
 - [ ] The report distinguishes passing, failing, skipped, and unexecuted checks.
