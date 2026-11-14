@@ -39,7 +39,9 @@ establish success. When output passes through a pipe or filter, such as `tail`
 or a pager, record the check's own exit status. In Bash and other POSIX shells a
 pipeline reports its last command's status by default, and an option that fails
 the pipeline on any stage does not say which stage failed; other shells report
-a native command's status in their own way.
+a native command's status in their own way. Capture a run's whole output, not
+only a filtered tail, and keep a failing run's before summarizing or rerunning
+it: a later pass does not recover what failed.
 
 ## Select the right level
 

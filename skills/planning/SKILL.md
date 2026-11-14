@@ -117,8 +117,7 @@ Include restructuring that is necessary for a coherent solution. Separate it
 when that makes review or verification materially easier, rather than making
 separate tasks or commits mandatory.
 
-For each task, state the following; in a brief outline, one line can carry
-them:
+For each task, state the following; in a brief outline, one line can carry them:
 
 - the result and why it matters;
 - dependencies that actually block it;
@@ -212,9 +211,11 @@ relabelling them, and present the decisions the new route needs together, each
 with a recommendation.
 
 A trigger the plan sets for stalled work, such as a number of failed attempts,
-returns the work to this replanning or to an independent review. It reaches the
-user only when what follows changes a commitment of theirs. A limit or stop the
-user set or supplied binds as written.
+returns the work to this replanning or to an independent review. Write it as
+what would show the route wrong, such as a broken contract or a cost beyond its
+resources, not another instance the route covers. It reaches the user only when
+what follows changes a commitment of theirs. A limit or stop the user set or
+supplied binds as written.
 
 ## Track acceptance and closeout
 
@@ -230,8 +231,7 @@ work complete only when its acceptance criteria and required checks are
 satisfied. A user decision to defer work changes the recorded scope; a skipped
 check is not a pass. Record completion and supporting evidence in the existing
 source of truth, with a commit or artifact anchor when available. If an overview
-links to detailed records, summarize completion there without duplicating the
-evidence.
+links to detailed records, summarize completion there, not the evidence.
 
 ## Verification
 
