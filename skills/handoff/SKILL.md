@@ -103,8 +103,10 @@ Point to stable documents and artifacts instead of copying them. Carry over the
 findings, decisions, constraints, and rationale from this conversation that
 continuation needs, including preferences and corrections the user gave only in
 conversation. Include exact text where fidelity matters, such as a current
-draft, an agreed contract, an authorization limit, or a security constraint.
-Summarize the rest and omit superseded material. When length makes you leave
+draft, an agreed contract, an authorization limit, a security constraint, or a
+recommendation not yet applied with the decisions it waits for, which a summary
+tends to reduce to its least contested part. Summarize the rest and omit
+superseded material. When length makes you leave
 out something the recipient may need, such as a constraint, a rule, or a source,
 name it and say where it is: a silent cut reads as nothing more to know.
 
@@ -146,7 +148,7 @@ Update or retire the record when it no longer describes the work.
 - [ ] The recipient can reach the record, and the user has its location or content.
 - [ ] Detail and format suit the recipient.
 - [ ] Current facts, historical evidence, and unverified claims are distinguishable.
-- [ ] Decisions are distinct from proposals; done, verified, and accepted work are distinct.
+- [ ] Decisions are distinct from proposals; done, verified, and accepted work are distinct; a recommendation not yet applied is carried whole, with the decisions it waits for.
 - [ ] Material findings and reasoning that exist only in this conversation are carried over.
 - [ ] Existing authorization and unresolved gates are preserved without expansion, with exact wording where fidelity matters.
 - [ ] Where another agent continues the work, expected owner checkpoints are noted as a forecast.

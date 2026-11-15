@@ -33,12 +33,14 @@ and the alternatives, including what an agent could do with the access the work
 already has, such as research or a bounded observation. An agent route still
 needs the authorization the action itself needs.
 
-Before breaking down the work, separate the required outcome from the
-mechanisms proposed to reach it. For each new service, dependency, abstraction,
-configuration, migration path, or process step, name the current requirement it
-serves and check whether an existing mechanism or platform capability meets it.
-Do not narrow the user's outcome to shrink the plan; present a narrower option
-as a choice with its trade-off.
+Before breaking down the work, separate the required outcome from the mechanisms
+proposed to reach it. For each new service, dependency, abstraction,
+configuration, migration path, compatibility or parity layer, or process step,
+name the current requirement it serves and check whether an existing mechanism
+or platform capability meets it. Keeping old data or behaviour, or parity where
+the result does not ship, is needed only where the user or the project's
+documents say so; otherwise ask, with the cost. Do not narrow the user's outcome
+to shrink the plan; present a narrower option as a choice with its trade-off.
 
 ## Choose the smallest useful form
 
@@ -65,18 +67,16 @@ A brief ordered plan for one feature:
    UI updates the stored value.
 ```
 
-Follow the project's existing format and source of truth. Inspect applicable
-instructions and representative current plans or work records for naming and
-numbering conventions. Preserve their hierarchy, prefixes, numbering, and
-relationships between work units, tasks, contracts, decisions, and acceptance
-criteria. Continue established identifiers rather than renaming existing
-records to match a template.
+Follow the project's existing format and source of truth: inspect applicable
+instructions and representative current plans or work records, and preserve
+their hierarchy, prefixes, numbering, and relationships between work units,
+tasks, contracts, decisions, and acceptance criteria. Continue established
+identifiers rather than renaming records to match a template.
 
 Without an established convention, use phases containing tasks when the scope
-warrants structured planning. Use phase-qualified identifiers consistently,
-such as `P3-02` for a task and `P3-02-C1` for its first contract. Small changes
-can still use a brief outline without phases or identifiers.
-For larger work or tasks with interpretation risk, adapt
+warrants structured planning, with phase-qualified identifiers such as `P3-02`
+for a task and `P3-02-C1` for its first contract; small changes can use a brief
+outline. For larger work or tasks with interpretation risk, adapt
 [references/plan-format.md](references/plan-format.md). Omit unused sections.
 
 ## Define coherent tasks
@@ -95,30 +95,29 @@ route; other failures need diagnosis. Passing probes support the plan without
 proving the total reachable. Say what reaching it would and would not show. A
 probe that ships and enables nothing can run ahead of the work it informs when
 it stays within existing authorization and approved decisions and keeps off
-shared resources; one that cannot is the change to propose. A tool given its own
-task, such as a grader or harness, is accepted only once its result on one real,
-representative input serves what it is for; request any approval that input
-needs with the plan. Discover existing interfaces before proposing new ones. Use
-an agreed contract first when independent implementations need it. For changes
-with real compatibility commitments, consider an additive transition and
-explicit removal conditions. Do not add migration machinery without a need. When
-a change crosses a deployment boundary or cannot be fully undone, such as a data
-migration or a contract other systems consume, order the work so each deployed
-step leaves the system working. State the deployment order, how long old and new
-forms coexist, and the point after which rolling back no longer restores the
-previous state, with the recovery path beyond it.
+shared resources; one that cannot is the change to propose. Proof that only
+qualifies the finished result for release runs once, at the end, and holds back
+no building. A tool given its own task, such as a grader or harness, is accepted
+only once its result on one real, representative input serves what it is for;
+request any approval that input needs with the plan. Discover existing
+interfaces before proposing new ones. Use an agreed contract first when
+independent implementations need it. For changes with real compatibility
+commitments, consider an additive transition and explicit removal conditions. Do
+not add migration machinery without a need. When a change crosses a deployment
+boundary or cannot be fully undone, such as a data migration or a contract other
+systems consume, order the work so each deployed step leaves the system working.
+State the deployment order, how long old and new forms coexist, and the point
+after which rolling back no longer restores the previous state, with the
+recovery path beyond it.
 
 Identify work that can proceed independently. Where practical, organize tasks so
 independent work can run in parallel without weakening coherent outcomes:
 establish shared contracts first, name conflicting edits or shared mutable
 resources, and state where results are integrated and verified. Keep work
 sequential when dependencies, coordination cost, or interference outweigh the
-benefit. Identifying parallel opportunities does not authorize launching agents
-or external processes; keep the plan usable for sequential or parallel
-execution within existing authorization and available capabilities.
-Include restructuring that is necessary for a coherent solution. Separate it
-when that makes review or verification materially easier, rather than making
-separate tasks or commits mandatory.
+benefit. Identifying parallel work authorizes no agents or external processes.
+Include restructuring a coherent solution needs; separate it only where that
+makes review or verification materially easier.
 
 For each task, state the following; in a brief outline, one line can carry them:
 
@@ -145,10 +144,8 @@ Add a task-detail block when the task:
 Record the observable contract, deliberate boundaries, relevant decisions,
 existing mechanisms to inspect, required proof, and a likely misleading result.
 Use a "Misfire" field to name how work could appear complete while missing intent.
-Routine mechanical tasks need no such block.
-An edit inside a boundary does not automatically require more documentation.
-Reuse existing acceptance and proof when they already express the contract; a
-few explicit lines can be sufficient without duplicating them under every field.
+Routine mechanical tasks need no such block. Reuse acceptance and proof that
+already express the contract rather than repeating them under every field.
 
 Record decisions and reasons where they constrain implementation. Mark a decision
 as locked only when the user or project has actually established that commitment.
@@ -202,14 +199,17 @@ mechanism the outcome does not need can change, and a commitment changes only
 with the person who made it.
 
 Then choose the simplest credible route from here: cancel, reorder, or narrow
-work; deliver a thin slice before a larger programme it does not depend on; or
-prove the behavior another way. Effort already spent is not a reason to keep a
-route. Name the simplest route even when it changes a commitment, such as an
-approved gate or sequence: it then goes to the person who made it, with what it
-saves and risks, and a cheaper version of the current route says why it beats
-changing the commitment. Keep unmet criteria recorded as unmet rather than
+work; deliver a thin slice before a larger programme it does not depend on, such
+as the assembled result used on a disposable instance behind a development-only
+switch; or prove the behavior another way. Effort already spent is not a reason
+to keep a route. Name the simplest route even when it changes a commitment, such
+as an approved gate or sequence: it then goes to the person who made it, with
+what it saves and risks, and a cheaper version of the current route says why it
+beats changing the commitment. Keep unmet criteria recorded as unmet rather than
 relabelling them, and present the decisions the new route needs together, each
-with a recommendation.
+with a recommendation. Apply the route in the plan itself, its steps,
+dependencies and acceptance text, and start with the step that builds what is
+missing: a note beside an unchanged plan changes nothing.
 
 A trigger the plan sets for stalled work, such as a number of failed attempts,
 returns the work to this replanning or to an independent review. Write it as
@@ -243,7 +243,7 @@ links to detailed records, summarize completion there, not the evidence.
 - [ ] Tasks with interpretation risk preserve contracts, boundaries, and proof.
 - [ ] Beyond a brief outline, a derived plan was compared with its source for omissions, contradictions, and consequential additions, and a plan with interpretation risk that someone else carries out was checked by what a reader explains from it.
 - [ ] Verification is proportionate and does not automatically require new tests.
-- [ ] Work that stopped converging was replanned from its outcome, with unmet criteria kept visible.
+- [ ] Work that stopped converging was replanned from its outcome in the plan itself, with unmet criteria kept visible and the next step building what is missing.
 - [ ] A step whose result could change the design runs before proof is built around it, within authorization and off shared resources, and a tool's total became the goal only after its limits were read and one real example of each failure kind went through it.
 - [ ] Existing authorization and explicit project gates are respected.
 - [ ] Substantial user involvement was surfaced before approval, with its purpose and alternatives.
