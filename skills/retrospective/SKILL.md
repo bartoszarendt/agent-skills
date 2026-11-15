@@ -52,6 +52,11 @@ Trace the events needed to understand material outcomes: the intended work,
 decisions, actions, feedback, corrections, and result. Include practices that
 helped and problems that affected correctness, effort, continuity, or the user.
 
+Within the requested review scope, read the user's turns where the sources hold
+them: a correction of how agents worked is a finding to explain, even when the
+request does not mention it, and a proposal that would bring back a
+corrected practice says so and is the user's call.
+
 Separate observations from explanations. For a proposed cause, identify the
 supporting evidence, plausible alternatives, and contrary evidence. Distinguish
 avoidable process problems from necessary investigation, task difficulty,
@@ -192,6 +197,7 @@ A retrospective does not accept a result or override an existing review verdict.
 - [ ] Observations, explanations, measurements, and uncertainties are distinct.
 - [ ] Counts state what they measure and their base, each event counts once, and compared groups are comparable or their differences are stated.
 - [ ] Material findings have sources, and existing mechanisms were considered.
+- [ ] The user's corrections in the period were explained, and a proposal restoring a corrected practice is marked as the user's call.
 - [ ] Earlier reviews of the same work, where kept, were checked for recurring causes, each supported by evidence from the current work.
 - [ ] Each proposed change names who can make it.
 - [ ] Recommendations address supported causes with proportionate costs and checks.

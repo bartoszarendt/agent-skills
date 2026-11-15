@@ -23,7 +23,6 @@ or consumers. Separate verified facts, assumptions, and unresolved decisions.
 A request for a plan does not authorize implementation. When a plan is part of
 already-authorized implementation, continue after resolving material blockers;
 do not introduce another approval gate. Preserve any explicit review gates.
-
 Ask about unresolved choices that change the outcome, contracts, persisted data,
 security, significant cost, or irreversible behavior. Make routine choices from
 repository evidence. Continue independent work while a dependent choice waits.
@@ -77,7 +76,6 @@ Without an established convention, use phases containing tasks when the scope
 warrants structured planning. Use phase-qualified identifiers consistently,
 such as `P3-02` for a task and `P3-02-C1` for its first contract. Small changes
 can still use a brief outline without phases or identifiers.
-
 For larger work or tasks with interpretation risk, adapt
 [references/plan-format.md](references/plan-format.md). Omit unused sections.
 
@@ -89,20 +87,26 @@ the word "and" do not determine the boundary.
 
 Put consequential unknowns early. Run the step whose result could change the
 design, such as the real operation under its failure conditions, before building
-proof or instruments around it. A probe that ships and enables nothing can run
-ahead of the work it informs when it stays within existing authorization and
-approved decisions and keeps off shared resources; one that cannot is the
-change to propose. A tool given its own task, such as a grader or harness, is
-accepted only once its result on one real, representative input serves what it
-is for; request any approval that input needs with the plan. Discover existing interfaces
-before proposing new ones. Use an agreed contract first when independent
-implementations need it. For changes with real compatibility commitments, consider an additive transition
-and explicit removal conditions. Do not add migration machinery without a need.
-When a change crosses a deployment boundary or cannot be fully undone, such as a
-data migration or a contract other systems consume, order the work so each
-deployed step leaves the system working. State the deployment order, how long
-old and new forms coexist, and the point after which rolling back no longer
-restores the previous state, with the recovery path beyond it.
+proof or instruments around it. Before a total a tool reports, such as findings
+at zero, becomes the goal, read what the tool extracts, selects, excludes and
+matches, and put one real example of each failure kind through it. A probe that
+demonstrates a constraint the permitted changes cannot overcome rules out that
+route; other failures need diagnosis. Passing probes support the plan without
+proving the total reachable. Say what reaching it would and would not show. A
+probe that ships and enables nothing can run ahead of the work it informs when
+it stays within existing authorization and approved decisions and keeps off
+shared resources; one that cannot is the change to propose. A tool given its own
+task, such as a grader or harness, is accepted only once its result on one real,
+representative input serves what it is for; request any approval that input
+needs with the plan. Discover existing interfaces before proposing new ones. Use
+an agreed contract first when independent implementations need it. For changes
+with real compatibility commitments, consider an additive transition and
+explicit removal conditions. Do not add migration machinery without a need. When
+a change crosses a deployment boundary or cannot be fully undone, such as a data
+migration or a contract other systems consume, order the work so each deployed
+step leaves the system working. State the deployment order, how long old and new
+forms coexist, and the point after which rolling back no longer restores the
+previous state, with the recovery path beyond it.
 
 Identify work that can proceed independently. Where practical, organize tasks so
 independent work can run in parallel without weakening coherent outcomes:
@@ -112,7 +116,6 @@ sequential when dependencies, coordination cost, or interference outweigh the
 benefit. Identifying parallel opportunities does not authorize launching agents
 or external processes; keep the plan usable for sequential or parallel
 execution within existing authorization and available capabilities.
-
 Include restructuring that is necessary for a coherent solution. Separate it
 when that makes review or verification materially easier, rather than making
 separate tasks or commits mandatory.
@@ -143,7 +146,6 @@ Record the observable contract, deliberate boundaries, relevant decisions,
 existing mechanisms to inspect, required proof, and a likely misleading result.
 Use a "Misfire" field to name how work could appear complete while missing intent.
 Routine mechanical tasks need no such block.
-
 An edit inside a boundary does not automatically require more documentation.
 Reuse existing acceptance and proof when they already express the contract; a
 few explicit lines can be sufficient without duplicating them under every field.
@@ -185,7 +187,6 @@ Treat file and module anchors as evidence to inspect, not an exclusive edit list
 Explain a replacement when an anchor is stale. Amend consequential ambiguity
 before dependent implementation; use an existing change-request gate when a
 locked decision would change.
-
 Direct execution from the plan is sufficient. Do not introduce a tracker or
 duplicate task records solely to follow this process. External task creation
 requires authorization covering that action.
@@ -225,7 +226,6 @@ gate with an owner. Several tasks can contribute to one outcome.
 Record material deviations and their reasons in the existing plan. Preserve
 unrelated unfinished work and historical evidence. Add a dated correction when
 later results supersede an earlier closeout.
-
 Distinguish implemented, verified, deployed, blocked, and deferred work. Mark
 work complete only when its acceptance criteria and required checks are
 satisfied. A user decision to defer work changes the recorded scope; a skipped
@@ -244,7 +244,7 @@ links to detailed records, summarize completion there, not the evidence.
 - [ ] Beyond a brief outline, a derived plan was compared with its source for omissions, contradictions, and consequential additions, and a plan with interpretation risk that someone else carries out was checked by what a reader explains from it.
 - [ ] Verification is proportionate and does not automatically require new tests.
 - [ ] Work that stopped converging was replanned from its outcome, with unmet criteria kept visible.
-- [ ] A step whose result could change the design runs before proof is built around it, within authorization and off shared resources.
+- [ ] A step whose result could change the design runs before proof is built around it, within authorization and off shared resources, and a tool's total became the goal only after its limits were read and one real example of each failure kind went through it.
 - [ ] Existing authorization and explicit project gates are respected.
 - [ ] Substantial user involvement was surfaced before approval, with its purpose and alternatives.
 - [ ] The plan has one maintained source of truth and an honest completion state.

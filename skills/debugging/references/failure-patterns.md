@@ -67,6 +67,14 @@ that budget protects: widening an observer's guard says nothing about product
 latency. A pass on another platform, in isolation, or at another priority does
 not rule out a product defect.
 
+When a run stops making progress without failing, find where it stops before
+explaining why: compare where repeated runs stopped, their elapsed times, and any
+deadline or timeout events, and sample the stack of the process that is still
+working, with the tools the environment offers, before theorizing about the
+changed code. Repeated stops at one point narrow the search; they do not
+establish the cause, since a deadline or a slow dependency can stop runs at the
+same frame. The active frame may lie in code the change never touched.
+
 If a rare event cannot be reproduced, preserve evidence and narrow the next
 observation needed. Permanent instrumentation requires a useful signal, bounded
 data, and an authorized deployment. State when the cause remains unconfirmed.

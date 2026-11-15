@@ -160,6 +160,14 @@ Do not hide failures, loosen valid assertions, or disable checks to reach green.
 Use mutation or coverage results to investigate meaningful gaps rather than
 requiring protection for every branch or constant.
 
+When a result rests on a figure or class built from another tool's output, by
+joining, classifying, or totalling it, check it against that tool before you
+rely on it: the join matches the cardinality it intends and keeps each source's
+identity, totals reconcile over the population you state, and real examples try
+to falsify each materially different class. Name the cases left ambiguous or
+unmatched. A configured limit, such as a call ceiling, is not the usage it
+allowed.
+
 Run focused checks first. Expand for demonstrated risk or project requirements.
 When deciding which checks a change affects, count untracked and uncommitted
 files as changed, not only committed ones.
@@ -173,6 +181,7 @@ Repeat after edits that could invalidate evidence, not simply for reassurance.
 - [ ] Expectations are independent, a claimed guard is shown to have decided the result, and valid protection was preserved.
 - [ ] Cases execute, handle async work, and clean up owned resources.
 - [ ] Relevant final-state checks and required gates ran, or gaps are explicit.
+- [ ] A figure or class derived from another tool's output was checked against that tool: intended join cardinality, totals over the stated population, real examples that try to falsify each class, unmatched cases named.
 - [ ] Reruns followed the conclusions a change could affect, including through what observes or judges, and reuse was justified.
 - [ ] For a changed shape, consumers were traced across the repository; before an expensive assembled run, original and added acceptance observations were mapped to planned assertions or manual observations, and completed proof and remaining gaps are explicit.
 - [ ] The report distinguishes passing, failing, skipped, and unexecuted checks.
