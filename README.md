@@ -73,14 +73,17 @@ agreed work.
 | Skill | Use it for |
 |---|---|
 | [implementation](skills/implementation/) | Completing work in coherent increments with relevant final-state evidence. |
+| [ai-system-design](skills/ai-system-design/) | Designing LLM applications and tool-using agents: model and context strategy, RAG, memory, workflows, evaluation, and production tradeoffs. |
 | [api-design](skills/api-design/) | Defining programming contracts, consumer compatibility, and retry safety. |
 | [ui-ux](skills/ui-ux/) | User journeys, navigation, interaction states, interface wording, accessibility, and usable data presentation. |
 | [frontend-design](skills/frontend-design/) | Visual composition, styling, assets, and rendered web implementation. |
 
-`api-design` covers contracts between pieces of software, including internal
-modules and component props. `ui-ux` covers how people understand and complete
-tasks. `frontend-design` covers visual composition and implementation. A feature
-can involve all three.
+`ai-system-design` covers architecture choices for LLM applications, including
+whether retrieval, memory, or adaptive tool use is needed. `api-design` covers
+contracts between pieces of software, including internal modules and component
+props. `ui-ux` covers how people understand and complete tasks. `frontend-design`
+covers visual composition and implementation. A feature can involve several of
+these skills.
 
 ### Verify and improve
 
