@@ -20,8 +20,9 @@ the decision or work each answer supports; that sets the required depth:
 - **Feasibility:** whether an approach can work under the actual constraints.
 
 Scale depth to consequence. A quick location answer needs one confirmed source.
-A claim that will drive a migration or security decision needs its paths traced
-and its exceptions checked. Decide what would count as a sufficient answer
+A claim that will drive a migration, a security decision, or a change to
+instructions other agents follow needs its paths traced and its exceptions
+checked. Decide what would count as a sufficient answer
 before searching broadly; framing it for yourself is enough unless the user
 needs to confirm the scope.
 
@@ -73,6 +74,12 @@ to recover why code exists when the reason matters to the answer.
 Distinguish what was read, what was executed, and what was inferred. Do not
 infer behavior from names, comments, or an isolated snippet when the answer
 depends on it; confirm the path that actually runs.
+
+Keyword matches, message prefixes, and truncated or sampled output locate
+material; read the complete relevant passage before it supports a consequential
+claim. For a question about why something happens or happened, test the
+strongest credible alternative explanation and follow contradictions that could
+change the answer.
 
 Check for more than one implementation, dead or unreachable code, flags that
 change the path, and configuration that differs by environment. Record
@@ -127,8 +134,11 @@ When independent questions or areas can be examined separately, consider
 dividing them across parallel searches or helper agents where the environment
 supports it and existing authorization permits. Keep the investigation
 sequential when dependencies, coordination cost, or the size of the question
-outweigh the benefit. Give each part a bounded question, the depth expected, and
-the form of the answer: conclusions with source locations, not raw output.
+outweigh the benefit. Before dividing substantial work, establish what sources exist
+in scope; give each part the known sources and starting points, and let it
+follow further references within scope. Give each part a bounded
+question, the depth expected, and the form of the answer: conclusions with
+source locations, not raw output.
 Avoid duplicating a delegated search while it runs; repeat targeted parts to
 verify material claims or fill gaps in a returned result.
 
@@ -180,7 +190,7 @@ already uses for such notes.
 ## Verification
 
 - [ ] The questions and required depth were framed before broad searching.
-- [ ] Claims rest on sources read or checks run; inferences are labeled, and a claim of absence states what was searched.
+- [ ] Claims rest on sources read or checks run, and a consequential claim on the complete passage rather than an extract or truncated output; inferences are labeled, and a claim of absence states what was searched.
 - [ ] Traced paths account for indirect wiring, configuration, and versions where relevant.
 - [ ] Contradictions and unknowns are reported rather than resolved silently; copies of one claim count once, and superseded records are reported as history.
 - [ ] Web addresses come from tool results or confirmed schemes; other sources are cited by path, identifier, or title.

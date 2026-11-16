@@ -30,10 +30,14 @@ merely to complete a pattern.
 
 Read relevant primary evidence where available: conversation or session events,
 task records, changes, check results, review findings, and the user's account.
-Use summaries and reports to locate evidence, then inspect the underlying
-material needed to support consequential claims. State which sources you read,
+Use summaries, reports, keyword matches, and extracts to locate evidence, then
+read the underlying passages in full where they support consequential claims;
+truncated tool output is unread. State which sources you read,
 including memory systems and documents outside the repository, which were
 available, and what the review cannot establish without the missing ones.
+When the evidence includes agent session transcripts or delegated runs, read
+[references/session-evidence.md](references/session-evidence.md) before
+choosing what to read in depth or dividing the review.
 
 If transcripts are unavailable, work from the available sources. Do not invent
 intermediate actions or infer an entire session from its final result. Ask for
@@ -62,6 +66,13 @@ supporting evidence, plausible alternatives, and contrary evidence. Distinguish
 avoidable process problems from necessary investigation, task difficulty,
 changed requirements, and unavailable prerequisites. If the cause is uncertain,
 say so and identify a proportionate way to distinguish the explanations.
+
+For a causal explanation or comparison, trace each pivotal recommendation,
+constraint, or decision from its source through the brief, record, handoff, and
+next action. Say whether it was never considered, or was considered and then
+rejected, lost, overridden, or impossible to carry out. Follow it back to where
+it began within the same work, which is not expanding the review, and state any
+explicit time, session, or file boundary that stops you.
 
 Treat repeated searches, tool calls, result revisions, and review rounds as
 signals, not defects or causes. A new revision does not establish a failed
@@ -159,6 +170,10 @@ evaluate a small improvement. Recommendations are not demonstrated benefits.
 
 ## Report and act within scope
 
+Before concluding, close accessible evidence gaps that could change the
+explanation or a recommendation. A plausible common theme is an intermediate
+finding. Where evidence stays unavailable, narrow the conclusion and name the gap.
+
 Lead with the most useful conclusion. Rank findings by consequence and likely
 recurrence, and give each material finding:
 
@@ -195,6 +210,7 @@ A retrospective does not accept a result or override an existing review verdict.
 
 - [ ] The review stayed within the requested work, evidence, and time boundaries.
 - [ ] Observations, explanations, measurements, and uncertainties are distinct.
+- [ ] Pivotal recommendations, constraints, and decisions were traced from their source to the next action; conclusions rest on passages read in full, not extracts or truncated output, and accessible gaps that could change them were closed.
 - [ ] Counts state what they measure and their base, each event counts once, and compared groups are comparable or their differences are stated.
 - [ ] Material findings have sources, and existing mechanisms were considered.
 - [ ] The user's corrections in the period were explained, and a proposal restoring a corrected practice is marked as the user's call.
