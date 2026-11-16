@@ -1,4 +1,4 @@
-# Implementation considerations
+# Web implementation
 
 Use the existing stack, supported versions, and project conventions. Consult
 current official documentation when correctness depends on framework or browser
@@ -18,11 +18,22 @@ Keep server and client responsibilities consistent with the framework. Isolate
 interactive state where it is needed rather than moving an entire page to the
 client for one effect.
 
+Map a visual proposal onto the project's existing semantic tokens and component
+variants. Check where a token is consumed before changing it globally. Scope a
+page-specific treatment when it should not alter shared controls; preserve existing
+theme selectors and CSS conventions rather than creating a competing token set.
+
 ## Layout and assets
 
 Choose Grid, Flexbox, normal flow, and container constraints according to the
 relationship being expressed. Test content wrapping, long labels, localization,
 zoom, and empty states where they matter.
+
+Choose adaptation points where content or controls need them. Check intermediate
+widths around those changes, not only a desktop and phone screenshot. Recompose
+columns into a meaningful reading order; do not hide essential evidence or actions
+to make the smaller layout fit. Keep intentional wide tables operable instead
+of shrinking their text beyond useful readability.
 
 Choose viewport units based on whether the design should follow dynamic browser
 chrome or keep a stable size. Verify supported devices rather than prescribing
@@ -44,9 +55,19 @@ Choose CSS or an existing animation mechanism before adding a library.
 Use transforms and opacity where they achieve the effect efficiently, but do not
 turn that preference into a ban on necessary layout transitions.
 
+Ask what would be lost if the change happened instantly. Motion can explain a
+relationship or acknowledge an action; decoration alone does not justify delaying
+the next input.
+
 For scrolling or pointer effects, avoid unnecessary rendering on every event.
 Use an appropriate browser or framework mechanism and measure when performance
 is uncertain. Account for cleanup, resizing, dynamic content, and reduced motion.
+
+Treat scroll choreography as enhancement to an already readable sequence. Preserve
+the information and a useful static order when the effect or its required browser
+capability is unavailable. For a pinned explanation beside changing evidence,
+check the unpinned reading order, keyboard navigation, and short windows before
+adding further transitions. Do not simulate browser scrolling to force a sequence.
 
 If a motion effect cannot be completed in scope, preserve a usable static state
 and report the omitted behavior. Do not silently drop motion that is a required
@@ -61,11 +82,23 @@ that justifies its cost.
 Implement loading, error, empty, disabled, and success states relevant to the
 flow. Preserve authorization and data correctness behind those states.
 
+Keep the control's purpose recognizable during those changes. For example, reserve
+the space needed for a save action's progress feedback instead of replacing it
+with a narrower icon that moves adjacent controls. Preserve room for errors without
+clipping translations. Visual loading or success styling must follow the real
+operation, including an unconfirmed outcome.
+
 ## Runtime checks
 
 Inspect the final rendering where tools are available. Check representative
 widths, overflow, focus visibility, label association, contrast, reduced motion,
 and important interactions.
+
+Inspect supported motion both in its ordinary
+mode and with reduced motion when relevant; a capture with motion disabled alone
+does not establish that the animation works. Exercise controls whose behavior
+changed, including relevant failure and keyboard paths. Finding a focus selector,
+request call, or media query in source does not establish that behavior ran.
 
 Use existing static, component, and browser checks according to risk. Assess
 performance against the product's targets with representative builds and

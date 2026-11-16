@@ -47,6 +47,25 @@ Autosave changes persistence and expectations. Reuse it when already supported;
 do not add draft storage merely to improve a form without considering scope,
 privacy, recovery, and conflicts.
 
+## Control states
+
+Define the states a control actually has, not a universal list. These describe
+the control itself; the outcome of an operation it starts is covered under
+asynchronous operations below.
+
+| State | Applies when | What it conveys |
+|---|---|---|
+| Default | Every interactive control | Its purpose and that it can be used |
+| Hover | Pointer input is supported | Optional reinforcement; never the only cue to an action or information |
+| Focus | Keyboard or other non-pointer navigation reaches it | A visible indicator distinct from hover and selection |
+| Pressed | Activation benefits from immediate acknowledgement | That input was received, without implying the operation succeeded |
+| Unavailable | The action exists but cannot be used now | That it is unavailable and, when it helps the user proceed, why |
+| Selected, checked, or expanded | The control holds a choice or disclosure state | The current value, exposed to assistive technology as well as visually |
+
+Combine states coherently: a selected item can also have focus, and an unavailable
+control does not show hover feedback that suggests it will respond. Keep the
+control's size and label stable across its states.
+
 ## Asynchronous operations
 
 Represent actual state, not just animation:
@@ -74,11 +93,29 @@ Match loading feedback to the expected wait and task. A skeleton, progress
 indicator, or retained stale view can each be appropriate. Distinguish stale
 content from current results when that affects a decision.
 
+Keep the action's identity apparent while it is pending. Reserve enough room for
+changing labels or progress and let explanatory text grow without displacing
+nearby targets unexpectedly. Apply states only where they make sense; static
+text does not need a loading, selected, or disabled variant.
+
+For example, after a reservation request times out, retain the entered details
+and distinguish unconfirmed booking from rejection. Use an existing status lookup
+or safe reconciliation path before offering a retry that could reserve twice.
+A spinner ending or a confirmation screen appearing does not establish success.
+
 ## Feedback and recovery
 
 Use inline feedback where the action or data needs attention. Use transient
 messages for information that can safely disappear; keep consequential errors
 and recovery actions available. Do not prescribe one timeout for all messages.
+
+Show feedback near the affected object when that gives it context. A copied
+value can acknowledge completion beside its control after the clipboard operation
+succeeds; an unsuccessful copy needs an available recovery rather than the same
+success mark. A changed row may already make its new state clear. Avoid adding
+a toast for the same result unless it adds necessary information, and preserve
+an appropriate announcement for people who cannot see the change. A result users
+need to retain, such as a booking reference, belongs in persistent content.
 
 For destructive or costly actions, identify the affected object and consequence.
 Use confirmation when accidental execution is consequential, or undo when the

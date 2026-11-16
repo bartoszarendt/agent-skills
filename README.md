@@ -75,15 +75,16 @@ agreed work.
 | [implementation](skills/implementation/) | Completing work in coherent increments with relevant final-state evidence. |
 | [ai-system-design](skills/ai-system-design/) | Designing LLM applications and tool-using agents: model and context strategy, RAG, memory, workflows, evaluation, and production tradeoffs. |
 | [api-design](skills/api-design/) | Defining programming contracts, consumer compatibility, and retry safety. |
-| [ui-ux](skills/ui-ux/) | User journeys, navigation, interaction states, interface wording, accessibility, and usable data presentation. |
-| [frontend-design](skills/frontend-design/) | Visual composition, styling, assets, and rendered web implementation. |
+| [ui-ux](skills/ui-ux/) | Designing, building, and reviewing interfaces: user journeys, interaction states, wording, accessibility, data presentation, visual direction, typography, color, composition, assets, web implementation, landing pages, and redesigns. |
 
 `ai-system-design` covers architecture choices for LLM applications, including
 whether retrieval, memory, or adaptive tool use is needed. `api-design` covers
 contracts between pieces of software, including internal modules and component
-props. `ui-ux` covers how people understand and complete tasks. `frontend-design`
-covers visual composition and implementation. A feature can involve several of
-these skills.
+props. `ui-ux` covers how people understand and complete tasks and the visual
+form that serves them, from flow and wording to composition, styling, and
+rendered web implementation; its conditional references cover each area,
+including landing pages, redesigns, and visual critique. A feature can involve
+several of these skills.
 
 ### Verify and improve
 
@@ -183,6 +184,10 @@ intended scope and hosts. Verify its complete contents and availability before
 removing the unchanged obsolete installation. Preserve a locally modified old
 installation until its changes are resolved, and account for every host that
 shares it.
+
+A merged skill follows the same order. `frontend-design` is now part of `ui-ux`:
+refresh `ui-ux` from the published source, verify it, then remove the unchanged
+`frontend-design` installation.
 
 <details>
 <summary>Project-local installation, team copies, and other computers</summary>
