@@ -151,7 +151,10 @@ authorization boundaries; infrequent use does not make a rule unnecessary, and
 missing usage records leave its use unmeasured, not absent.
 Place guidance where the agent responsible for applying it will read it, and
 name who can make each change: the project, a tool or framework that directs
-the agents, the host, or a user-level instruction or skill. A cause outside the
+the agents, the host, or a user-level instruction or skill. Give each proposal
+one destination: split one whose parts belong to different owners, such as the
+project's policy, one machine's setup, and a tool's own guidance, and say which
+the user can apply in the project now. A cause outside the
 project goes to its owner as a proposal; a project workaround names it. Propose
 each change at the narrowest scope the evidence supports, and widen it beyond
 the project only when the cause lies outside it or the problem recurred

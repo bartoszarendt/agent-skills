@@ -34,7 +34,14 @@ configuration. Identify the cheapest relevant checks and required gates.
 Do not assume a package manager, runner, or full-suite command.
 
 Confirm that the runner discovers the intended cases and that assertions execute.
-Zero tests, unexpected skips, missing services, and incomplete runs do not
+A substitute for the project's own command, such as a compiler run at the root
+of a project that builds from references, shows only what it reached: confirm
+it reaches the intended files or stages, or use the project's command. When you
+change how a costly check starts, such as its environment, mounts, or server,
+first exercise the stage you changed, in the environment the check will use,
+through readiness or its first intended case, against its startup limits;
+stages the change does not touch need not run again. Zero tests, unexpected
+skips, missing services, and incomplete runs do not
 establish success. When output passes through a pipe or filter, such as `tail`
 or a pager, record the check's own exit status. In Bash and other POSIX shells a
 pipeline reports its last command's status by default, and an option that fails

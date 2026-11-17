@@ -149,8 +149,8 @@ or a sound approach, and update the brief with it or the way to obtain it.
 
 - Deliver the brief through stdin or a file, never as a command-line argument.
 - Launch from the workspace with the reference's command. Redirect stdout and
-  stderr into the run directory and record the exit status of every run,
-  including resumed runs. Apply a time limit proportionate to the task. Where the host caps one run, fit setup, reading, checks, and recording the results within it together, and give a check that cannot fit with them a run of its own.
+  stderr into the run directory, and parse or print the output only from those files, read as UTF-8. Record the exit status of every run, including resumed runs, and of any script that collects the output apart from the delegate's: a collector that fails printing a result, as one can through a console's code page on Windows, leaves the delegate's exit status unchanged, and the run is not complete until its result is recovered from the saved files and meets the success conditions below.
+  Apply a time limit proportionate to the task. Where the host caps one run, fit setup, reading, checks, and recording the results within it together, and give a check that cannot fit with them a run of its own.
 - In PowerShell 7 or later, `<` redirection is unavailable: pipe the brief with
   `Get-Content -Raw` and record `$LASTEXITCODE`. Windows PowerShell 5.1
   re-encodes piped text and redirected output; prefer PowerShell 7 or a POSIX shell.
