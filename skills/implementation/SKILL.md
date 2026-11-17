@@ -109,7 +109,11 @@ it. Run checks again when subsequent edits could invalidate their results.
 A clean result does not need repetition after an unrelated change.
 
 Read the output and confirm that the intended cases actually executed. Distinguish
-change-related failures, pre-existing defects, and environment failures.
+change-related failures, pre-existing defects, and environment failures. A run
+in another checkout shows a failure is pre-existing only when it loaded that
+checkout's code: an installed or linked package or a path setting can load this
+one's, so confirm which code ran. Applicable retained results or the failing
+code's history can show it without a new run.
 Do not weaken valid assertions, suppress errors, or bypass required hooks to
 obtain a passing result.
 
@@ -181,7 +185,7 @@ pre-existing user processes and identify anything intentionally left running.
 - [ ] Necessary fixes are complete without unrelated scope expansion.
 - [ ] The final diff was read: changes are in scope or reported, and no debug, experiment, or temporary material remains.
 - [ ] Relevant checks exercised the final affected behavior.
-- [ ] Failures, skips, and unavailable evidence are reported accurately.
+- [ ] Failures, skips, and unavailable evidence are reported accurately; a baseline run used to call a failure pre-existing loaded the base's own code.
 - [ ] The report leads with the outcome, answer, or required decision and includes relevant progress, failures, and remaining work without requiring the reader to reconstruct context.
 - [ ] Documentation and operational consequences are accounted for where relevant.
 - [ ] Commits and external actions stay within existing authorization.

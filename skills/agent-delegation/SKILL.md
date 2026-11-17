@@ -128,17 +128,17 @@ Report: changes and reasons; files touched; checks run with results;
   and the evidence expected. Ask the delegate to separate observations from
   inferences. Forbid changes, not inspection: permit the read-only commands the
   CLI needs, because some CLIs read files only through shell commands. For a
-  second opinion on an approach, rule out no conclusion, marking one that changes
-  what the user approved as theirs. Point it at code and tests as well as records;
-  where the answer turns on behavior, allow an authorized, isolated scratch probe.
+  second opinion on an approach or an assessment of a result, rule out no
+  conclusion and name no verdict, marking one that changes what the user
+  approved as theirs. Point it at code and tests as well as records; where the
+  answer turns on behavior, allow an authorized, isolated scratch probe.
 - When the project defines the agent that should do the task, such as a role
   file in the selected CLI's agent directory, start that agent by name where the
   reference gives an option for it; otherwise have the brief tell the delegate
   to read that file before anything else, with its path. Pass model and effort
   explicitly where the project sets them, since a separate process does not
   always apply an agent file's settings. The agent's own permission rules then
-  shape the boundary: read them, and keep the permission options this skill
-  selects.
+  shape the boundary: read them, and keep this skill's permission options.
 
 The brief's premises are fixed once the run starts. If one proves wrong, stop the
 run, reconcile any partial edits, and dispatch a corrected brief. Before retrying
