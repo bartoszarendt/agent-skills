@@ -127,7 +127,7 @@ Report: changes and reasons; files touched; checks run with results;
 - For read-only work, state the question, the positions or hypotheses to test,
   and the evidence expected. Ask the delegate to separate observations from
   inferences. Forbid changes, not inspection: permit the read-only commands the
-  CLI needs, because some CLIs read files only through shell commands. For a
+  CLI needs to read files and the evidence needs, such as git history. For a
   second opinion on an approach or an assessment of a result, rule out no
   conclusion and name no verdict, marking one that changes what the user
   approved as theirs. Point it at code and tests as well as records; where the
