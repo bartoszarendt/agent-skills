@@ -22,6 +22,14 @@ context. Treat parts available only as summaries as secondary evidence and state
 that limitation. Resolve material ambiguity before expanding into other sessions
 or projects. Scale investigation to the consequences and available evidence.
 
+For a review that may change shared guidance, start from each named project's
+authoritative checkout and run evidence, not a copy you have not compared with
+it. Treat a drafted change's diagnosis as one explanation to test: confirm the
+failure in primary evidence, say whether the guidance in force at that point was
+absent, ambiguous, overridden by a brief, or not followed, and check each
+mechanism the change relies on in the code, the tool, or its history. Report any
+missing link that could change the recommendation.
+
 For a time-bounded review, define the requested calendar period or time window.
 Use exact timestamps and the timezone when precise cutoffs matter. Preserve any
 explicit boundaries supplied by the user. Exclude events that cannot be placed
@@ -98,8 +106,10 @@ reviews of the same project or work are kept, read them and say which causes
 recur and whether their proposed changes helped. Count an earlier review's
 cause as recurring only when evidence from the current work supports it; the
 cause being named again, including by work shaped by that review's proposals,
-does not confirm it. Do not turn an ordinary
-one-off into a permanent rule without a reason it should affect future work. Separate a practice worth retaining from proof that it caused success;
+does not confirm it. Where an earlier review was itself analysed, check
+each of its proposals' status in that analysis, the changelog, or the commits,
+and spend the reading on open proposals and newer evidence. Do not turn an
+ordinary one-off into a permanent rule without a reason it should affect future work. Separate a practice worth retaining from proof that it caused success;
 one successful run does not establish that it will work in every context.
 
 ## Inspect relevant areas
@@ -218,6 +228,7 @@ A retrospective does not accept a result or override an existing review verdict.
 - [ ] Material findings have sources, and existing mechanisms were considered.
 - [ ] The user's corrections in the period were explained, and a proposal restoring a corrected practice is marked as the user's call.
 - [ ] Earlier reviews of the same work, where kept, were checked for recurring causes, each supported by evidence from the current work.
+- [ ] A drafted change's diagnosis was tested against primary evidence from the authoritative checkout and the guidance in force, and each mechanism it relies on was checked.
 - [ ] Each proposed change names who can make it.
 - [ ] Recommendations address supported causes with proportionate costs and checks.
 - [ ] Effective practices and a no-change outcome were considered.

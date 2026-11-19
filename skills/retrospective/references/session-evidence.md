@@ -29,7 +29,11 @@ and personal data; keep it out of reports and saved findings.
 
 Use summaries, keyword matches, and message prefixes to find events, then read
 in full the user's turns and the stretches around each decision, stop, step
-back, review, pause, and handoff that bears on the outcome.
+back, review, pause, and handoff that bears on the outcome. Choose a decision's
+stretch by time, from the result it acted on to the next assignment, and read
+every message, reasoning block, and brief in it. A keyword filter drawn from the
+proposal or explanation under test finds only what that explanation predicts.
+Copy a remote transcript locally before reading it.
 
 A coordinating session's transcript shows what it asked for and passed on. What
 a delegate saw, recommended, and found is in that delegate's own transcript or
