@@ -65,6 +65,16 @@ use is unmeasured, not that the guidance is unused.
   change interrupts the agent or adds steps and the claim concerns what it
   says, a variant that interrupts as often with generic content separates the
   effect of stopping from the effect of the content.
+- Before crediting a change with removing a failure, confirm that the unchanged
+  guidance still produces that failure in the current configuration, with the
+  same model, tools, and other instructions. A failure seen earlier under other
+  conditions may not recur, and the change would get credit for nothing.
+- To measure one decision, such as whether the agent ends its turn after
+  starting a delegate, fix the conversation up to that point and sample only
+  the next response, repeated per variant with everything else identical, the
+  number of samples decided before running as for any case. Such samples point
+  at one cause; they show that step, not the whole task, so confirm in full
+  runs where the rest of the task could change the effect.
 - Repeat each case, and decide before running how many runs and what
   difference will count. Do not extend a run because its result is close.
 - A case that every variant passes, or every variant fails, shows no

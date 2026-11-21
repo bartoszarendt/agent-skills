@@ -13,6 +13,11 @@ Keep the description within 1024 characters and include both capability and
 applicability. Other specifications or hosts may permit more fields; those are
 outside this collection's format.
 
+Some hosts show only the start of a description in their catalog, such as its
+first 500 characters, and choose a skill from that alone. Put the capability
+and the main triggers first, and keep the whole description within 500
+characters where you can.
+
 Write discriminating descriptions. "Use for every coding task" attracts unrelated
 work and duplicates general policy. Explain meaningful exclusions only when they
 prevent likely misrouting.
@@ -22,6 +27,17 @@ prevent likely misrouting.
 Hosts differ in how they load descriptions and select skills. Description wording
 can guide selection but cannot guarantee activation, invisibility, or a particular
 context cost.
+
+Two installed copies with one name, such as a project copy beside a user-level
+one, or an old backup in a directory the host scans, leave the host's
+precedence to decide which runs, and a directory that fails to load can let the
+other copy win. Where behavior suggests the wrong copy, check from a fresh
+session in the affected project, preferring the source path or load event the
+host reports. Where a marker is needed, put it in a disposable copy, and reach
+the skill through the same selection path you are diagnosing: invoking a skill
+by name can pick a different copy than the host's own choice from its catalog,
+and some hosts list both. If the host exposes neither a source nor a usable
+marker, report which copy ran as unverified.
 
 Express user-requested applicability in ordinary language when a procedure needs
 an explicit request. Do not claim that wording enforces a host permission gate.

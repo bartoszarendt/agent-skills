@@ -69,6 +69,13 @@ and discarded afterwards over proving a long-lived one unchanged. When building
 or repairing an instrument costs more than the change it checks, revisit the
 evidence method first.
 
+A component that tests construct by hand skips how it is loaded and how its
+dependencies are found, however complete their coverage. Where loading,
+registration, or wiring could fail, start it at least once through the entry
+point it ships with, such as the real launcher, loader, or installed package,
+and continue to the first operation a consumer calls: a check that stops once
+startup succeeds has not reached that operation.
+
 After a change, determine which earlier conclusions it could affect and rerun
 those. A change to what observes or judges results, such as an observer, oracle,
 classifier, or fixture, can affect them even when the product is unchanged: a fix
@@ -190,7 +197,7 @@ Repeat after edits that could invalidate evidence, not simply for reassurance.
 ## Verification
 
 - [ ] Each added test protects a named consequential risk absent from existing coverage.
-- [ ] The selected layer and environment exercise the behavior being claimed, where it runs.
+- [ ] The selected layer and environment exercise the behavior being claimed, where it runs; where loading or wiring could fail, a check reaches a consumer's first operation through the shipped entry point.
 - [ ] The reported result identifies the candidate and relevant environment, and where a comparison turns on version, the code that executed; it distinguishes setup from repairs and accounts for shared resources the check could change.
 - [ ] Expectations are independent, a claimed guard is shown to have decided the result, and valid protection was preserved.
 - [ ] Cases execute, handle async work, and clean up owned resources.

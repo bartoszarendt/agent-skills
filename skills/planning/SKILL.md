@@ -1,6 +1,6 @@
 ---
 name: planning
-description: Plan multi-step work before implementing it — sequence steps and dependencies, identify work that can proceed in parallel, surface unknowns and decisions, and define acceptance criteria and proportionate verification. Use when a feature, fix, refactor, migration, or other task needs several coordinated steps, when given a spec or requirements, when asked for a plan, breakdown, or roadmap, or when uncertainty or work across sessions makes an explicit approach useful. Scales from a brief outline to a detailed plan.
+description: Plan multi-step work before implementing it — sequence steps and dependencies, find work that can run in parallel, surface unknowns and decisions, and define acceptance criteria and proportionate verification. Use when a feature, fix, refactor, or migration needs several coordinated steps, when given a spec or requirements, when asked for a plan, breakdown, or roadmap, or when uncertainty or work across sessions makes an explicit approach useful. Scales from a brief outline to a detailed plan.
 ---
 
 # Planning

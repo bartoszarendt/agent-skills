@@ -44,6 +44,13 @@ implementation is correct and maintainable. State when missing requirements
 prevent assessing intent. Do not require unrelated improvements as a condition
 of accepting a focused change.
 
+A requirement, test, or check the change itself introduced is part of what is
+under review, not independent evidence that its mechanisms are needed: judge
+the need from the request, the project's commitments, and the mechanism's
+consumers. Trace each field, option, or variant the change adds from what
+produces it to what acts on it; a declaration, a serializer branch, and a test
+can look like a feature that nothing sets or nothing honors.
+
 Look for what the change leaves out as well as what it gets wrong. For each
 piece of state it sets, such as a registration, flag, cache entry, lock, or
 temporary resource, establish its intended lifetime and owner, and trace its

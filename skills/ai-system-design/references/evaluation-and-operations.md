@@ -64,6 +64,38 @@ model, tools, and case facts comparable, define the scoring before seeing result
 and do not reveal the desired answer in the request. More detailed output or
 repetition of the guidance's vocabulary is not itself an improvement.
 
+## Replay recorded responses to test the application
+
+A recorded model response replayed through the application's real entry point
+tests the code around the model, such as prompt assembly, tool wiring, state,
+and effects, without model variance or provider cost. It shows whether the
+application still behaves as it did under those responses, not whether a live
+model would still give them: a change to prompts, tools, or models that could
+alter the model's choices needs live trials as well.
+
+- Record from a live run, then replay through the launcher or configuration the
+  product ships, in a disposable workspace, with requests to the provider
+  disabled or failing loudly.
+- When the claim concerns prompt assembly or tool wiring, compare each request
+  the application sends with the recorded one before returning its response,
+  on the fields that claim depends on, such as the assembled instructions, the
+  tool definitions, and the order of calls. A regression can change any of
+  them while consuming the same number of responses; recorded prompt and tool
+  definitions kept beside the recording help only where the check compares
+  them with what the application actually sent.
+- Fail the replay when the application makes more requests than the recording
+  holds or leaves a recorded response unused, so an ignored response fails
+  instead of passing silently.
+- Assert effects apart from the model's narrative. Compare the final workspace
+  or external state with an expected state kept separately from the recording,
+  and a read-only case with its starting state; a response saying a file was
+  written shows nothing about the file.
+- Re-record deliberately when an intended change alters the requests, and
+  review the new recording and the expected state separately; never regenerate
+  the expected state from a replay.
+- Normalize only values outside the contract, such as generated identifiers and
+  timestamps, and keep credentials and personal data out of recordings.
+
 ## Grade facts and outcomes with appropriate oracles
 
 | Surface | Evidence and oracle |
@@ -154,7 +186,13 @@ updates, tools, and results. An illustrative trace can include:
 request/run ID; caller/scope reference; model/prompt/tool/representation versions
 stage and parent span; start/end time; actual outcome and failure stage
 source/result/operation locators; usage categories; retries and cost attribution
+context transformations applied before a call, such as truncation or compaction
 ```
+
+When prompt assembly, truncation, or a resumed session could explain a failure,
+keep enough to reconstruct what the model received: the instruction and
+tool-definition versions, the retrieved inputs, and each transformation applied
+to the context.
 
 Prefer locators and redacted/sampled payloads when full content is unnecessary.
 Do not log credentials, hidden reasoning, or unrestricted customer material for

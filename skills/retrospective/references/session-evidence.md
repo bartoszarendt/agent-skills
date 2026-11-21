@@ -10,6 +10,10 @@ Before reading in depth or dividing substantial work, list the sessions and
 delegated runs within the review's scope: each one's time span, model, the
 user's turns, and the work it delegated. Separate a main session from the runs
 it started, and a child's copy of its parent's history from what the child did.
+Count as the user's turns only what the user wrote: hosts and extensions put
+other text in the user role, such as wake or progress notices, injected skill
+or instruction content, hook output, and briefs or relays another agent or a
+supervisor wrote. Label those by their source.
 When the problem spans several sessions, the review covers each of them, not
 only the newest file. Place events with the user's turns, record changes, and
 commit history by time window.

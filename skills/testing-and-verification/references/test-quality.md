@@ -31,6 +31,13 @@ Control environmental inputs that can affect the result: timezone, locale,
 clock, randomness, network, generated identifiers, or filesystem state.
 Record random seeds when needed to replay a failure.
 
+Obtain ports, temporary directories, and similar resources atomically, such as
+by binding port 0 or creating a uniquely named directory, rather than probing
+for a free one and using it later. Isolation inside one runner does not extend
+to parallel workers, jobs, separate checkouts, or subprocesses that share the
+machine; to confirm a fix for a collision between them, run two independent
+processes at once.
+
 Use isolated resources and failure-safe cleanup for handles, servers,
 transactions, files, listeners, and subscriptions. Do not run shared mutable
 fixtures in parallel unless their isolation permits it.

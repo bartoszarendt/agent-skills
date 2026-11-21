@@ -108,8 +108,8 @@ Inspect the resulting answers or environment state, not only the system's claim
 that it succeeded. Add a component only when its benefit justifies its quality,
 latency, cost, maintenance, and operational effects.
 
-For evaluation, caching, cost or latency controls, observability, fallback, or
-production readiness, read
+For evaluation, replaying recorded responses, caching, cost or latency controls,
+observability, fallback, or production readiness, read
 [references/evaluation-and-operations.md](references/evaluation-and-operations.md).
 Use its case construction, worked rubric, and judge-error analysis to choose
 evidence that can change a decision; examples are not mandatory schemas or quotas.

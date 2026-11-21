@@ -51,6 +51,16 @@ when required by the product and maintainable within its asset system.
 Prefer native semantics for links, buttons, forms, disclosure, and navigation.
 Verify keyboard behavior and focus transitions when state or route changes.
 
+On touch devices, apply hover styles only where the primary pointer can hover,
+for example under `@media (hover: hover)`, so a tap does not leave a hover
+state behind, and keep hover-revealed actions reachable without hover. Give
+text fields at least a 16 CSS pixel font size where iOS Safari would otherwise
+zoom on focus. Keep a control mounted across layout changes while it stays
+visible, so focus and unsent input survive a resize. Do not raise the
+on-screen keyboard automatically unless typing is the intended next step.
+Choose layout from media features and available space, not from a parsed user
+agent; media features do not detect a physical keyboard.
+
 Choose CSS or an existing animation mechanism before adding a library.
 Use transforms and opacity where they achieve the effect efficiently, but do not
 turn that preference into a ban on necessary layout transitions.

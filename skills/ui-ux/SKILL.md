@@ -1,6 +1,6 @@
 ---
 name: ui-ux
-description: Design, build, and evaluate user interfaces for web, mobile, and desktop products, from user journeys, navigation, interaction states, interface wording, accessibility, and data presentation to visual direction, typography, color, composition, imagery, styling, and responsive web implementation, including landing pages, websites, and redesigns. Use when defining a flow, choosing controls, wording labels or errors, designing, restyling, or implementing a page, screen, or component, or reviewing whether an interface is usable and visually coherent; a focused correction does not require a new flow or visual system.
+description: Design, build, and review interfaces for web, mobile, and desktop — journeys, navigation, interaction states, wording, accessibility, data presentation, visual direction, typography, color, composition, responsive implementation, landing pages, and redesigns. Use when defining a flow, choosing controls, wording labels or errors, or designing, restyling, building, or reviewing a page, screen, or component for usability and visual coherence; a focused correction needs no new flow or visual system.
 ---
 
 # UI / UX

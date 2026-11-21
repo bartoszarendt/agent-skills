@@ -57,6 +57,13 @@ Preserve stable domain boundaries, deliberate isolation, ownership, external
 contracts, and lifecycle control. One implementation does not by itself make
 an adapter unnecessary.
 
+Before treating a declared feature as supported, trace it from what produces
+it to what acts on it: a field copied through every layer may have no setter,
+no reader, or only implementations that reject it. A requirement, test, or
+check introduced by the work under review is a design choice to assess, not
+independent evidence that its distinctions are needed. A check added to keep
+duplicate definitions equal is part of the duplication's cost, not its removal.
+
 ## Tests
 
 Investigate fixture hierarchies, elaborate case languages, repeated assertions
