@@ -50,7 +50,8 @@ use is unmeasured, not that the guidance is unused.
 
 - Control the configuration. Install or inject the guidance under test, and
   keep other instructions, skills, and tools the same in every variant, or
-  record where they differ.
+  record where they differ. To assess a description, install the skill and let
+  the host choose it: injecting it skips the choice the description governs.
 - Write the expected outcome before seeing any result, from what the user needs
   rather than in the guidance's own terms. A pass criterion that reuses the
   guidance's vocabulary can only confirm it.
@@ -58,6 +59,12 @@ use is unmeasured, not that the guidance is unused.
   starting state and a plausible wrong result fail.
 - Score the delivered result and the consequential actions. Score the order of
   steps only where that order protects a real contract.
+- Where a person or agent scores by judgement, give the scorer the request,
+  the result, the criteria, and any permitted evidence needed to judge them,
+  such as a trace or the final state of files. Use neutral labels, keep what
+  identifies the variant out of that material, and vary which variant comes
+  first across cases. Record scores and reasons before revealing which variant
+  produced which result.
 
 ## Measure an improvement
 
@@ -77,6 +84,9 @@ use is unmeasured, not that the guidance is unused.
   runs where the rest of the task could change the effect.
 - Repeat each case, and decide before running how many runs and what
   difference will count. Do not extend a run because its result is close.
+- When results lead you to revise the change, the cases that shaped the
+  revision can no longer show that it generalizes: keep at least one case out
+  of the revisions and run it only in the final comparison.
 - A case that every variant passes, or every variant fails, shows no
   difference in accuracy between them; it can still show one in cost.
 
@@ -91,6 +101,8 @@ use is unmeasured, not that the guidance is unused.
   variants.
 - For a regression check, one run per case can be enough when the decision is
   clear; repeat a case whose result is close or varies between runs.
+- Report a run that failed or did not finish among that case's results, rather
+  than dropping the case or silently rerunning until one succeeds.
 - Report the cost beside the effect, such as added turns, questions,
   interruptions, or tokens.
 - State what the runs cannot show, such as cases written by someone who knew
