@@ -26,8 +26,11 @@ depends on: for code, its callers, tests, configuration, and relevant history;
 for a plan or decision, its acceptance criteria, consumers, and prior decisions.
 
 Identify the outcome, acceptance criteria, commitments to users and consumers,
-approved decisions, explicit gates, authorization, and constraints. Separate
-required results from the mechanisms proposed to reach them:
+approved decisions, explicit gates, authorization, and constraints. Judge what
+a mechanism protects against how the software is used, as the repository or the
+request shows: who uses it, at what scale, for how long, and what a failure
+costs. Where nothing shows it, state the use you assumed. Separate required
+results from the mechanisms proposed to reach them:
 
 - Preserve the required outcome and explicit commitments unless the user or
   responsible owner has already authorized changing them.

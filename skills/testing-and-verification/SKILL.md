@@ -13,7 +13,10 @@ test-first method. Explain a material trade-off rather than silently omitting it
 ## Decide whether a test is needed
 
 Read the affected contract, implementation, and existing coverage first. Identify
-what can go wrong, how it can occur, and why the consequence matters.
+what can go wrong, how it can occur, and why the consequence matters. Judge the
+consequence against how the software is used, as the repository or the request
+shows: who uses it, at what scale, for how long, and what a failure costs.
+Where nothing shows it, state the use you assumed.
 
 Before adding a test, name the consequential failure existing checks would miss.
 If you cannot name it, do not add the test. Prefer running, extending, or

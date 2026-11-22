@@ -16,7 +16,10 @@ or service; or a whole repository. Identify the criteria: concerns the user
 names, applicable project standards, or, when none are given, correctness,
 security, maintainability, and verification evidence, adding performance where
 the workload makes it relevant. Match depth to the request and to the
-consequence of what the code does.
+consequence of what the code does. Judge consequence and scale against how the
+software is used, as the repository or the request shows: who uses it, at what
+scale, for how long, and what a failure costs. Where nothing shows it, state
+the use you assumed.
 
 Read the request, applicable standards, and working-tree state. Ask when an
 unclear target, criterion, or depth would materially change the result;
@@ -89,7 +92,10 @@ For each candidate, establish:
 Trace callers and state transitions rather than inferring architecture from an
 isolated snippet. Use focused execution when it resolves meaningful uncertainty.
 Do not treat a smell, missing test, large file, or unfamiliar pattern as a defect
-without establishing the consequence.
+without establishing the consequence. A limit the code or its author names
+deliberately, such as a size, a load, or a case left out, is a decision rather
+than an oversight: report it only where it breaks a requirement or a commitment
+such as safety or data integrity, or the expected use already reaches it.
 
 Report confirmed or well-supported findings with appropriate confidence. Keep
 material unresolved risks separate, explaining the missing evidence and impact.
@@ -166,7 +172,7 @@ was not adopted.
 
 ## Verification
 
-- [ ] Target, criteria, and depth were established; coverage and limitations are stated.
+- [ ] Target, criteria, depth, and the expected use were established; coverage and limitations are stated.
 - [ ] For a change, delivered intent and implementation quality were assessed, with missing context named.
 - [ ] Findings have concrete consequences, evidence, and realistic paths, with safeguards and counterevidence considered.
 - [ ] Recurring problems are reported as patterns with their observed extent.
