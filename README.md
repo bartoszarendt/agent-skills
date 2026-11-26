@@ -106,6 +106,7 @@ several of these skills.
 | [agent-delegation](skills/agent-delegation/) | Running tasks in a separate Claude Code, Codex, OpenCode, or Pi CLI process and verifying the result. |
 | [agent-instructions](skills/agent-instructions/) | Writing clear, scoped agent guidance and checking how its rules interact. |
 | [retrospective](skills/retrospective/) | Learning from completed or stopped agent work, retaining effective practices, and recommending improvements supported by evidence. |
+| [resource-cleanup](skills/resource-cleanup/) | Naming the files, worktrees, databases, containers and images work creates so they can be traced, and removing what is no longer needed when the work ends. |
 
 ## How skills load
 
