@@ -43,9 +43,15 @@ it reaches the intended files or stages, or use the project's command. When you
 change how a costly check starts, such as its environment, mounts, or server,
 first exercise the stage you changed, in the environment the check will use,
 through readiness or its first intended case, against its startup limits;
-stages the change does not touch need not run again. Zero tests, unexpected
-skips, missing services, and incomplete runs do not
-establish success. When output passes through a pipe or filter, such as `tail`
+stages the change does not touch need not run again. Before starting a costly
+check, confirm its required inputs are available and usable where it will run,
+such as an environment variable another checkout's ignored files supply, a
+service, or data, keeping any absence the check is meant to exercise. Supply a
+missing one within scope, or report the check as unrun.
+Zero tests, unexpected skips, missing services, and incomplete runs do not
+establish success. Read a case's status from a structured result, such as a
+JUnit or JSON report, with a parser for its format, finding the exact case; if
+it cannot be parsed, leave that status unverified. When output passes through a pipe or filter, such as `tail`
 or a pager, record the check's own exit status. In Bash and other POSIX shells a
 pipeline reports its last command's status by default, and an option that fails
 the pipeline on any stage does not say which stage failed; other shells report
@@ -203,6 +209,7 @@ Repeat after edits that could invalidate evidence, not simply for reassurance.
 - [ ] The selected layer and environment exercise the behavior being claimed, where it runs; where loading or wiring could fail, a check reaches a consumer's first operation through the shipped entry point.
 - [ ] The reported result identifies the candidate and relevant environment, and where a comparison turns on version, the code that executed; it distinguishes setup from repairs and accounts for shared resources the check could change.
 - [ ] Expectations are independent, a claimed guard is shown to have decided the result, and valid protection was preserved.
+- [ ] A costly check ran only after its required inputs were confirmed usable where it ran, or it is reported unrun.
 - [ ] Cases execute, handle async work, and clean up owned resources.
 - [ ] Relevant final-state checks and required gates ran, or gaps are explicit.
 - [ ] A figure or class derived from another tool's output was checked against that tool: intended join cardinality, totals over the stated population, real examples that try to falsify each class, unmatched cases named.
