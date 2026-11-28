@@ -131,7 +131,7 @@ Report: changes and reasons; files touched; checks run with results;
   second opinion on an approach or an assessment of a result, rule out no
   conclusion and name no verdict, marking one that changes what the user
   approved as theirs. Point it at code and tests as well as records; where the
-  answer turns on behavior, allow an authorized, isolated scratch probe.
+  answer turns on behavior, allow an authorized, isolated scratch probe. When the user asked for the run, their request, quoted, is its question at the scope they gave it, such as a whole phase or plan; context you add does not narrow it.
 - When the project defines the agent that should do the task, such as a role
   file in the selected CLI's agent directory, start that agent by name where the
   reference gives an option for it; otherwise have the brief tell the delegate
@@ -204,7 +204,7 @@ or a sound approach, and update the brief with it or the way to obtain it.
 - After a read-only run, confirm the workspace is unchanged. Report any edits
   it made and do not keep them without the user's decision.
 - For review and research results, confirm that cited files, lines, and
-  behavior exist before relaying conclusions. When a project record or document will cite the result, save the final report unchanged where the project keeps such notes, naming what it reviewed, with your own reconciliation in a separate, labelled part; the run directory is temporary.
+  behavior exist before relaying conclusions. When a project record or document will cite the result, save the final report unchanged where the project keeps such notes, naming what it reviewed, with your own reconciliation in a separate, labelled part; the run directory is temporary. Before relaying a finding as blocking, say whether it was shown on input the work meets in use or only on one the reviewer built, and whether the work reads that input wrongly or refuses it. Run a cheap check the reviewer names that could show a costly next step will not serve its purpose before that step, rather than only reporting it.
 
 ## Rework and sequences
 
@@ -239,12 +239,12 @@ and give the run directory's location.
 ## Verification
 
 - [ ] CLI, model, and permission level match the request and existing authorization; requested scope and enforced isolation were distinguished and reported.
-- [ ] The brief is self-contained, names exact checks, fits a capped run including recording, names the authoritative record when work spans checkouts, and contains no secrets; a second opinion's brief rules out no conclusion.
+- [ ] The brief is self-contained, names exact checks, fits a capped run including recording, names the authoritative record when work spans checkouts, and contains no secrets; a second opinion's brief rules out no conclusion; a run the user asked for keeps their question and scope.
 - [ ] A project-defined agent was started by name or read first, with any model and effort the project sets passed explicitly.
 - [ ] Any fallback was one the user or project instructions allow, and was reported.
 - [ ] Progress was judged from events and process state, not a missing result; success from process exit, terminal state, and errors together, with a recorded cancellation or timeout overriding them.
 - [ ] Resume commands repeated or explicitly updated authorized permission options; a newly authorized excluded action was checked against current state, and session replacement matched context and permission needs.
 - [ ] The starting state was recorded, pre-existing user work is intact, and changes were compared with that state and reviewed against the brief.
-- [ ] Acceptance was checked in proportion to risk; unverified claims are labeled.
+- [ ] Acceptance was checked in proportion to risk; unverified claims are labeled; a relayed blocking finding says whether real or built input showed it.
 - [ ] No commit, push, or external action exceeded existing authorization.
 - [ ] Only processes recorded for an invocation were terminated; delegate processes are stopped, the run directory location was reported, and a result a project record cites was saved with the project's notes.
